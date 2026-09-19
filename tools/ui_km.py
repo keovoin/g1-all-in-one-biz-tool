@@ -17,7 +17,8 @@ KEYF = os.path.join(BASE, "tools/gem_key.txt")
 
 GAP = float(os.environ.get("UI_GAP_GEM", "5.0"))   # seconds between API batches (stay under 20 RPM)
 MODEL = os.environ.get("I18N_GEM_MODEL", "gemini-flash-latest")
-BATCH = int(os.environ.get("UI_BATCH", "25"))
+BATCH_CHARS = int(os.environ.get("UI_BATCH_CHARS", "6000"))   # pack lines up to ~6k chars per call
+BATCH_MAX = int(os.environ.get("UI_BATCH_MAX", "200"))
 NUM = re.compile(r"^\s*(\d{1,4})[:.\)]\s?")
 PLACE = re.compile(r"\{\{[^}]*\}\}")
 
@@ -49,11 +50,12 @@ def call_gemini(payload, tries=5):
         except Exception as e:
             code = getattr(e, "code", None)
             if code == 429:
-                wait = 75 * (a + 1)              # 75,150,225,300,375s
-                log("  429 — waiting %ds" % wait)
-                time.sleep(wait); continue
-            log("  err %s — retry in 15s" % e)
-            time.sleep(15)
+                # daily free-tier quota — wait once, then let the outer loop retry
+                log("  429 (daily quota) — sleeping 12h, will retry this batch")
+                time.sleep(43200)
+                return None
+            log("  err %s — retry in 30s" % e)
+            time.sleep(30)
     return None
 
 def flatten(obj, prefix=""):
@@ -128,16 +130,21 @@ def main():
     done = 0
     i = 0
     while i < len(todo):
-        chunk = todo[i:i + BATCH]
+        # pack by char budget
+        end = i
+        size = 0
+        while end < len(todo) and end - i < BATCH_MAX:
+            c = len(todo[end][3]) + len(str(end - i + 1)) + 3
+            if size + c > BATCH_CHARS and end > i:
+                break
+            size += c
+            end += 1
+        chunk = todo[i:end]
         res = batch([c[3] for c in chunk])
         if res is None:
-            log("batch at %d failed — sleeping 120s" % i)
-            time.sleep(120)
-            res = batch([c[3] for c in chunk])
-            if res is None:
-                log("giving up on this batch, moving on")
-                i += 1   # try next single line
-                continue
+            log("batch at %d failed — sleeping 60min, then retrying SAME batch" % i)
+            time.sleep(3600)
+            continue
         for (p, v, k, masked, spans), tr in zip(chunk, res):
             final = restore(tr, spans)
             if "{{" in v and not re.search(r"\{\{[^}]*\}\}", final):
@@ -147,7 +154,7 @@ def main():
             done += 1
         i += len(chunk)
         json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
-        if i % 100 < BATCH:
+        if done % 1000 < len(chunk):
             log("%d/%d translated" % (done, len(todo)))
         time.sleep(GAP)
     json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
