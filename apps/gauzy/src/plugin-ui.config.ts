@@ -45,7 +45,8 @@ export const uiPluginConfig: PluginUiConfig = {
 		LanguagesEnum.CHINESE,
 		LanguagesEnum.ARABIC,
 		LanguagesEnum.BULGARIAN,
-		LanguagesEnum.HEBREW
+		LanguagesEnum.HEBREW,
+		LanguagesEnum.KHMER
 	],
 
 	availableLocales: [

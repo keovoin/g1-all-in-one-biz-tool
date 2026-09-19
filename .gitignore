@@ -162,3 +162,7 @@ apps/server-api/src/assets/icons/menu
 /graphify-out
 
 /Tempnx-console-tmp**/**
+tools/gem_key.txt
+__pycache__/
+tools/*.log
+tools/*.cache.json

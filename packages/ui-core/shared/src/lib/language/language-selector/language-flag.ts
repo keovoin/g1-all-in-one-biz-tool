@@ -18,7 +18,8 @@ const LANGUAGE_FLAG_COUNTRIES: Record<string, string> = {
 	[LanguagesEnum.ITALIAN]: 'it',
 	[LanguagesEnum.DUTCH]: 'nl',
 	[LanguagesEnum.POLISH]: 'pl',
-	[LanguagesEnum.ARABIC]: 'sa'
+	[LanguagesEnum.ARABIC]: 'sa',
+	[LanguagesEnum.KHMER]: 'kh'
 };
 
 /**

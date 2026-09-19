@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<defs>
+		<radialGradient id="bg" cx="0.5" cy="0.42" r="0.75">
+			<stop offset="0" stop-color="#241E17"/>
+			<stop offset="1" stop-color="#141009"/>
+		</radialGradient>
+		<linearGradient id="g" x1="0" y1="1" x2="0" y2="0">
+			<stop offset="0" stop-color="#A88420"/>
+			<stop offset="0.6" stop-color="#C9A227"/>
+			<stop offset="1" stop-color="#E9CD6B"/>
+		</linearGradient>
+		<linearGradient id="gC" x1="0" y1="1" x2="0" y2="0">
+			<stop offset="0" stop-color="#C9A227"/>
+			<stop offset="1" stop-color="#F2D87E"/>
+		</linearGradient>
+		<!-- petal: base (0,0), tip up (0,-170); slim teardrop -->
+		<path id="pet" d="M0,0 C -26,-36 -30,-96 0,-170 C 30,-96 26,-36 0,0 Z"/>
+	</defs>
+	<rect width="512" height="512" rx="96" fill="url(#bg)"/>
+	<!-- lotus fan, all tips up from base point (256,320) -->
+	<g fill="url(#g)">
+		<use href="#pet" transform="translate(256,320) rotate(56) scale(0.62)"/>
+		<use href="#pet" transform="translate(256,320) rotate(-56) scale(0.62)"/>
+		<use href="#pet" transform="translate(256,320) rotate(28) scale(0.84)"/>
+		<use href="#pet" transform="translate(256,320) rotate(-28) scale(0.84)"/>
+	</g>
+	<g fill="url(#gC)">
+		<use href="#pet" transform="translate(256,320) scale(1.05)"/>
+	</g>
+	<!-- bowl base: smooth crescent -->
+	<path d="M158,314 Q 256,344 354,314 Q 256,404 158,314 Z" fill="url(#g)"/>
+</svg>
