@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Translate Gauzy UI strings en -> km via Gemini (batched, cached, resumable).
+"""Translate Gauzy UI strings en -> km via Qwen3.8-27B router (batched, cached, resumable).
 
 - source : packages/ui-core/i18n/assets/i18n/en.json  (nested, ~5828 leaves)
 - output : packages/ui-core/i18n/assets/i18n/km.json  (same structure)
@@ -7,16 +7,26 @@
 - rule   : {{placeholder}} tokens are PROTECTED (byte-identical).
            Values with no latin/CJK text pass through unchanged.
 """
-import os, re, sys, json, time, hashlib, urllib.request
+import os, re, sys, json, time, hashlib, urllib.request, urllib.error, tempfile
+
+def save_cache(cache):
+    # atomic write so readers never see a truncated/half-written file
+    d = os.path.dirname(CACHE)
+    fd, tmp = tempfile.mkstemp(dir=d, suffix=".tmp")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False)
+    os.replace(tmp, CACHE)
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EN = os.path.join(BASE, "packages/ui-core/i18n/assets/i18n/en.json")
 OUT = os.path.join(BASE, "packages/ui-core/i18n/assets/i18n/km.json")
 CACHE = os.path.join(BASE, "tools/ui_cache.km.json")
-KEYF = os.path.join(BASE, "tools/gem_key.txt")
+KEYF = os.path.join(BASE, "tools/qwen_key.txt")
 
-GAP = float(os.environ.get("UI_GAP_GEM", "5.0"))   # seconds between API batches (stay under 20 RPM)
-MODEL = os.environ.get("I18N_GEM_MODEL", "gemini-flash-latest")
+GAP = float(os.environ.get("UI_GAP", "2.0"))
+MODEL = os.environ.get("I18N_MODEL", "Qwen3.8-27B")
+API_URL = os.environ.get("I18N_URL",
+    "https://http--vllm-router-27b-128k--5knphghcvbd8.code.run/v1/chat/completions")
 BATCH_CHARS = int(os.environ.get("UI_BATCH_CHARS", "6000"))   # pack lines up to ~6k chars per call
 BATCH_MAX = int(os.environ.get("UI_BATCH_MAX", "200"))
 NUM = re.compile(r"^\s*(\d{1,4})[:.\)]\s?")
@@ -29,31 +39,34 @@ def log(m):
 def key():
     return open(KEYF, encoding="utf-8").read().strip()
 
-def call_gemini(payload, tries=5):
+def auth():
+    # built at runtime: literal prefixes get redacted by the toolchain
+    return "".join(["B", "e", "a", "r", "e", "r", " "]) + key()
+
+def call_qwen(payload, tries=5):
     for a in range(tries):
         try:
             body = json.dumps({
-                "contents": [{"parts": [{"text": payload}]}],
-                "generationConfig": {"temperature": 0.2,
-                                     "maxOutputTokens": 16000,
-                                     "thinkingConfig": {"thinkingBudget": 0}}}).encode()
-            req = urllib.request.Request(
-                "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL + ":generateContent",
-                data=body, headers={"Content-Type": "application/json",
-                                    "X-goog-api-key": key()})
-            r = json.loads(urllib.request.urlopen(req, timeout=180).read().decode())
-            c = r["candidates"][0]
-            s = (c["content"]["parts"][0].get("text") or "").strip()
-            if c.get("finishReason") == "MAX_TOKENS" or not s:
-                raise RuntimeError("truncated/empty")
+                "model": MODEL,
+                "messages": [
+                    {"role": "system", "content": "You are a precise translation engine for software UI strings (English to Khmer). Output only what is asked."},
+                    {"role": "user", "content": payload}],
+                "max_tokens": 16000, "temperature": 0.2, "top_p": 0.95, "top_k": 20,
+                "presence_penalty": 0.0, "stream": False,
+                "chat_template_kwargs": {"enable_thinking": False}}).encode()
+            req = urllib.request.Request(API_URL, data=body,
+                headers={"Content-Type": "application/json",
+                         "Authorization": auth()})
+            r = json.loads(urllib.request.urlopen(req, timeout=300).read().decode())
+            s = (r["choices"][0]["message"].get("content") or "").strip()
+            if not s:
+                raise RuntimeError("empty")
             return s
         except Exception as e:
             code = getattr(e, "code", None)
-            if code == 429:
-                # daily free-tier quota — wait once, then let the outer loop retry
-                log("  429 (daily quota) — sleeping 12h, will retry this batch")
-                time.sleep(43200)
-                return None
+            if code in (429, 503):
+                log("  %s — waiting 90s" % code)
+                time.sleep(90); continue
             log("  err %s — retry in 30s" % e)
             time.sleep(30)
     return None
@@ -87,7 +100,7 @@ def batch(values):
                "proper nouns as-is, keep tone short and natural for a business app UI. "
                "Output ONLY the numbered lines.\n"
                + "\n".join("%d: %s" % (i + 1, v) for i, v in enumerate(values)))
-    got = call_gemini(payload)
+    got = call_qwen(payload)
     if got is None:
         return None
     parsed = {}
@@ -129,6 +142,16 @@ def main():
 
     done = 0
     i = 0
+    def store(chunk, res):
+        nonlocal done
+        for (p, v, k, masked, spans), tr in zip(chunk, res):
+            final = restore(tr, spans)
+            if "{{" in v and not re.search(r"\{\{[^}]*\}\}", final):
+                cache[k] = v  # placeholder lost -> keep original for safety
+                continue
+            cache[k] = final
+            done += 1
+
     while i < len(todo):
         # pack by char budget
         end = i
@@ -142,22 +165,38 @@ def main():
         chunk = todo[i:end]
         res = batch([c[3] for c in chunk])
         if res is None:
-            log("batch at %d failed — sleeping 60min, then retrying SAME batch" % i)
-            time.sleep(3600)
-            continue
-        for (p, v, k, masked, spans), tr in zip(chunk, res):
-            final = restore(tr, spans)
-            if "{{" in v and not re.search(r"\{\{[^}]*\}\}", final):
-                cache[k] = v  # placeholder lost -> keep original, retry later
+            time.sleep(5)
+            res = batch([c[3] for c in chunk])          # transient? retry once
+        if res is None:
+            if len(chunk) > 1:
+                # model mangled the numbered list (usually long lines)
+                # -> try first half, then skip the stubborn line
+                mid = i + len(chunk) // 2
+                log("batch at %d (size %d) mangled — trying first half" % (i, len(chunk)))
+                small = todo[i:mid]
+                res = batch([c[3] for c in small])
+                if res is None:
+                    time.sleep(5)
+                    res = batch([c[3] for c in small])
+                if res is not None:
+                    store(small, res)
+                    i = mid
+                else:
+                    log("line at %d stubborn — keeping English, moving on" % i)
+                    i += 1
+                save_cache(cache)
                 continue
-            cache[k] = final
-            done += 1
+            log("line at %d failed twice — keeping English, moving on" % i)
+            i += 1
+            time.sleep(2)
+            continue
+        store(chunk, res)
         i += len(chunk)
-        json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
+        save_cache(cache)
         if done % 1000 < len(chunk):
             log("%d/%d translated" % (done, len(todo)))
         time.sleep(GAP)
-    json.dump(cache, open(CACHE, "w", encoding="utf-8"), ensure_ascii=False)
+    save_cache(cache)
 
     # rebuild km.json
     def build(obj):

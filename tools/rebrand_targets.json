@@ -1,0 +1,290 @@
+[
+ [
+  ".BUTTONS.SAVE_AND_SEND_CONTACT",
+  "Save and send to contact in gauzy"
+ ],
+ [
+  ".FORM.PLACEHOLDERS.GAUZY_API_KEY",
+  "Gauzy AI Key"
+ ],
+ [
+  ".FORM.PLACEHOLDERS.GAUZY_API_SECRET",
+  "Gauzy AI Secret"
+ ],
+ [
+  ".POP_UPS.TOTAL_HOURS_WORKED_OVER_GAUZY",
+  "Total Hours worked over Gauzy"
+ ],
+ [
+  ".MENU.GAUZY_AI",
+  "Gauzy AI"
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.MIGRATE_TO_CLOUD",
+  "Migrate to Ever Gauzy Cloud"
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.IMPORT_INFO",
+  "Click \"Import\" to import your data into Gauzy DB."
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.EXPORT_INFO",
+  "Click \"Export\" to export data from Gauzy DB."
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.DOWNLOAD_TEMPLATES_INFO",
+  "Click \"Download Templates\" to download Zip archive with CSV templates for the format of Gauzy data."
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.MIGRATE_TO_CLOUD_INFO",
+  "Click \"Migrate to Ever Gauzy Cloud\" to migrate from self-hosted to cloud edition."
+ ],
+ [
+  ".MENU.IMPORT_EXPORT.MIGRATE_SUCCESSFULLY",
+  "Gauzy Cloud migration for '{{ tenant }}' successfully!"
+ ],
+ [
+  ".MENU.OPEN_GA_BROWSER",
+  "Open Gauzy In Browser"
+ ],
+ [
+  ".SETTINGS_MENU.GAUZY_LIGHT",
+  "Gauzy Light"
+ ],
+ [
+  ".SETTINGS_MENU.GAUZY_DARK",
+  "Gauzy Dark"
+ ],
+ [
+  ".CHANGELOG_MENU.GAUZY_FEATURES",
+  "Gauzy features"
+ ],
+ [
+  ".REPORT_PAGE.NO_DATA.DAILY_TIME_AND_ACTIVITY",
+  "There is no time and activity tracked yet for this day. Please use the <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Gauzy Desktop Timer App</a>."
+ ],
+ [
+  ".INTEGRATIONS.HUBSTAFF_PAGE.GRANT_PERMISSION",
+  "Next you will be taken to Hubstaff to grant permission to Gauzy."
+ ],
+ [
+  ".INTEGRATIONS.UPWORK_PAGE.NEXT_STEP_INFO",
+  "Next you will be taken to Upwork to grant permission to Gauzy."
+ ],
+ [
+  ".INTEGRATIONS.ZAPIER_PAGE.TOOLTIP.TRIGGERS",
+  "Triggers are events that occur in Gauzy and can be used to trigger actions in Zapier."
+ ],
+ [
+  ".INTEGRATIONS.ZAPIER_PAGE.TOOLTIP.ACTIONS",
+  "Actions are events that occur in Zapier and can be used to trigger actions in Gauzy."
+ ],
+ [
+  ".INTEGRATIONS.ZAPIER_PAGE.TOOLTIP.WEBHOOKS",
+  "Webhooks are events that occur in Zapier and can be used to trigger actions in Gauzy."
+ ],
+ [
+  ".INTEGRATIONS.ZAPIER_PAGE.SETTINGS.WEBHOOK_INFO",
+  "Webhook is a URL that is used to update data in Gauzy based on a specific event in Zapier."
+ ],
+ [
+  ".INTEGRATIONS.GAUZY_AI_PAGE.TITLE",
+  "Gauzy AI Integration"
+ ],
+ [
+  ".INTEGRATIONS.GAUZY_AI_PAGE.API_KEY",
+  "Gauzy AI key"
+ ],
+ [
+  ".INTEGRATIONS.GAUZY_AI_PAGE.API_SECRET",
+  "Gauzy AI Secret"
+ ],
+ [
+  ".INTEGRATIONS.GAUZY_AI_PAGE.DESCRIPTION",
+  "Activate Gauzy AI integration for smarter job hunting."
+ ],
+ [
+  ".INTEGRATIONS.GAUZY_AI_PAGE.TOOLTIP.ENABLE_EMPLOYEE_PERFORMANCE_ANALYSIS",
+  "Manages the transmission of employee work metrics, including keyboard inputs, mouse movements, and screenshots, for analysis by Gauzy AI. Enable for comprehensive performance analysis; disable for strict user privacy and data control."
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.SETUP_INFO",
+  "Connect this Gauzy organization to your Ever Async tenant. Choose which projects and employee task assignments may appear in your connected chats."
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.MAPPINGS_HINT",
+  "Map each chat identity to a Gauzy employee. Use the platform and verified workspace or server ID shown in Ever Async Connections. The same user ID in another workspace is a separate identity."
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.CONFIGURE_HINT",
+  "Sign in to your Ever Async dashboard, select your tenant, and open Connections. Add an Ever Gauzy connection using the details below and the one-time credentials. Select which of your Slack and Discord connections may use it."
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.GAUZY_API_URL",
+  "Gauzy API URL"
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.TENANT_ID",
+  "Gauzy tenant ID"
+ ],
+ [
+  ".INTEGRATIONS.EVER_ASYNC_PAGE.ORGANIZATION_ID",
+  "Gauzy organization ID"
+ ],
+ [
+  ".INTEGRATIONS.PLANE_PAGE.MODE_SHARED",
+  "Use shared Ever Gauzy PM (recommended)"
+ ],
+ [
+  ".INTEGRATIONS.PLANE_PAGE.SHARED_INFO",
+  "You're using the shared Ever Gauzy project management apps. No URLs to configure — just enable the integration."
+ ],
+ [
+  ".HELP_PAGE.INTRO",
+  "Find documentation, get answers, and reach the team behind Gauzy."
+ ],
+ [
+  ".HELP_PAGE.DOCUMENTATION_DESC",
+  "Guides and reference for every Gauzy feature."
+ ],
+ [
+  ".HELP_PAGE.WEBSITE",
+  "Gauzy Website"
+ ],
+ [
+  ".HELP_PAGE.WEBSITE_DESC",
+  "Learn more about the Gauzy platform."
+ ],
+ [
+  ".HELP_PAGE.ABOUT_LINK",
+  "About Gauzy"
+ ],
+ [
+  ".ABOUT_PAGE.COPYRIGHT",
+  "Copyright © 2019-{{year}}, Ever Co. LTD. All rights reserved."
+ ],
+ [
+  ".ABOUT_PAGE.DESCRIPTION",
+  "Ever® Gauzy™ is an Open Business Management Platform for Collaborative, On-Demand and Sharing Economies — ERP, CRM, HRM, ATS and Project Management with integrated time tracking."
+ ],
+ [
+  ".TIMER_TRACKER.ALERT_DESKTOP_DOWNLOAD",
+  "For more flexible time and activity tracking, please <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Download</a> and use the <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Gauzy Desktop Timer App</a>."
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.TITLE",
+  "Welcome to Ever® Gauzy™ - Open-Source Business Management Platform (ERP/CRM/HRM)"
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.LABEL",
+  "Ever Gauzy Desktop App provides the full functionality of the Gauzy Platform available directly on your desktop computer or a laptop. In addition, it allows tracking work time, activity recording, and the ability to receive tracking reminders/notifications."
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.TITLE_SERVER",
+  "Ever Gauzy Server Installation Wizard"
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.LABEL_SERVER",
+  "Ever Gauzy Desktop App provides the full functionality of the Gauzy Platform available directly on your desktop computer or a laptop. In addition, it allows tracking work time, activity recording, and the ability to receive tracking reminders/notifications."
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.GP_FEATURES",
+  "Gauzy Platform Features"
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.HOW_GONNA_USE_GP",
+  "How are you going to use Gauzy platform?"
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.INSTALL_GP_LOCAL",
+  "Install and run Gauzy Platform on your local computer."
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.FINAL_STEP_GP",
+  "This is the final step where you can get to the nitty-gritty of your Gauzy Platform."
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.TITLE_SERVER_API",
+  "Ever Gauzy API Server Installation Wizard"
+ ],
+ [
+  ".TIMER_TRACKER.SETUP.LABEL_SERVER_API",
+  "Ever Gauzy API Server Desktop App provides the full functionality of the Gauzy Platform available directly on your desktop computer or a laptop. In addition, it allows tracking work time, activity recording, and the ability to receive tracking reminders/notifications."
+ ],
+ [
+  ".TIMER_TRACKER.DIALOG.DB_CLEANUP_DETAIL",
+  "Removing the database will wipe locally cached data. Data already synced to the server will safely rest on the Gauzy cloud."
+ ],
+ [
+  ".TIMER_TRACKER.PERMISSIONS.DESCRIPTION",
+  "Gauzy requires certain macOS permissions to track your work accurately. Review and manage them here."
+ ],
+ [
+  ".TIMER_TRACKER.PERMISSIONS.DIALOG_DESC",
+  "Gauzy needs Screen Recording permission to capture screenshots during your work session. Please grant access to continue."
+ ],
+ [
+  ".EMAIL_TEMPLATES_PAGE.TEMPLATE_NAMES.invite-gauzy-teams",
+  "Invite Gauzy Teams"
+ ],
+ [
+  ".PLUGIN.FORM.SOURCE_TYPES.GAUZY",
+  "Gauzy"
+ ],
+ [
+  ".PLUGIN.FORM.GAUZY.TITLE",
+  "Gauzy Plugin Upload"
+ ],
+ [
+  ".PLUGIN.FORM.GAUZY.DESCRIPTION",
+  "Upload your plugin file directly to Gauzy"
+ ],
+ [
+  ".PLUGIN.FORM.GAUZY.UPLOAD_INFO_DESC",
+  "Upload your plugin as a .zip file. The file will be securely stored and distributed through Gauzy."
+ ],
+ [
+  ".PLUGIN.BUILTIN.SUBTITLE",
+  "Native integrations included with Gauzy — click to configure."
+ ],
+ [
+  ".PLUGIN.BUILTIN.DESKTOP_NOTICE",
+  "These integrations are configured via the Gauzy web app. Open the web app to manage them."
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.DESKTOP",
+  "Gauzy Desktop"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.DESKTOP_DESC",
+  "Full-featured desktop application with all Gauzy capabilities"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.TIMER",
+  "Gauzy Timer"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.SERVER",
+  "Gauzy Server"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.SERVER_DESC",
+  "Self-hosted Gauzy server application"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.API_SERVER",
+  "Gauzy API Server"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.API_SERVER_DESC",
+  "Standalone API server for Gauzy services"
+ ],
+ [
+  ".PLUGIN.DIALOG.APP_SELECTOR.AGENT",
+  "Gauzy Agent"
+ ],
+ [
+  ".OAUTH_CLIENTS.SUBTITLE",
+  "Register and manage third-party applications that can request access to Ever Gauzy on behalf of your users."
+ ]
+]
