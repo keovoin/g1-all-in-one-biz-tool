@@ -138,7 +138,7 @@ const PosthogAnalytics = initializePosthog();
  * ```
  * import { version } from './version';
  *
- * console.log('Gauzy API version:', version);
+ * console.log('Sastra API version:', version);
  * ```
  *
  * @since 0.1.0
@@ -330,7 +330,7 @@ const { jitsu, sentry, posthog } = config_namespaceObject.environment;
     plugin_ai_provider_openai_namespaceObject.AiProviderOpenAiPlugin,
     plugin_ai_provider_openrouter_namespaceObject.AiProviderOpenRouterPlugin,
     plugin_ai_provider_vercel_gateway_namespaceObject.AiProviderVercelGatewayPlugin,
-    // Gauzy AI provider is registered but chat is not routed through it yet (see plugin README).
+    // Sastra AI provider is registered but chat is not routed through it yet (see plugin README).
     plugin_ai_provider_gauzy_ai_namespaceObject.AiProviderGauzyAiPlugin,
     plugin_ai_provider_gemini_namespaceObject.AiProviderGeminiPlugin,
     plugin_ai_provider_grok_namespaceObject.AiProviderGrokPlugin,
