@@ -15,7 +15,7 @@ export class ToastrNotificationService extends NotificationService {
 	) {
 		super();
 		this._notification = {
-			title: environment?.DESCRIPTION || 'Gauzy',
+			title: environment?.DESCRIPTION || 'Sastra',
 			message: ''
 		};
 	}

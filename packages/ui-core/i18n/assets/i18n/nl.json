@@ -656,8 +656,8 @@
 			"ALL_TEAMS": "Alle teams",
 			"UPWORK_API_KEY": "Upwork API-sleutel",
 			"UPWORK_SECRET": "Upwork Geheim",
-			"GAUZY_API_KEY": "Gauzy AI-sleutel",
-			"GAUZY_API_SECRET": "Gauzy AI Geheim",
+			"GAUZY_API_KEY": "Sastra AI-sleutel",
+			"GAUZY_API_SECRET": "Sastra AI Geheim",
 			"SELECT_COMPANY": "Bedrijf",
 			"TYPE_SEARCH_REQUEST": "Typ hier uw zoekopdracht...",
 			"SELECT_ICON": "Pictogram",
@@ -848,7 +848,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Voorstellen",
 		"TIME_OFF": "Vrije tijd",
@@ -899,11 +899,11 @@
 			"WRONG_FILE_NAME": "Foutieve bestandsnaam!!!",
 			"CORRECT_FILE_NAME": "De bestandsnaam moet zijn: \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Download sjablonen",
-			"MIGRATE_TO_CLOUD": "Migreer naar Ever Gauzy Cloud",
+			"MIGRATE_TO_CLOUD": "Migreer naar Sastra Solution Cloud",
 			"IMPORT_INFO": "Klik op \"Importeren\" om uw gegevens in de Gauzy DB te importeren.",
 			"EXPORT_INFO": "Klik op \"Exporteren\" om gegevens uit de Gauzy DB te exporteren.",
 			"DOWNLOAD_TEMPLATES_INFO": "Klik op \"Download sjablonen\" om het zip-archief met CSV-sjablonen te downloaden voor het formaat van Gauzy-gegevens.",
-			"MIGRATE_TO_CLOUD_INFO": "Klik op \"Migreren naar Ever Gauzy Cloud\" om over te schakelen van een eigen gehoste versie naar de cloud editie.",
+			"MIGRATE_TO_CLOUD_INFO": "Klik op \"Migreren naar Sastra Solution Cloud\" om over te schakelen van een eigen gehoste versie naar de cloud editie.",
 			"MIGRATE_SUCCESSFULLY": "Gauzy Cloudmigratie voor '{{ tenant }}' succesvol!",
 			"ACCOUNTING_TEMPLATE": "Boekhoudsjabloon",
 			"ACTIVITY": "Activiteit",
@@ -1275,7 +1275,7 @@
 			"MANUAL_ACTIVITY": "Geen records gevonden. Selecteer alstublieft een datumbereik, medewerker of project.",
 			"AMOUNT_OWED": "Geen bedrag verschuldigd.",
 			"WEEKLY_TIME_AND_ACTIVITY": "Je hebt nog geen getraceerde tijd en activiteit voor deze dagen.",
-			"DAILY_TIME_AND_ACTIVITY": "Er is nog geen tijd en activiteit bijgehouden voor deze dag. Gebruik alsjeblieft de <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Gauzy Desktop Timer App</a>.",
+			"DAILY_TIME_AND_ACTIVITY": "Er is nog geen tijd en activiteit bijgehouden voor deze dag. Gebruik alsjeblieft de <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Sastra Desktop Timer App</a>.",
 			"PROJECT_BUDGET": "U heeft geen enkel project gemaakt met een budget.",
 			"CLIENT_BUDGET": "U heeft nog geen klant met een budget aangemaakt."
 		},
@@ -1505,8 +1505,8 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "Gauzy AI-sleutel",
-			"API_SECRET": "Gauzy AI Geheim"
+			"API_KEY": "Sastra AI-sleutel",
+			"API_SECRET": "Sastra AI Geheim"
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4467,7 +4467,7 @@
 		"VIEW_TIMESHEET": "Bekijk timesheet",
 		"ADD_TIME": "Voeg tijd toe",
 		"TODAY": "Vandaag",
-		"ALERT_DESKTOP_DOWNLOAD": "Voor meer flexibele tijd- en activiteitenregistratie, gelieve <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">te downloaden</a> en gebruik te maken van de <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Gauzy Desktop Timer App</a>.",
+		"ALERT_DESKTOP_DOWNLOAD": "Voor meer flexibele tijd- en activiteitenregistratie, gelieve <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">te downloaden</a> en gebruik te maken van de <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Sastra Desktop Timer App</a>.",
 		"STATUS": "De tijdsregistratie is al actief in de {{ source }}",
 		"VERSION": "Versie v{{ version }}",
 		"OS": "OS: {{ os }} {{ systemVersion }} ({{ arch }})",
@@ -4476,14 +4476,14 @@
 		"SETUP": {
 			"WELCOME": "Welkom",
 			"TITLE": "Welkom bij Ever® Gauzy™ - Open-Source Business Management Platform (ERP/CRM/HRM)",
-			"LABEL": "De Ever Gauzy Desktop App biedt de volledige functionaliteit van het Gauzy Platform rechtstreeks op uw desktopcomputer of laptop. Daarnaast stelt het u in staat om werktijd bij te houden, activiteiten op te nemen en tracking herinneringen/meldingen te ontvangen.",
-			"TITLE_SERVER": "Ever Gauzy Server Installatie-assistent",
-			"LABEL_SERVER": "De Ever Gauzy Desktop-app biedt de volledige functionaliteit van het Gauzy-platform direct beschikbaar op uw desktopcomputer of laptop. Daarnaast maakt het het mogelijk om werktijden bij te houden, activiteiten op te nemen en meldingen/herinneringen voor tracking te ontvangen.",
+			"LABEL": "De Sastra Solution Desktop App biedt de volledige functionaliteit van het Gauzy Platform rechtstreeks op uw desktopcomputer of laptop. Daarnaast stelt het u in staat om werktijd bij te houden, activiteiten op te nemen en tracking herinneringen/meldingen te ontvangen.",
+			"TITLE_SERVER": "Sastra Solution Server Installatie-assistent",
+			"LABEL_SERVER": "De Sastra Solution Desktop-app biedt de volledige functionaliteit van het Gauzy-platform direct beschikbaar op uw desktopcomputer of laptop. Daarnaast maakt het het mogelijk om werktijden bij te houden, activiteiten op te nemen en meldingen/herinneringen voor tracking te ontvangen.",
 			"FUNCTIONALITIES": "Functionaliteiten",
 			"WHAT_WOULD_LIKE_USE": "Waarmee zou je graag willen werken?",
 			"SELECT_MULTIPLE_OPTIONS": "Je kunt slechts één optie selecteren of beide opties.",
 			"TIME_ACTIVITY_FEATURES": "Tijd- en activiteitstraceringfuncties",
-			"GP_FEATURES": "Ever Gauzy Platformfuncties",
+			"GP_FEATURES": "Sastra Solution Platformfuncties",
 			"HOW_GONNA_USE_GP": "Hoe ga je het Gauzy platform gebruiken?",
 			"SELECT_ONE_OPTION": "Je moet slechts één van de onderstaande opties selecteren.",
 			"INTEGRATED": "Geïntegreerd",
@@ -4508,8 +4508,8 @@
 			"USER": "Gebruiker",
 			"PASSWORD": "Wachtwoord",
 			"UI_HOSTNAME": "UI Hostnaam / IP-adres",
-			"TITLE_SERVER_API": "Ever Gauzy API Server-installatiewizard",
-			"LABEL_SERVER_API": "Ever Gauzy API Server Desktop App biedt de volledige functionaliteit van het Gauzy Platform direct beschikbaar op uw desktopcomputer of laptop. Daarnaast kunt u hiermee werktijd bijhouden, activiteiten registreren en trackingherinneringen/meldingen ontvangen.",
+			"TITLE_SERVER_API": "Ever Sastra API Server-installatiewizard",
+			"LABEL_SERVER_API": "Ever Sastra API Server Desktop App biedt de volledige functionaliteit van het Gauzy Platform direct beschikbaar op uw desktopcomputer of laptop. Daarnaast kunt u hiermee werktijd bijhouden, activiteiten registreren en trackingherinneringen/meldingen ontvangen.",
 			"UNABLE_TO_CONNECT": "Kan geen verbinding maken met de server. Controleer uw API-host of internetverbinding.",
 			"JWT_SECRET": "JWT-geheim",
 			"JWT_SECRET_PLACEHOLDER": "Voer een geheime sleutel in voor JWT",
@@ -5061,7 +5061,7 @@
 			"email-invoice": "E-mailfactuur",
 			"invite-employee": "Nodig werknemer uit",
 			"invite-user": "Nodig gebruiker uit",
-			"invite-gauzy-teams": "Nodig Gauzy Teams uit.",
+			"invite-gauzy-teams": "Nodig Sastra Teams uit.",
 			"appointment-confirmation": "Afspraakbevestiging",
 			"appointment-cancellation": "Afspraak annuleren",
 			"equipment": "Creëer uitrusting",
@@ -5574,7 +5574,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "CDN-URL",
@@ -5751,7 +5751,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "OAuth-clients",
-		"SUBTITLE": "Registreer en beheer apps van derden die namens uw gebruikers toegang kunnen aanvragen tot Ever Gauzy.",
+		"SUBTITLE": "Registreer en beheer apps van derden die namens uw gebruikers toegang kunnen aanvragen tot Sastra Solution.",
 		"STATUS": {
 			"ACTIVE": "Actief",
 			"INACTIVE": "Inactief"

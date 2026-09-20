@@ -1,8 +1,8 @@
 {
 	"name": "gauzy-desktop-timer",
-	"productName": "Gauzy Desktop Timer",
+	"productName": "Sastra Desktop Timer",
 	"version": "0.1.0",
-	"description": "Gauzy Desktop Timer",
+	"description": "Sastra Desktop Timer",
 	"license": "AGPL-3.0",
 	"homepage": "https://gauzy.co",
 	"repository": {
@@ -22,7 +22,7 @@
 	"build": {
 		"appId": "com.ever.gauzydesktoptimer",
 		"artifactName": "${name}-${arch}-${version}.${ext}",
-		"productName": "Gauzy Desktop Timer",
+		"productName": "Sastra Desktop Timer",
 		"copyright": "Copyright © 2019-Present. Ever Co. LTD",
 		"afterSign": "tools/notarize.js",
 		"dmg": {

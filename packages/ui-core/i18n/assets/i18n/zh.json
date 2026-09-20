@@ -652,8 +652,8 @@
 			"ALL_TEAMS": "所有团队",
 			"UPWORK_API_KEY": "Upwork API 密钥",
 			"UPWORK_SECRET": "Upwork机密",
-			"GAUZY_API_KEY": "Gauzy AI关键",
-			"GAUZY_API_SECRET": "Gauzy AI 秘密",
+			"GAUZY_API_KEY": "Sastra AI关键",
+			"GAUZY_API_SECRET": "Sastra AI 秘密",
 			"SELECT_COMPANY": "公司",
 			"TYPE_SEARCH_REQUEST": "在此处输入您的搜索请求...",
 			"SELECT_ICON": "图标",
@@ -847,7 +847,7 @@
 		"INTEGRATIONS": "应用程序和集成",
 		"UPWORK": "Upwork: 艾普沃克",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI 云知能",
+		"GAUZY_AI": "Sastra AI 云知能",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "提议",
 		"TIME_OFF": "休假",
@@ -903,7 +903,7 @@
 			"IMPORT_INFO": "点击“导入”将您的数据导入到Gauzy数据库中。",
 			"EXPORT_INFO": "点击“导出”按钮以从Gauzy数据库导出数据。",
 			"DOWNLOAD_TEMPLATES_INFO": "点击“下载模板”以下载包含Gauzy数据格式的CSV模板的Zip存档。",
-			"MIGRATE_TO_CLOUD_INFO": "点击“迁移到 Ever Gauzy 云”以从自助托管版迁移到云版。",
+			"MIGRATE_TO_CLOUD_INFO": "点击“迁移到 Sastra Solution 云”以从自助托管版迁移到云版。",
 			"MIGRATE_SUCCESSFULLY": "'{{ tenant }}' 的Gauzy云迁移成功！",
 			"ACCOUNTING_TEMPLATE": "会计模板",
 			"ACTIVITY": "活动",
@@ -1505,7 +1505,7 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "Gauzy AI 密钥",
+			"API_KEY": "Sastra AI 密钥",
 			"API_SECRET": "AI秘密"
 		},
 		"ACTIVEPIECES_PAGE": {
@@ -4508,8 +4508,8 @@
 			"USER": "用户",
 			"PASSWORD": "密码",
 			"UI_HOSTNAME": "界面主机名/ IP地址",
-			"TITLE_SERVER_API": "Ever Gauzy API 服务器安装向导",
-			"LABEL_SERVER_API": "Ever Gauzy API Server 桌面应用程序提供 Gauzy 平台的全部功能，可直接在您的台式计算机或笔记本电脑上使用。此外，它还允许跟踪工作时间、活动记录以及接收跟踪提醒/通知的功能。",
+			"TITLE_SERVER_API": "Ever Sastra API 服务器安装向导",
+			"LABEL_SERVER_API": "Ever Sastra API Server 桌面应用程序提供 Gauzy 平台的全部功能，可直接在您的台式计算机或笔记本电脑上使用。此外，它还允许跟踪工作时间、活动记录以及接收跟踪提醒/通知的功能。",
 			"UNABLE_TO_CONNECT": "Unable to connect to the server. Please check your API host or internet connection.",
 			"JWT_SECRET": "JWT 密钥",
 			"JWT_SECRET_PLACEHOLDER": "请输入 JWT 的密钥",
@@ -5061,7 +5061,7 @@
 			"email-invoice": "电子邮件发票",
 			"invite-employee": "邀请员工",
 			"invite-user": "邀请用户",
-			"invite-gauzy-teams": "邀请Gauzy Teams",
+			"invite-gauzy-teams": "邀请Sastra Teams",
 			"appointment-confirmation": "预约确认",
 			"appointment-cancellation": "取消预约",
 			"equipment": "设备创建",
@@ -5574,7 +5574,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "CDN URL",
@@ -5751,7 +5751,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "OAuth客户端",
-		"SUBTITLE": "注册和管理可以代表您的用户请求访问Ever Gauzy的第三方应用程序。",
+		"SUBTITLE": "注册和管理可以代表您的用户请求访问Sastra Solution的第三方应用程序。",
 		"STATUS": {
 			"ACTIVE": "活跃",
 			"INACTIVE": "不活跃"

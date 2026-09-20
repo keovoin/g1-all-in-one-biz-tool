@@ -41,8 +41,8 @@ export class WorkspaceSelectionComponent {
 
 	setDefaultLogo(event: Event) {
 		const el = event.target as HTMLImageElement;
-		if (el && el.src !== '/assets/images/logos/logo_Gauzy.png') {
-			el.src = '/assets/images/logos/logo_Gauzy.png';
+		if (el && el.src !== '/assets/images/logos/logo_sastra.png') {
+			el.src = '/assets/images/logos/logo_sastra.png';
 		}
 	}
 	/**

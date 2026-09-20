@@ -154,7 +154,7 @@ const windowSetting = (preloadPath?: string): Electron.BrowserWindowConstructorO
 		height: sizes.height,
 		x: 0,
 		y: 0,
-		title: process.env.DESCRIPTION || 'Gauzy Desktop',
+		title: process.env.DESCRIPTION || 'Sastra Desktop',
 		show: false,
 		icon: filesPath.iconPath
 	};

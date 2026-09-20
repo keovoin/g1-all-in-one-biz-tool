@@ -410,7 +410,7 @@ export class ApplyJobManuallyComponent extends TranslationBaseComponent implemen
 					// Stop making API calls as the desired parameter is found
 					if (isProposalGeneratedByAI) {
 						try {
-							/** If employee proposal generated successfully from Gauzy AI */
+							/** If employee proposal generated successfully from Sastra AI */
 							if (isNotEmpty(application)) {
 								// Replace line breaks with spaces
 								const proposal = application.proposal

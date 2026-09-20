@@ -658,8 +658,8 @@
 			"ALL_TEAMS": "Todos los equipos",
 			"UPWORK_API_KEY": "Clave de API de Upwork",
 			"UPWORK_SECRET": "Secreto de Upwork",
-			"GAUZY_API_KEY": "Gauzy AI Key",
-			"GAUZY_API_SECRET": "Gauzy AI Secret: Gauzy es una inteligencia artificial confidencial.",
+			"GAUZY_API_KEY": "Sastra AI Key",
+			"GAUZY_API_SECRET": "Sastra AI Secret: Gauzy es una inteligencia artificial confidencial.",
 			"SELECT_COMPANY": "Empresa",
 			"TYPE_SEARCH_REQUEST": "Escribe aquí tu solicitud de búsqueda...",
 			"SELECT_ICON": "Icono",
@@ -850,7 +850,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Propuestas",
 		"TIME_OFF": "Tiempo libre",
@@ -901,11 +901,11 @@
 			"WRONG_FILE_NAME": "¡Nombre de archivo incorrecto!",
 			"CORRECT_FILE_NAME": "El nombre del archivo debe ser: \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Descargar plantillas",
-			"MIGRATE_TO_CLOUD": "Migra a Ever Gauzy Cloud.",
+			"MIGRATE_TO_CLOUD": "Migra a Sastra Solution Cloud.",
 			"IMPORT_INFO": "Haz clic en \"Importar\" para importar tus datos a Gauzy DB.",
 			"EXPORT_INFO": "Haz clic en \"Exportar\" para exportar datos de la base de datos de Gauzy.",
 			"DOWNLOAD_TEMPLATES_INFO": "Haz clic en \"Descargar plantillas\" para descargar un archivo Zip con las plantillas CSV para el formato de datos de Gauzy.",
-			"MIGRATE_TO_CLOUD_INFO": "Haz clic en \"Migrar a la versión en la nube de Ever Gauzy\" para migrar de la versión autoalojada a la versión en la nube.",
+			"MIGRATE_TO_CLOUD_INFO": "Haz clic en \"Migrar a la versión en la nube de Sastra Solution\" para migrar de la versión autoalojada a la versión en la nube.",
 			"MIGRATE_SUCCESSFULLY": "Migración exitosa de nube difusa para '{{ tenant }}' ¡con éxito!",
 			"ACCOUNTING_TEMPLATE": "Plantilla de contabilidad",
 			"ACTIVITY": "Actividad",
@@ -1507,8 +1507,8 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "Clave de Gauzy AI",
-			"API_SECRET": "Gauzy AI Secret: Secreto de Inteligencia Artificial de Gauzy."
+			"API_KEY": "Clave de Sastra AI",
+			"API_SECRET": "Sastra AI Secret: Secreto de Inteligencia Artificial de Gauzy."
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4510,8 +4510,8 @@
 			"USER": "Usuario",
 			"PASSWORD": "Contraseña",
 			"UI_HOSTNAME": "Nombre de host de IU / Dirección IP",
-			"TITLE_SERVER_API": "Asistente de instalación del servidor API de Ever Gauzy",
-			"LABEL_SERVER_API": "La aplicación de escritorio Ever Gauzy API Server proporciona la funcionalidad completa de la plataforma Gauzy disponible directamente en su computadora de escritorio o portátil. Además, permite realizar un seguimiento del tiempo de trabajo, registrar actividades y recibir recordatorios/notificaciones de seguimiento.",
+			"TITLE_SERVER_API": "Asistente de instalación del servidor API de Sastra Solution",
+			"LABEL_SERVER_API": "La aplicación de escritorio Ever Sastra API Server proporciona la funcionalidad completa de la plataforma Gauzy disponible directamente en su computadora de escritorio o portátil. Además, permite realizar un seguimiento del tiempo de trabajo, registrar actividades y recibir recordatorios/notificaciones de seguimiento.",
 			"UNABLE_TO_CONNECT": "Unable to connect to the server. Please check your API host or internet connection.",
 			"JWT_SECRET": "Secreto JWT",
 			"JWT_SECRET_PLACEHOLDER": "Introduzca una clave secreta para JWT",
@@ -5576,7 +5576,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "URL de CDN",
@@ -5753,7 +5753,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "Clientes OAuth",
-		"SUBTITLE": "Registrar y gestionar aplicaciones de terceros que pueden solicitar acceso a Ever Gauzy en nombre de sus usuarios.",
+		"SUBTITLE": "Registrar y gestionar aplicaciones de terceros que pueden solicitar acceso a Sastra Solution en nombre de sus usuarios.",
 		"STATUS": {
 			"ACTIVE": "Activo",
 			"INACTIVE": "Inactivo"

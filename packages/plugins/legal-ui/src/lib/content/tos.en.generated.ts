@@ -14,7 +14,7 @@ import { ILegalDocument } from '../models/legal-document.model';
 export const LEGAL_TOS_EN: ILegalDocument = {
 	document: 'tos',
 	product: 'gauzy',
-	productName: 'Ever Gauzy',
+	productName: 'Sastra Solution',
 	domain: 'gauzy.co',
 	entity: 'Ever Technologies LTD',
 	entityId: 'ever-technologies-bg',
@@ -23,7 +23,7 @@ export const LEGAL_TOS_EN: ILegalDocument = {
 	effectiveDate: '2026-08-02',
 	sha256: 'bdc354a89ab3a35d857fb10c1297fe5d7e7204f8f6f200d4813b2caf70ad6ece',
 	title: 'Terms of Service',
-	html: `<p>These Terms of Service (&quot;<strong>Terms</strong>&quot;) govern your access to and use of Ever Gauzy Cloud and the
+	html: `<p>These Terms of Service (&quot;<strong>Terms</strong>&quot;) govern your access to and use of Sastra Solution Cloud and the
 websites, applications and application programming interfaces we make available at <a href="https://gauzy.co">gauzy.co</a>
 (together, the &quot;<strong>Service</strong>&quot;).</p>
 <p>The Service is provided by <strong>Ever Technologies LTD</strong>, a company registered in Bulgaria under
@@ -121,7 +121,7 @@ under its own licence, from its own publisher, on its own terms — not under th
 neither grant you rights in that code nor take any away. The section on open-source software below explains
 exactly where the line falls and what follows from it if you run your own copy.</p>
 <h3 id="these-terms-cover-this-product" tabindex="-1">These Terms cover this product</h3>
-<p>These Terms govern <a href="https://gauzy.co">gauzy.co</a> and Ever Gauzy Cloud. Other websites,
+<p>These Terms govern <a href="https://gauzy.co">gauzy.co</a> and Sastra Solution Cloud. Other websites,
 products and services — including ones that share part of our branding, and ones operated by other
 companies — have their own terms, their own operator and their own privacy notice. Read the terms published
 on the site you are actually using.</p>
@@ -586,22 +586,22 @@ your own provider, that is between you and them — see above.</p>
 providers impose their own acceptable-use restrictions and can change or discontinue a model at short
 notice, and we may have to pass those changes through to you. The section on modification of the Service
 covers how we handle that.</p>
-<h2 id="annex-ever-gauzy" tabindex="-1">Annex: Ever Gauzy</h2>
+<h2 id="annex-ever-gauzy" tabindex="-1">Annex: Sastra</h2>
 <h3 id="editions-and-which-terms-govern-which" tabindex="-1">Editions, and which terms govern which</h3>
-<p>Ever Gauzy exists in more than one form and it is worth being clear about which is which.</p>
+<p>Sastra Solution exists in more than one form and it is worth being clear about which is which.</p>
 <ul>
 <li><strong>The open-source edition</strong> is published under its own licence. That licence governs the code. You may
 run it on your own infrastructure, and if you do, <strong>you are the operator</strong>: you choose the hosting, the
 storage, the mail provider and any AI providers, you are the controller for the data in it, and these
 terms do not apply to your deployment.</li>
-<li><strong>Ever Gauzy Cloud</strong> is the hosted service we operate. These terms govern it.</li>
+<li><strong>Sastra Solution Cloud</strong> is the hosted service we operate. These terms govern it.</li>
 <li><strong>Paid editions</strong> add features under a commercial licence. Where you hold one, its licence terms apply
 in addition to these terms.</li>
 </ul>
-<p>Running your own copy gives you no right to use Ever Gauzy Cloud, and subscribing to
-Ever Gauzy Cloud gives you no rights in the code beyond the open-source licence.</p>
+<p>Running your own copy gives you no right to use Sastra Solution Cloud, and subscribing to
+Sastra Solution Cloud gives you no rights in the code beyond the open-source licence.</p>
 <h3 id="the-monitoring-features" tabindex="-1">The monitoring features</h3>
-<p>Ever Gauzy includes features that capture an individual's screen, camera, microphone and application
+<p>Sastra Solution includes features that capture an individual's screen, camera, microphone and application
 activity. Two things follow, and they are conditions of using the Service rather than advice.</p>
 <p><strong>You decide whether these features run, and you are responsible for that decision.</strong> We build them, we
 document precisely what each captures and what each control does, and we run them as you configure them.

@@ -29,17 +29,17 @@ export class GauzyApiClient {
 		this.baseUrl = base.replace(/\/+$/, '');
 	}
 
-	/** GET a Gauzy API path (e.g. '/api/tasks/me') with optional query params. */
+	/** GET a Sastra API path (e.g. '/api/tasks/me') with optional query params. */
 	async get<T = unknown>(path: string, query?: Record<string, unknown>): Promise<T> {
 		return this.request<T>('GET', path, query);
 	}
 
-	/** POST to a Gauzy API path with a JSON body. */
+	/** POST to a Sastra API path with a JSON body. */
 	async post<T = unknown>(path: string, body?: unknown): Promise<T> {
 		return this.request<T>('POST', path, undefined, body);
 	}
 
-	/** PUT to a Gauzy API path with a JSON body. */
+	/** PUT to a Sastra API path with a JSON body. */
 	async put<T = unknown>(path: string, body?: unknown): Promise<T> {
 		return this.request<T>('PUT', path, undefined, body);
 	}
@@ -79,7 +79,7 @@ export class GauzyApiClient {
 			} catch {
 				/* keep raw slice */
 			}
-			throw new Error(`Gauzy API ${response.status} on ${method} ${url.pathname}: ${detail}`);
+			throw new Error(`Sastra API ${response.status} on ${method} ${url.pathname}: ${detail}`);
 		}
 		try {
 			return JSON.parse(text) as T;

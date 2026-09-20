@@ -120,8 +120,8 @@ export class SettingsComponent implements OnInit, AfterViewInit, OnDestroy {
 	menus = [];
 	gauzyIcon: SafeResourceUrl =
 		this.isDesktopTimer || this.isServer || this.isAgent
-			? './assets/images/logos/logo_Gauzy.svg'
-			: '../assets/images/logos/logo_Gauzy.svg';
+			? './assets/images/logos/logo_sastra.svg'
+			: '../assets/images/logos/logo_sastra.svg';
 
 	private _monitorsOption$: BehaviorSubject<any> = new BehaviorSubject([
 		{

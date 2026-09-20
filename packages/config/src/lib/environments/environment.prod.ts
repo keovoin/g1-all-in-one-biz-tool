@@ -308,12 +308,12 @@ export const environment: IEnvironment = {
 	electronResourcesPath: process.env.ELECTRON_RESOURCES_PATH,
 
 	/**
-	 * Endpoint for Gauzy AI API (optional), e.g.: http://localhost:3005/graphql
+	 * Endpoint for Sastra AI API (optional), e.g.: http://localhost:3005/graphql
 	 */
 	gauzyAIGraphQLEndpoint: process.env.GAUZY_AI_GRAPHQL_ENDPOINT,
 
 	/**
-	 * Endpoint for Gauzy AI REST API (optional), e.g.: http://localhost:3005/api
+	 * Endpoint for Sastra AI REST API (optional), e.g.: http://localhost:3005/api
 	 */
 	gauzyAIRESTEndpoint: process.env.GAUZY_AI_REST_ENDPOINT,
 
@@ -347,9 +347,9 @@ export const environment: IEnvironment = {
 	 * Email Template Config
 	 */
 	appIntegrationConfig: {
-		appName: process.env.APP_NAME || 'Gauzy',
-		appLogo: process.env.APP_LOGO || `${process.env.CLIENT_BASE_URL}/assets/images/logos/logo_Gauzy.png`,
-		appSignature: process.env.APP_SIGNATURE || 'Gauzy Team',
+		appName: process.env.APP_NAME || 'Sastra',
+		appLogo: process.env.APP_LOGO || `${process.env.CLIENT_BASE_URL}/assets/images/logos/logo_sastra.png`,
+		appSignature: process.env.APP_SIGNATURE || 'Sastra Team',
 		appLink: process.env.APP_LINK || 'https://app.gauzy.co/',
 		appEmailConfirmationUrl:
 			process.env.APP_EMAIL_CONFIRMATION_URL || `${process.env.CLIENT_BASE_URL}/#/auth/confirm-email`,

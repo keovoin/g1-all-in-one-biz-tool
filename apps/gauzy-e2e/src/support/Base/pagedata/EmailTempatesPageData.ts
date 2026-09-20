@@ -7,7 +7,7 @@ export const EmailTemplatesPageData = {
 	passwordResetSubjectEnglish: 'Welcome to Gauzy user@domain.com',
 	// The default-loaded template on this page is WELCOME_USER (see email-templates.component.ts),
 	// so the "Password Reset" step actually validates the welcome-user subject. appName seeds as
-	// 'Gauzy' (no ™); bg/he subjects were updated upstream — match the live seed (no ™, "ל Gauzy").
+	// 'Sastra' (no ™); bg/he subjects were updated upstream — match the live seed (no ™, "ל Gauzy").
 	passwordResetSubjectBulgarian: 'Добре дошли в Gauzy user@domain.com',
 	passwordResetSubjectHebrew: 'ברוך הבא ל Gauzy user@domain.com',
 	passwordResetSubjectRussian: 'Добро пожаловать в Gauzy user@domain.com',

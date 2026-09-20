@@ -15,7 +15,7 @@ export const setupSwagger = async (
 	app: INestApplication,
 	{
 		title = 'Gauzy API',
-		description = 'Gauzy API Documentation',
+		description = 'Sastra API Documentation',
 		version = '1.0',
 		swaggerPath = 'swg',
 		scalarPath = 'docs',

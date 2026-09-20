@@ -258,7 +258,7 @@ export const selectProjectOrContactFromDropdown = async (index: number) => {
 	// panel auto-close on blur before the click ran, so 'div.ng-option' was never present (round-4
 	// 60s timeout). BEST-EFFORT by design: the dropdown source is "all org entities MINUS the ones
 	// already assigned to this employee". On the Projects tab the only seeded/added project
-	// ("Gauzy Web Site") is assigned to this same employee by CustomCommands.addProject (it picks
+	// ("Sastra Web Site") is assigned to this same employee by CustomCommands.addProject (it picks
 	// member index 0 = our just-added employee), so the list is legitimately EMPTY — there is nothing
 	// to add. Don't hard-fail: close the panel and return; the caller's verifyProjectOrContactExist
 	// still passes (the entities card shows the already-assigned project). On the Contacts tab the

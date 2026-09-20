@@ -33,7 +33,7 @@ export interface IPdfRasterResult {
  * PDF buffer is simply not loadable. Actually rasterizing needs `pdfjs-dist` plus a native
  * canvas (`@napi-rs/canvas`, which `pdfjs-dist` itself declares as an optional dependency).
  * Making those *hard* dependencies of the backend plugin would force a per-platform native
- * binary into every Gauzy API install for two cosmetic/opt-in features, so they are loaded the
+ * binary into every Sastra API install for two cosmetic/opt-in features, so they are loaded the
  * same defensive way `DocsAiService` loads `@gauzy/plugin-ai-chat`: try, cache, and report
  * "unavailable" forever after a failure.
  *

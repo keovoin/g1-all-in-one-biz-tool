@@ -22,7 +22,7 @@ import { PlaneApiKeyDialogComponent } from '../api-key-dialog/api-key-dialog.com
 
 const URL_PATTERN = /^https?:\/\/.+/;
 
-/** Default global hosted Ever Gauzy PM web URL used for SSO in shared mode. */
+/** Default global hosted Sastra Solution PM web URL used for SSO in shared mode. */
 const SHARED_PLANE_WEB_URL = 'https://pm.gauzy.co';
 
 @UntilDestroy({ checkProperties: true })

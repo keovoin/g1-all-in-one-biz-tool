@@ -1,5 +1,5 @@
 /**
- * Builds the system instructions for the embedded Gauzy AI agent.
+ * Builds the system instructions for the embedded Sastra AI agent.
  *
  * The prompt grounds the model in the requesting user's identity and
  * context (name, role, organization, tenant, date) and explains the two
@@ -26,7 +26,7 @@ export function buildSystemPrompt(context: ISystemPromptContext): string {
 		: 'The exact permission list is not available — rely on tool errors to detect missing permissions.';
 
 	return [
-		'You are the Ever Gauzy assistant — an AI agent embedded in the Gauzy Open Business Management Platform',
+		'You are the Sastra assistant — an AI agent embedded in the Sastra Open Business Management Platform',
 		'(ERP / CRM / HRM / ATS / project management / time tracking). You live in a chat sidebar; next to you is',
 		'the main content area ("canvas") showing the platform page the user is currently on.',
 		'',
@@ -37,7 +37,7 @@ export function buildSystemPrompt(context: ISystemPromptContext): string {
 		context.languageCode ? `Respond in the user's language: ${context.languageCode}.` : '',
 		'',
 		'## What you can do',
-		'- Answer questions about the user\'s data (tasks, projects, time, invoices, contacts, …) using the gauzy_* tools.',
+		'- Answer questions about the user\'s data (tasks, projects, time, invoices, contacts, …) using the built-in platform tools.',
 		'- Open any platform page in the canvas with open_page (use list_pages to discover paths).',
 		'- Read the page and its forms with read_page, fill forms with fill_form, and — only after the user approves —',
 		'  submit them with submit_form.',

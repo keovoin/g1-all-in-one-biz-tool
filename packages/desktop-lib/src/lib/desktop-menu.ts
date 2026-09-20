@@ -46,7 +46,7 @@ export class AppMenu {
 		this.windowPath = windowPath;
 		const isZoomEnabled = isZoomVisible ?? false;
 		this.applicationMenu = {
-			label: 'Gauzy',
+			label: 'Sastra',
 			submenu: [
 				{
 					id: 'gauzy-about',

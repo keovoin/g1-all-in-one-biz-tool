@@ -23,7 +23,7 @@ export const DocumentsHubPageData = {
 	 * and the extractor has something real to turn into markdown.
 	 */
 	uploadFileContent: [
-		'# Ever Gauzy e2e document',
+		'# Sastra Solution e2e document',
 		'',
 		'This file is uploaded by the Playwright Documents-hub journey.',
 		'It exists so the extraction pipeline has real text to process.'

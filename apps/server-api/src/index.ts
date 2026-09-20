@@ -493,7 +493,7 @@ ipcMain.on('start_server', async (event, arg) => {
 });
 
 ipcMain.on('run_gauzy_server', async (event, arg) => {
-	console.log('Run Gauzy Server Event Handler');
+	console.log('Run Sastra Server Event Handler');
 	await runServer();
 });
 
@@ -502,7 +502,7 @@ const stopServer = () => {
 };
 
 ipcMain.on('stop_gauzy_server', (event, arg) => {
-	console.log('Stop Gauzy Server Event Handler');
+	console.log('Stop Sastra Server Event Handler');
 	stopServer();
 });
 

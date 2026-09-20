@@ -852,7 +852,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Proposals",
 		"TIME_OFF": "Time Off",
@@ -903,11 +903,11 @@
 			"WRONG_FILE_NAME": "Wrong file name!!!",
 			"CORRECT_FILE_NAME": "The file name should be: \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Download templates",
-			"MIGRATE_TO_CLOUD": "Migrate to Ever Gauzy Cloud",
+			"MIGRATE_TO_CLOUD": "Migrate to Sastra Solution Cloud",
 			"IMPORT_INFO": "Click \"Import\" to import your data into Gauzy DB.",
 			"EXPORT_INFO": "Click \"Export\" to export data from Gauzy DB.",
 			"DOWNLOAD_TEMPLATES_INFO": "Click \"Download Templates\" to download Zip archive with CSV templates for the format of Gauzy data.",
-			"MIGRATE_TO_CLOUD_INFO": "Click \"Migrate to Ever Gauzy Cloud\" to migrate from self-hosted to cloud edition.",
+			"MIGRATE_TO_CLOUD_INFO": "Click \"Migrate to Sastra Solution Cloud\" to migrate from self-hosted to cloud edition.",
 			"MIGRATE_SUCCESSFULLY": "Gauzy Cloud migration for '{{ tenant }}' successfully!",
 			"ACCOUNTING_TEMPLATE": "Accounting Template",
 			"ACTIVITY": "Activity",
@@ -1279,7 +1279,7 @@
 			"MANUAL_ACTIVITY": "No records found. Please select date range, employee or project.",
 			"AMOUNT_OWED": "No Amount Owed",
 			"WEEKLY_TIME_AND_ACTIVITY": "You have not any tracked time and activity yet for these day's.",
-			"DAILY_TIME_AND_ACTIVITY": "There is no time and activity tracked yet for this day. Please use the <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Gauzy Desktop Timer App</a>.",
+			"DAILY_TIME_AND_ACTIVITY": "There is no time and activity tracked yet for this day. Please use the <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Sastra Desktop Timer App</a>.",
 			"PROJECT_BUDGET": "You have not created any project with budget.",
 			"CLIENT_BUDGET": "You have not created any client with budget."
 		},
@@ -1509,11 +1509,11 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"TITLE": "Gauzy AI Integration",
-			"API_KEY": "Gauzy AI key",
-			"API_SECRET": "Gauzy AI Secret",
+			"TITLE": "Sastra AI Integration",
+			"API_KEY": "Sastra AI key",
+			"API_SECRET": "Sastra AI Secret",
 			"OPEN_AI_API_SECRET_KEY": "Open AI Secret Key",
-			"DESCRIPTION": "Activate Gauzy AI integration for smarter job hunting.",
+			"DESCRIPTION": "Activate Sastra AI integration for smarter job hunting.",
 			"CONSUMER_KEYS": "Consumer Keys",
 			"GENERATED": "Generated",
 			"TAB": {
@@ -1525,7 +1525,7 @@
 				"API_SECRET": "ה-API Secret משמש כזהות האפליקציה שלך לבקשות API, נשמרת מסתירה לצמיתות, עם חלק מהתווים נראים.",
 				"OPEN_AI_API_SECRET_KEY": "ה-OpenAI API Secret משמש כזהות האפליקציה שלך לבקשות API, נשמרת מסתירה לצמיתות, עם חלק מהתווים נראים.",
 				"ENABLE_JOBS_SEARCH_MATCHING_ANALYSIS": "מאפשר ניתוח מתקדם של חיפוש והתאמה למשתמש לשיפור הדיוק. בהשבתה, פריטי התפריט 'גלישה' ו-'התאמה' בתפריט המשרות ייחבאו כדי להבטיח ממשק משתמש קל ופשוט.",
-				"ENABLE_EMPLOYEE_PERFORMANCE_ANALYSIS": "ניהול העברת מדדי עבודה של עובד, כולל קלטי מקלדת, תנועות עכבר וצילומי מסך, לניתוח על ידי Gauzy AI. הפעלה מאפשרת ניתוח ביצועים מקיף. בכיבוי, Gauzy AI לא יקבל ולא ינתח צילומי מסך או כל קלט פרטני נוסף, מבטיח פרטיות מחמירה ושליטה מוחלטת על שיתוף המידע."
+				"ENABLE_EMPLOYEE_PERFORMANCE_ANALYSIS": "ניהול העברת מדדי עבודה של עובד, כולל קלטי מקלדת, תנועות עכבר וצילומי מסך, לניתוח על ידי Sastra AI. הפעלה מאפשרת ניתוח ביצועים מקיף. בכיבוי, Sastra AI לא יקבל ולא ינתח צילומי מסך או כל קלט פרטני נוסף, מבטיח פרטיות מחמירה ושליטה מוחלטת על שיתוף המידע."
 			}
 		},
 		"GITHUB_PAGE": {
@@ -4520,8 +4520,8 @@
 			"USER": "משתמש",
 			"PASSWORD": "סיסמה",
 			"UI_HOSTNAME": "שם מארח יישום ממשק משתמש / כתובת IP",
-			"TITLE_SERVER_API": "אשף התקנת שרת API של Ever Gauzy",
-			"LABEL_SERVER_API": "Ever Gauzy API Server Desktop App מספקת את הפונקציונליות המלאה של פלטפורמת Gauzy הזמינה ישירות במחשב השולחני או במחשב הנייד שלך. בנוסף, הוא מאפשר מעקב אחר זמן עבודה, רישום פעילות ויכולת לקבל תזכורות/הודעות מעקב.",
+			"TITLE_SERVER_API": "אשף התקנת שרת API של Sastra Solution",
+			"LABEL_SERVER_API": "Ever Sastra API Server Desktop App מספקת את הפונקציונליות המלאה של פלטפורמת Gauzy הזמינה ישירות במחשב השולחני או במחשב הנייד שלך. בנוסף, הוא מאפשר מעקב אחר זמן עבודה, רישום פעילות ויכולת לקבל תזכורות/הודעות מעקב.",
 			"UNABLE_TO_CONNECT": "Unable to connect to the server. Please check your API host or internet connection.",
 			"JWT_SECRET": "סוד JWT",
 			"JWT_SECRET_PLACEHOLDER": "הזן מפתח סודי עבור JWT",
@@ -5564,7 +5564,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "כתובת CDN",
@@ -5741,7 +5741,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "לקוחות OAuth",
-		"SUBTITLE": "רשום ונהל אפליקציות צד שלישי שיכולות לבקש גישה ל-Ever Gauzy בשם המשתמשים שלך.",
+		"SUBTITLE": "רשום ונהל אפליקציות צד שלישי שיכולות לבקש גישה ל-Sastra Solution בשם המשתמשים שלך.",
 		"STATUS": {
 			"ACTIVE": "פעיל",
 			"INACTIVE": "לא פעיל"

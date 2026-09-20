@@ -19,7 +19,7 @@ export interface ILegalDocument {
 	/** Product the document was rendered for, e.g. `gauzy`. */
 	readonly product: string;
 
-	/** Human readable product name, e.g. `Ever Gauzy`. */
+	/** Human readable product name, e.g. `Sastra Solution`. */
 	readonly productName: string;
 
 	/** Canonical domain the document refers to, e.g. `gauzy.co`. */

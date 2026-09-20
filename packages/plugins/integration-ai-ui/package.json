@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-integration-ai-ui",
 	"version": "0.1.0",
-	"description": "A plugin for the Ever Gauzy platform providing AI-powered UI integrations for enhanced productivity and automation.",
+	"description": "A plugin for the Sastra Solution platform providing AI-powered UI integrations for enhanced productivity and automation.",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -45,7 +45,7 @@
 		"jest-preset-angular": "16.0.0"
 	},
 	"keywords": [
-		"Ever Gauzy",
+		"Sastra Solution",
 		"AI",
 		"plugin",
 		"UI integration",

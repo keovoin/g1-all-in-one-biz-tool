@@ -109,7 +109,7 @@
 		padding: 0.375rem;
 		// Monochrome marks fill with `currentColor`. Sourcing it from the theme's
 		// text colour is what flips them from dark-on-light to light-on-dark —
-		// without it the black artwork (Gauzy AI, OpenAI, Vercel, Anthropic, xAI)
+		// without it the black artwork (Sastra AI, OpenAI, Vercel, Anthropic, xAI)
 		// is all but invisible on the dark themes.
 		color: var(--text-basic-color);
 

@@ -28,7 +28,7 @@ export class CreateActivepiecesIntegrationDto
 
 	@ApiPropertyOptional({
 		description: 'Display name for the connection (defaults to tenant name)',
-		example: 'Ever Gauzy Connection'
+		example: 'Sastra Solution Connection'
 	})
 	@IsOptional()
 	@IsString()

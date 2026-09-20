@@ -296,7 +296,7 @@ export async function InitApp() {
 	app.setName(process.env.NAME || 'Agent App');
 
 	// Add node modules path
-	log.info('Gauzy Agent Node Modules Path', path.join(__dirname, 'node_modules'));
+	log.info('Sastra Agent Node Modules Path', path.join(__dirname, 'node_modules'));
 
 	process.env.GAUZY_USER_PATH = app.getPath('userData');
 	log.info(`GAUZY_USER_PATH: ${process.env.GAUZY_USER_PATH}`);

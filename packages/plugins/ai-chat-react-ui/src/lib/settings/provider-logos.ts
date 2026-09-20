@@ -50,7 +50,7 @@ export interface IProviderLogo {
  * falls back to the monogram tile, so a tile is never an empty box.
  */
 export const PROVIDER_LOGOS: Readonly<Record<string, IProviderLogo>> = {
-	// Gauzy AI — repository artwork. The trace is stored in tenth-of-a-unit,
+	// Sastra AI — repository artwork. The trace is stored in tenth-of-a-unit,
 	// y-flipped coordinates (potrace output), hence the group transform; the
 	// viewBox is cropped to the ink so the wordmark fills the tile rather than
 	// floating in the empty half of the original 200×200 canvas.

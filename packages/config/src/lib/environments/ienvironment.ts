@@ -151,12 +151,12 @@ export interface IEnvironment {
 	electronResourcesPath?: string;
 
 	/**
-	 * Endpoint for Gauzy AI API (optional), e.g.: http://localhost:3005/graphql
+	 * Endpoint for Sastra AI API (optional), e.g.: http://localhost:3005/graphql
 	 */
 	gauzyAIGraphQLEndpoint?: string;
 
 	/**
-	 * Endpoint for Gauzy AI REST API (optional), e.g.: http://localhost:3005/api
+	 * Endpoint for Sastra AI REST API (optional), e.g.: http://localhost:3005/api
 	 */
 	gauzyAIRESTEndpoint?: string;
 

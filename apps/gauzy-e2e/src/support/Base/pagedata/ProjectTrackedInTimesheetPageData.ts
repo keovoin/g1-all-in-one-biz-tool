@@ -1,4 +1,4 @@
 export const ProjectTrackedInTimesheetPageData = {
-    name: 'Gauzy Web Site',
+    name: 'Sastra Web Site',
     urlConfirmDashboardLoad: '/api/employee-statistics/months*'
 };

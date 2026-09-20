@@ -31,7 +31,7 @@ import { RequestConfigProvider } from './request-config.provider';
 })
 export class GauzyAIModule {
 	/**
-	 * Configure the GauzyAI module for integration with Ever Gauzy Platform.
+	 * Configure the GauzyAI module for integration with Sastra Solution Platform.
 	 * @param options Optional configuration options for GauzyAI.
 	 * @returns A dynamic module configuration object.
 	 */

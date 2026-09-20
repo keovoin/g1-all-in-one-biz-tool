@@ -656,8 +656,8 @@
 			"ALL_TEAMS": "Todos os times",
 			"UPWORK_API_KEY": "Chave de API do Upwork",
 			"UPWORK_SECRET": "Segredo do Upwork",
-			"GAUZY_API_KEY": "Chave Gauzy AI",
-			"GAUZY_API_SECRET": "Gauzy AI Secreto.",
+			"GAUZY_API_KEY": "Chave Sastra AI",
+			"GAUZY_API_SECRET": "Sastra AI Secreto.",
 			"SELECT_COMPANY": "Empresa",
 			"TYPE_SEARCH_REQUEST": "Digite sua solicitação de pesquisa aqui...",
 			"SELECT_ICON": "Ícone",
@@ -848,7 +848,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Propostas",
 		"TIME_OFF": "Tempo livre",
@@ -899,11 +899,11 @@
 			"WRONG_FILE_NAME": "Nome de arquivo errado!!!",
 			"CORRECT_FILE_NAME": "O nome do arquivo deve ser: \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Baixar modelos.",
-			"MIGRATE_TO_CLOUD": "Migre para a Nuvem Ever Gauzy.",
+			"MIGRATE_TO_CLOUD": "Migre para a Nuvem Sastra Solution.",
 			"IMPORT_INFO": "Clique em \"Importar\" para importar seus dados para o Gauzy DB.",
 			"EXPORT_INFO": "Clique em \"Exportar\" para exportar dados do Gauzy DB.",
 			"DOWNLOAD_TEMPLATES_INFO": "Clique em \"Baixar Modelos\" para fazer o download do arquivo Zip com os modelos CSV para o formato dos dados do Gauzy.",
-			"MIGRATE_TO_CLOUD_INFO": "Clique em \"Migrar para a Nuvem Ever Gauzy\" para migrar da edição self-hosted para a edição na nuvem.",
+			"MIGRATE_TO_CLOUD_INFO": "Clique em \"Migrar para a Nuvem Sastra Solution\" para migrar da edição self-hosted para a edição na nuvem.",
 			"MIGRATE_SUCCESSFULLY": "Migração suave para a nuvem para '{{ tenant }}' concluída com sucesso!",
 			"ACCOUNTING_TEMPLATE": "Modelo de contabilidade",
 			"ACTIVITY": "Atividade",
@@ -1275,7 +1275,7 @@
 			"MANUAL_ACTIVITY": "Nenhum registro encontrado. Por favor, selecione um intervalo de datas, funcionário ou projeto.",
 			"AMOUNT_OWED": "Nenhum Valor Devido",
 			"WEEKLY_TIME_AND_ACTIVITY": "Você não tem nenhum tempo rastreado e atividade ainda para estes dias.",
-			"DAILY_TIME_AND_ACTIVITY": "Ainda não há tempo e atividade registrados para este dia. Por favor, utilize o aplicativo de cronômetro Gauzy Desktop <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">aqui</a>.",
+			"DAILY_TIME_AND_ACTIVITY": "Ainda não há tempo e atividade registrados para este dia. Por favor, utilize o aplicativo de cronômetro Sastra Desktop <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">aqui</a>.",
 			"PROJECT_BUDGET": "Você não criou nenhum projeto com orçamento.",
 			"CLIENT_BUDGET": "Você não criou nenhum cliente com orçamento."
 		},
@@ -1506,7 +1506,7 @@
 		},
 		"GAUZY_AI_PAGE": {
 			"API_KEY": "Chave de IA Gauzy",
-			"API_SECRET": "Gauzy AI Secret: Gauzy AI Secret é uma tecnologia avançada e revolucionária que combina inteligência artificial com recursos intuitivos. Essa solução inovadora oferece segurança e privacidade máxima, permitindo que os usuários protejam seus dados confidenciais de hackers e outras ameaças. Com o Gauzy AI Secret, é possível ter tranquilidade ao realizar qualquer tipo de comunicação ou transação online."
+			"API_SECRET": "Sastra AI Secret: Sastra AI Secret é uma tecnologia avançada e revolucionária que combina inteligência artificial com recursos intuitivos. Essa solução inovadora oferece segurança e privacidade máxima, permitindo que os usuários protejam seus dados confidenciais de hackers e outras ameaças. Com o Sastra AI Secret, é possível ter tranquilidade ao realizar qualquer tipo de comunicação ou transação online."
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4467,7 +4467,7 @@
 		"VIEW_TIMESHEET": "Visualizar a folha de ponto",
 		"ADD_TIME": "Adicionar Tempo",
 		"TODAY": "Hoje",
-		"ALERT_DESKTOP_DOWNLOAD": "Para um acompanhamento de tempo e atividades mais flexível, por favor, faça o <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Download</a> e utilize o <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Aplicativo Gauzy Desktop Timer</a>.",
+		"ALERT_DESKTOP_DOWNLOAD": "Para um acompanhamento de tempo e atividades mais flexível, por favor, faça o <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Download</a> e utilize o <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">Aplicativo Sastra Desktop Timer</a>.",
 		"STATUS": "O rastreador de tempo já está em execução em {{ source }}.",
 		"VERSION": "Versão v{{ version }}",
 		"OS": "OS: {{ os }} {{ systemVersion }} ({{ arch }})",
@@ -4508,8 +4508,8 @@
 			"USER": "Usuário",
 			"PASSWORD": "Senha",
 			"UI_HOSTNAME": "Nome do Host da Interface do Usuário / Endereço IP",
-			"TITLE_SERVER_API": "Ever Gauzy API Server Instalation Wizard",
-			"LABEL_SERVER_API": "A aplicação Gauzy API Server Desktop fornece a funcionalidade completa da plataforma Gauzy disponível diretamente no seu computador de secretária ou portátil. Além disso, permite o tempo de trabalho de rastreio, o registo de atividades e a capacidade de receber lembretes/notificações de rastreio.",
+			"TITLE_SERVER_API": "Ever Sastra API Server Instalation Wizard",
+			"LABEL_SERVER_API": "A aplicação Sastra API Server Desktop fornece a funcionalidade completa da plataforma Gauzy disponível diretamente no seu computador de secretária ou portátil. Além disso, permite o tempo de trabalho de rastreio, o registo de atividades e a capacidade de receber lembretes/notificações de rastreio.",
 			"UNABLE_TO_CONNECT": "Unable to connect to the server. Please check your API host or internet connection.",
 			"JWT_SECRET": "Segredo JWT",
 			"JWT_SECRET_PLACEHOLDER": "Digite uma chave secreta para JWT",
@@ -5574,7 +5574,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "URL do CDN",
@@ -5751,7 +5751,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "Clientes OAuth",
-		"SUBTITLE": "Registre e gerencie aplicativos de terceiros que podem solicitar acesso ao Ever Gauzy em nome de seus usuários.",
+		"SUBTITLE": "Registre e gerencie aplicativos de terceiros que podem solicitar acesso ao Sastra Solution em nome de seus usuários.",
 		"STATUS": {
 			"ACTIVE": "Ativo",
 			"INACTIVE": "Inativo"

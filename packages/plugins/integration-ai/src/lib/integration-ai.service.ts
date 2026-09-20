@@ -31,7 +31,7 @@ export class IntegrationAIService {
 	) {}
 
 	/**
-	 * Creates a new integration tenant for Gauzy AI.
+	 * Creates a new integration tenant for Sastra AI.
 	 * @param input - The input data for creating the integration tenant.
 	 * @returns A promise that resolves to the created integration tenant.
 	 */
@@ -44,7 +44,7 @@ export class IntegrationAIService {
 			const tenantId = RequestContext.currentTenantId() || input.tenantId;
 			const { organizationId } = input;
 
-			// Retrieve Gauzy AI integration from the database
+			// Retrieve Sastra AI integration from the database
 			const integration = await this._integrationService.findOneByWhereOptions({
 				provider: IntegrationEnum.GAUZY_AI,
 				isActive: true,
@@ -119,10 +119,10 @@ export class IntegrationAIService {
 			return createdIntegration;
 		} catch (error) {
 			// Handle errors and return an appropriate error response
-			this.logger.error('Error while creating Gauzy AI integration', error.message);
+			this.logger.error('Error while creating Sastra AI integration', error.message);
 
 			throw new HttpException(
-				`Error while creating Gauzy AI integration: ${error.message}`,
+				`Error while creating Sastra AI integration: ${error.message}`,
 				HttpStatus.BAD_REQUEST
 			);
 		}
@@ -136,7 +136,7 @@ export class IntegrationAIService {
 	 */
 	public async update(integrationId: ID, input: IIntegrationTenantUpdateInput): Promise<IIntegrationTenant> {
 		try {
-			// Retrieve Gauzy AI integration from the database
+			// Retrieve Sastra AI integration from the database
 			const integration = await this._integrationTenantService.findOneByIdString(integrationId, {
 				relations: { settings: true }
 			});
@@ -163,10 +163,10 @@ export class IntegrationAIService {
 			return integration;
 		} catch (error) {
 			// Handle errors and return an appropriate error response
-			this.logger.error('Error while updating Gauzy AI integration', error.message);
+			this.logger.error('Error while updating Sastra AI integration', error.message);
 
 			throw new HttpException(
-				`Error while updating Gauzy AI integration: ${error.message}`,
+				`Error while updating Sastra AI integration: ${error.message}`,
 				HttpStatus.BAD_REQUEST
 			);
 		}
@@ -174,7 +174,7 @@ export class IntegrationAIService {
 
 	/**
 	 * Updates a tenant's API key by configuring the necessary parameters,
-	 * triggering the update in the Gauzy AI service, and handling any potential errors in a robust manner.
+	 * triggering the update in the Sastra AI service, and handling any potential errors in a robust manner.
 	 */
 	async updateOneTenantApiKey({ apiKey, apiSecret, openAiSecretKey, openAiOrganizationId }): Promise<void> {
 		try {
@@ -186,7 +186,7 @@ export class IntegrationAIService {
 				...(isNotEmpty(openAiOrganizationId) && { openAiOrganizationId })
 			});
 
-			// Update Gauzy AI service with the new API key
+			// Update Sastra AI service with the new API key
 			await this._gauzyAIService.updateOneTenantApiKey({
 				apiKey,
 				apiSecret,
