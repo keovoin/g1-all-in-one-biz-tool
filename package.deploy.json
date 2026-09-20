@@ -660,6 +660,8 @@
     "yargs": "17.7.2",
     "yargs-parser": "21.1.1",
     "zip-stream": "4.1.1",
-    "zod": "4.3.6"
+    "zod": "4.3.6",
+    "libphonenumber-js": "1.12.37",
+    "nanoid": "3.3.11"
   }
 }
