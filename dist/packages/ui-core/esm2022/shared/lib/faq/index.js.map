@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/faq/index.ts"],"names":[],"mappings":"AAAA,cAAc,cAAc,CAAC;AAC7B,cAAc,iBAAiB,CAAC","sourcesContent":["export * from './faq.module';\nexport * from './faq.component';\n"]}

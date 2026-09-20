@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/entity-with-members-card/index.ts"],"names":[],"mappings":"AAAA,cAAc,sCAAsC,CAAC;AACrD,cAAc,mCAAmC,CAAC","sourcesContent":["export * from './entity-with-members-card.component';\nexport * from './entity-with-members-card.module';\n"]}

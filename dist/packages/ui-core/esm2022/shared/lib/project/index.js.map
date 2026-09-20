@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/project/index.ts"],"names":[],"mappings":"AAAA,cAAc,4CAA4C,CAAC;AAC3D,cAAc,+CAA+C,CAAC","sourcesContent":["export * from './project-mutation/project-mutation.module';\nexport * from './project-mutation/project-mutation.component';\n"]}

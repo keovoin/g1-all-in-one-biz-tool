@@ -1,0 +1,33 @@
+import { TemplateRef } from '@angular/core';
+import { Collapsable } from './collapsable.interface';
+import { Draggable } from './draggable.interface';
+import { Expandable } from './expandable.interface';
+import * as i0 from "@angular/core";
+export declare abstract class GuiDrag implements Draggable, Expandable, Collapsable {
+    private _templateRef;
+    private _position;
+    private _title;
+    private _collapsed;
+    private _move;
+    private _hide;
+    private _positions;
+    constructor();
+    onClickSetting(event: boolean): void;
+    set templateRef(value: TemplateRef<any>);
+    get templateRef(): TemplateRef<any>;
+    set title(value: string);
+    get title(): string;
+    get position(): number;
+    set position(value: number);
+    get isExpand(): boolean;
+    set isExpand(value: boolean);
+    get isCollapse(): boolean;
+    set isCollapse(value: boolean);
+    get move(): boolean;
+    set move(value: boolean);
+    get hide(): boolean;
+    set hide(value: boolean);
+    toObject(): Partial<GuiDrag>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<GuiDrag, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<GuiDrag, "ng-component", never, { "templateRef": { "alias": "templateRef"; "required": false; }; "position": { "alias": "position"; "required": false; }; "isExpand": { "alias": "isExpand"; "required": false; }; "isCollapse": { "alias": "isCollapse"; "required": false; }; }, {}, never, never, false, never>;
+}

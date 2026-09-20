@@ -1,0 +1,1 @@
+{"version":3,"file":"Progress.d.ts","sourceRoot":"","sources":["../../../../../../packages/ui-react-components/src/lib/components/Progress.tsx"],"names":[],"mappings":"AAEA,MAAM,WAAW,aAAa;IAC7B,OAAO,EAAE,MAAM,CAAC;IAChB,mDAAmD;IACnD,KAAK,CAAC,EAAE,MAAM,CAAC;CACf;AAED,wBAAgB,QAAQ,CAAC,EAAE,OAAO,EAAE,KAAoB,EAAE,EAAE,aAAa,2CAsBxE"}

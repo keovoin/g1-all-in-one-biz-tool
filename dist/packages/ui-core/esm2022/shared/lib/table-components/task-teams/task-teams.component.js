@@ -1,0 +1,20 @@
+import { Component, Input } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "@nebular/theme";
+/**
+ * Grid cell renderer for the teams on a record. Accepts either team objects or
+ * plain team names, which is what `ngx-assigned-to` hands it.
+ */
+export class TaskTeamsComponent {
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: TaskTeamsComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "17.0.0", version: "21.0.7", type: TaskTeamsComponent, isStandalone: false, selector: "ngx-task-teams", inputs: { rowData: "rowData", value: "value" }, ngImport: i0, template: "<!--\n  Teams sit next to the people list in the same cell (Tasks, Approvals,\n  Projects), so they follow the same rules: one line, no per-item box, and a\n  name that truncates on width rather than on a character count.\n-->\n@if (value?.length > 0) {\n\t<div class=\"teams\">\n\t\t@for (team of value; track $index) {\n\t\t\t<span class=\"team\" [nbTooltip]=\"team?.name || team\">\n\t\t\t\t<span class=\"team-name\">{{ team?.name || team }}</span>\n\t\t\t\t@if (team?.members?.length) {\n\t\t\t\t\t<span class=\"team-count\">{{ team.members.length }}</span>\n\t\t\t\t}\n\t\t\t</span>\n\t\t}\n\t</div>\n}\n", styles: [".teams{display:flex;align-items:center;flex-wrap:nowrap;gap:var(--gauzy-people-gap);min-width:0;line-height:var(--gauzy-people-avatar-size)}.team{display:inline-flex;align-items:baseline;gap:.25rem;min-width:0;color:var(--text-basic-color);font-size:var(--gauzy-people-font-size)}.team-name{min-width:0;max-width:var(--gauzy-people-name-max-width);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.team-count{flex:0 0 auto;color:var(--text-hint-color);font-size:var(--gauzy-people-initials-font-size);font-weight:600}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"], dependencies: [{ kind: "directive", type: i1.NbTooltipDirective, selector: "[nbTooltip]", inputs: ["nbTooltip", "nbTooltipPlacement", "nbTooltipAdjustment", "nbTooltipClass", "nbTooltipIcon", "nbTooltipStatus", "nbTooltipTrigger", "nbTooltipOffset", "nbTooltipDisabled"], outputs: ["nbTooltipShowStateChange"], exportAs: ["nbTooltip"] }] }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: TaskTeamsComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'ngx-task-teams', standalone: false, template: "<!--\n  Teams sit next to the people list in the same cell (Tasks, Approvals,\n  Projects), so they follow the same rules: one line, no per-item box, and a\n  name that truncates on width rather than on a character count.\n-->\n@if (value?.length > 0) {\n\t<div class=\"teams\">\n\t\t@for (team of value; track $index) {\n\t\t\t<span class=\"team\" [nbTooltip]=\"team?.name || team\">\n\t\t\t\t<span class=\"team-name\">{{ team?.name || team }}</span>\n\t\t\t\t@if (team?.members?.length) {\n\t\t\t\t\t<span class=\"team-count\">{{ team.members.length }}</span>\n\t\t\t\t}\n\t\t\t</span>\n\t\t}\n\t</div>\n}\n", styles: [".teams{display:flex;align-items:center;flex-wrap:nowrap;gap:var(--gauzy-people-gap);min-width:0;line-height:var(--gauzy-people-avatar-size)}.team{display:inline-flex;align-items:baseline;gap:.25rem;min-width:0;color:var(--text-basic-color);font-size:var(--gauzy-people-font-size)}.team-name{min-width:0;max-width:var(--gauzy-people-name-max-width);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.team-count{flex:0 0 auto;color:var(--text-hint-color);font-size:var(--gauzy-people-initials-font-size);font-weight:600}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"] }]
+        }], propDecorators: { rowData: [{
+                type: Input
+            }], value: [{
+                type: Input
+            }] } });
+//# sourceMappingURL=task-teams.component.js.map

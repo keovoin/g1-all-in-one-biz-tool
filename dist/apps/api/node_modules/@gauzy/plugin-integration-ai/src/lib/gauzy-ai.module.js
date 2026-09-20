@@ -1,0 +1,63 @@
+"use strict";
+var GauzyAIModule_1;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GauzyAIModule = void 0;
+const tslib_1 = require("tslib");
+const config_1 = require("@nestjs/config");
+const axios_1 = require("@nestjs/axios");
+const common_1 = require("@nestjs/common");
+const constants_1 = require("@gauzy/constants");
+const gauzy_ai_service_1 = require("./gauzy-ai.service");
+const gauzy_ai_1 = require("./config/gauzy-ai");
+const request_config_provider_1 = require("./request-config.provider");
+let GauzyAIModule = GauzyAIModule_1 = class GauzyAIModule {
+    /**
+     * Configure the GauzyAI module for integration with Ever Gauzy Platform.
+     * @param options Optional configuration options for GauzyAI.
+     * @returns A dynamic module configuration object.
+     */
+    static forRoot(options) {
+        return {
+            module: GauzyAIModule_1,
+            imports: [config_1.ConfigModule], // Make sure to import ConfigModule here
+            providers: [
+                {
+                    provide: constants_1.GAUZY_AI_CONFIG_TOKEN,
+                    useFactory: (config) => ({
+                        apiKey: config.get('gauzyAI.gauzyAiApiKey'),
+                        apiSecret: config.get('gauzyAI.gauzyAiApiSecret'),
+                        ...options
+                    }),
+                    inject: [config_1.ConfigService]
+                }
+            ],
+            exports: [constants_1.GAUZY_AI_CONFIG_TOKEN]
+        };
+    }
+};
+exports.GauzyAIModule = GauzyAIModule;
+exports.GauzyAIModule = GauzyAIModule = GauzyAIModule_1 = tslib_1.__decorate([
+    (0, common_1.Module)({
+        imports: [
+            axios_1.HttpModule.registerAsync({
+                imports: [config_1.ConfigModule],
+                useFactory: (config) => ({
+                    baseURL: config.get('gauzyAI.gauzyAIRESTEndpoint'),
+                    timeout: config.get('gauzyAI.gauzyAIRequestTimeout'),
+                    maxRedirects: 5,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        apiKey: config.get('gauzyAI.gauzyAiApiKey'),
+                        apiSecret: config.get('gauzyAI.gauzyAiApiSecret')
+                    }
+                }),
+                inject: [config_1.ConfigService]
+            }),
+            config_1.ConfigModule.forFeature(gauzy_ai_1.default) // Make sure to import ConfigModule here
+        ],
+        controllers: [],
+        providers: [gauzy_ai_service_1.GauzyAIService, request_config_provider_1.RequestConfigProvider],
+        exports: [gauzy_ai_service_1.GauzyAIService, request_config_provider_1.RequestConfigProvider]
+    })
+], GauzyAIModule);
+//# sourceMappingURL=gauzy-ai.module.js.map

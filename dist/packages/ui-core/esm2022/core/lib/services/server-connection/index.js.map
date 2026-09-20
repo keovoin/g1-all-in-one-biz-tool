@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/server-connection/index.ts"],"names":[],"mappings":"AAAA,cAAc,6BAA6B,CAAC","sourcesContent":["export * from './server-connection.service';"]}

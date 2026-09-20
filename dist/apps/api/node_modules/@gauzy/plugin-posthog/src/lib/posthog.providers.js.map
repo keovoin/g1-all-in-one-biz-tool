@@ -1,0 +1,1 @@
+{"version":3,"file":"posthog.providers.js","sourceRoot":"","sources":["../../../../../../packages/plugins/posthog/src/lib/posthog.providers.ts"],"names":[],"mappings":";;AAIA,wDAKC;AARD,2DAAoD;AACpD,uDAAmD;AAEnD,SAAgB,sBAAsB,CAAC,OAA6B;IACnE,OAAO;QACN,OAAO,EAAE,iCAAa;QACtB,UAAU,EAAE,GAAG,EAAE,CAAC,IAAI,gCAAc,CAAC,OAAO,CAAC;KAC7C,CAAC;AACH,CAAC"}

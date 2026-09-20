@@ -1,0 +1,53 @@
+{
+  "name": "@gauzy/ui-config",
+  "version": "0.1.0",
+  "description": "A configuration library for the Gauzy framework, providing environment settings and configurations to be shared across various Angular applications within the Gauzy ecosystem.",
+  "type": "module",
+  "author": {
+    "name": "Ever Co. LTD",
+    "email": "ever@ever.co",
+    "url": "https://ever.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ever-co/ever-gauzy",
+    "directory": "packages/ui-config"
+  },
+  "bugs": {
+    "url": "https://github.com/ever-co/ever-gauzy/issues"
+  },
+  "homepage": "https://ever.co",
+  "license": "AGPL-3.0",
+  "private": true,
+  "peerDependencies": {
+    "@angular/common": "21.0.7",
+    "@angular/core": "21.0.7"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "keywords": [
+    "gauzy",
+    "angular",
+    "configuration",
+    "environment",
+    "settings",
+    "library"
+  ],
+  "engines": {
+    "node": ">=22",
+    "yarn": ">=1.22"
+  },
+  "sideEffects": false,
+  "module": "esm2022/gauzy-ui-config.js",
+  "typings": "gauzy-ui-config.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./gauzy-ui-config.d.ts",
+      "default": "./esm2022/gauzy-ui-config.js"
+    }
+  }
+}

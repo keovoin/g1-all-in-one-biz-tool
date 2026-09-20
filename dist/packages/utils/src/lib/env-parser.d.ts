@@ -1,0 +1,26 @@
+/**
+ * Parses an environment variable with a fallback value.
+ * Automatically handles type conversion based on the fallback type:
+ * - Boolean: parses 'true'/'false' strings
+ * - Number: parses numeric strings
+ * - String: returns the value as-is
+ *
+ * @param value - Environment variable value
+ * @param fallback - Fallback value if not set or invalid
+ * @returns Parsed value matching the fallback type
+ *
+ * @example
+ * ```typescript
+ * // Boolean parsing
+ * const isEnabled = parseEnvWithFallback(process.env.FEATURE_ENABLED, true);
+ *
+ * // Number parsing
+ * const port = parseEnvWithFallback(process.env.PORT, 3000);
+ *
+ * // String parsing
+ * const apiUrl = parseEnvWithFallback(process.env.API_URL, 'http://localhost:3000');
+ * ```
+ */
+export declare function parseEnvWithFallback(value: string | undefined, fallback: boolean): boolean;
+export declare function parseEnvWithFallback(value: string | undefined, fallback: number): number;
+export declare function parseEnvWithFallback<T>(value: string | undefined, fallback: T): string | T;

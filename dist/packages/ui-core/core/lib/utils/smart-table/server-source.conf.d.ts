@@ -1,0 +1,42 @@
+import { IOptionsSelect } from '@gauzy/contracts';
+export declare class ServerSourceConf {
+    protected static readonly SORT_FIELD_KEY = "orderBy";
+    protected static readonly SORT_DIR_KEY = "order";
+    protected static readonly PAGER_PAGE_KEY = "skip";
+    protected static readonly PAGER_LIMIT_KEY = "take";
+    protected static readonly FILTER_FIELD_KEY = "filters";
+    protected static readonly TOTAL_KEY = "total";
+    protected static readonly DATA_KEY = "items";
+    endPoint: string;
+    sortFieldKey: string;
+    sortDirKey: string;
+    pagerPageKey: string;
+    pagerLimitKey: string;
+    filterFieldKey: string;
+    totalKey: string;
+    dataKey: string;
+    where: any;
+    join: any;
+    relations: string[];
+    resultMap: any;
+    finalize: any;
+    withDeleted: boolean;
+    select: IOptionsSelect<any>;
+    constructor({ resultMap, finalize, endPoint, sortFieldKey, sortDirKey, pagerPageKey, pagerLimitKey, filterFieldKey, totalKey, dataKey, where, join, relations, withDeleted, select }?: {
+        resultMap?: any;
+        finalize?: any;
+        endPoint?: string;
+        sortFieldKey?: string;
+        sortDirKey?: string;
+        pagerPageKey?: string;
+        pagerLimitKey?: string;
+        filterFieldKey?: string;
+        totalKey?: string;
+        dataKey?: string;
+        where?: string;
+        join?: string;
+        relations?: any[];
+        withDeleted?: boolean;
+        select?: {};
+    });
+}

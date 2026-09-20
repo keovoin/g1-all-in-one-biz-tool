@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/availability-slot/index.ts"],"names":[],"mappings":"AAAA,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './availability-slots.service';"]}

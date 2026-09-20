@@ -1,0 +1,33 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { NbDialogRef } from '@nebular/theme';
+import { IEmployee, IOrganization, IOrganizationTeam, ITimeOffPolicy } from '@gauzy/contracts';
+import { EmployeesService, Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class TimeOffSettingsMutationComponent implements OnInit, OnDestroy {
+    protected readonly dialogRef: NbDialogRef<TimeOffSettingsMutationComponent>;
+    private readonly employeesService;
+    private readonly store;
+    constructor(dialogRef: NbDialogRef<TimeOffSettingsMutationComponent>, employeesService: EmployeesService, store: Store);
+    team?: IOrganizationTeam;
+    policy: ITimeOffPolicy;
+    organizationId: string;
+    selectedEmployees: string[];
+    employees: IEmployee[];
+    name: string;
+    requiresApproval: boolean;
+    paid: boolean;
+    showWarning: boolean;
+    organization: IOrganization;
+    ngOnInit(): void;
+    private loadEmployees;
+    private _initializeForm;
+    addOrEditPolicy(): void;
+    onEmployeesSelected(employees: string[]): void;
+    changeRequiresApproval(checked: boolean): void;
+    changePaidStatus(checked: boolean): void;
+    closeWarning(): void;
+    close(): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TimeOffSettingsMutationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TimeOffSettingsMutationComponent, "ngx-time-off-settings-mutation", never, { "team": { "alias": "team"; "required": false; }; }, {}, never, never, false, never>;
+}

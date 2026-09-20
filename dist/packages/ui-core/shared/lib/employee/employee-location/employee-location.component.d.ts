@@ -1,0 +1,32 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
+import { IEmployee, ICandidate } from '@gauzy/contracts';
+import { LatLng } from 'leaflet';
+import { Store } from '@gauzy/ui-core/core';
+import { CandidateStore, EmployeeStore } from '@gauzy/ui-core/core';
+import { LeafletMapComponent, LocationFormComponent } from '../../forms';
+import * as i0 from "@angular/core";
+export declare class EmployeeLocationComponent implements OnInit, OnDestroy {
+    private readonly fb;
+    private readonly candidateStore;
+    private readonly employeeStore;
+    private readonly store;
+    isEmployee: boolean;
+    isCandidate: boolean;
+    selectedEmployee: IEmployee;
+    selectedCandidate: ICandidate;
+    readonly form: UntypedFormGroup;
+    locationFormDirective: LocationFormComponent;
+    leafletTemplate: LeafletMapComponent;
+    constructor(fb: UntypedFormBuilder, candidateStore: CandidateStore, employeeStore: EmployeeStore, store: Store);
+    ngOnInit(): void;
+    submitForm(): void;
+    private _syncLocation;
+    onCoordinatesChanges($event: google.maps.LatLng | google.maps.LatLngLiteral): void;
+    onMapClicked(latlng: LatLng): void;
+    setValidator(): void;
+    onGeometrySend(geometry: any): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EmployeeLocationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmployeeLocationComponent, "ga-employee-location", never, { "isEmployee": { "alias": "isEmployee"; "required": false; }; "isCandidate": { "alias": "isCandidate"; "required": false; }; }, {}, never, never, false, never>;
+}

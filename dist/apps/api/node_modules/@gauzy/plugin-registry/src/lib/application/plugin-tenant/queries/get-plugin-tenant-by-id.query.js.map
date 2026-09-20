@@ -1,0 +1,1 @@
+{"version":3,"file":"get-plugin-tenant-by-id.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-tenant/queries/get-plugin-tenant-by-id.query.ts"],"names":[],"mappings":";;;AAGA,MAAa,wBAAwB;IAGpC,YAA4B,EAAM;QAAN,OAAE,GAAF,EAAE,CAAI;IAAG,CAAC;;AAHvC,4DAIC;AAHuB,6BAAI,GAAG,2BAA2B,CAAC"}

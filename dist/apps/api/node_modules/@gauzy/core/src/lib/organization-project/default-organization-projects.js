@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DEFAULT_ORGANIZATION_PROJECTS = void 0;
+exports.DEFAULT_ORGANIZATION_PROJECTS = [
+    'Gauzy Platform (Open-Source)',
+    'Gauzy Web Site',
+    'Gauzy Platform SaaS',
+    'Gauzy Platform DevOps',
+    'Ever Teams Platform',
+    'Mobile App Development',
+    'Marketing Campaign Q1',
+    'Customer Portal',
+    'API Gateway Service',
+    'Microservices Architecture',
+    'E-commerce Platform',
+    'Analytics Dashboard',
+    'Mobile iOS App',
+    'Mobile Android App',
+    'Design System',
+    'Documentation Portal',
+    'Internal Tools',
+    'CI/CD Pipeline',
+    'Cloud Infrastructure'
+];
+//# sourceMappingURL=default-organization-projects.js.map

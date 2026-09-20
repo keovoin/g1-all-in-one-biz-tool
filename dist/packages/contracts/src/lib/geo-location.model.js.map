@@ -1,0 +1,1 @@
+{"version":3,"file":"geo-location.model.js","sourceRoot":"","sources":["../../../../../packages/contracts/src/lib/geo-location.model.ts"],"names":[],"mappings":";;AAaA,0CAQC;AARD,SAAgB,eAAe;IAC9B,OAAO;QACN,OAAO,EAAE,IAAI;QACb,IAAI,EAAE,IAAI;QACV,QAAQ,EAAE,IAAI;QACd,OAAO,EAAE,IAAI;QACb,QAAQ,EAAE,IAAI;KACd,CAAC;AACH,CAAC"}

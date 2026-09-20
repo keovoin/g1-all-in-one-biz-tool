@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.trimTrailingSlash = exports.transcribeViaOpenAiCompatible = exports.transcribeMultipart = exports.speechRequest = exports.resolveAudioExtension = exports.redactSecret = exports.readBounded = exports.classifySpeechHttpFailure = exports.TRANSCRIBE_TIMEOUT_MS = exports.MAX_TRANSCRIPTION_RESPONSE_BYTES = exports.MAX_TRANSCRIPT_CHARS = exports.MAX_ERROR_DETAIL_BYTES = exports.isSpeechProviderError = exports.SpeechProviderError = void 0;
+var speech_provider_error_1 = require("./speech-provider-error");
+Object.defineProperty(exports, "SpeechProviderError", { enumerable: true, get: function () { return speech_provider_error_1.SpeechProviderError; } });
+Object.defineProperty(exports, "isSpeechProviderError", { enumerable: true, get: function () { return speech_provider_error_1.isSpeechProviderError; } });
+var openai_compatible_transcribe_1 = require("./openai-compatible-transcribe");
+Object.defineProperty(exports, "MAX_ERROR_DETAIL_BYTES", { enumerable: true, get: function () { return openai_compatible_transcribe_1.MAX_ERROR_DETAIL_BYTES; } });
+Object.defineProperty(exports, "MAX_TRANSCRIPT_CHARS", { enumerable: true, get: function () { return openai_compatible_transcribe_1.MAX_TRANSCRIPT_CHARS; } });
+Object.defineProperty(exports, "MAX_TRANSCRIPTION_RESPONSE_BYTES", { enumerable: true, get: function () { return openai_compatible_transcribe_1.MAX_TRANSCRIPTION_RESPONSE_BYTES; } });
+Object.defineProperty(exports, "TRANSCRIBE_TIMEOUT_MS", { enumerable: true, get: function () { return openai_compatible_transcribe_1.TRANSCRIBE_TIMEOUT_MS; } });
+Object.defineProperty(exports, "classifySpeechHttpFailure", { enumerable: true, get: function () { return openai_compatible_transcribe_1.classifySpeechHttpFailure; } });
+Object.defineProperty(exports, "readBounded", { enumerable: true, get: function () { return openai_compatible_transcribe_1.readBounded; } });
+Object.defineProperty(exports, "redactSecret", { enumerable: true, get: function () { return openai_compatible_transcribe_1.redactSecret; } });
+Object.defineProperty(exports, "resolveAudioExtension", { enumerable: true, get: function () { return openai_compatible_transcribe_1.resolveAudioExtension; } });
+Object.defineProperty(exports, "speechRequest", { enumerable: true, get: function () { return openai_compatible_transcribe_1.speechRequest; } });
+Object.defineProperty(exports, "transcribeMultipart", { enumerable: true, get: function () { return openai_compatible_transcribe_1.transcribeMultipart; } });
+Object.defineProperty(exports, "transcribeViaOpenAiCompatible", { enumerable: true, get: function () { return openai_compatible_transcribe_1.transcribeViaOpenAiCompatible; } });
+Object.defineProperty(exports, "trimTrailingSlash", { enumerable: true, get: function () { return openai_compatible_transcribe_1.trimTrailingSlash; } });
+//# sourceMappingURL=index.js.map

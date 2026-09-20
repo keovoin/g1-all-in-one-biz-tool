@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/workspaces/index.ts"],"names":[],"mappings":"AAAA,cAAc,wBAAwB,CAAC;AACvC,cAAc,qBAAqB,CAAC","sourcesContent":["export * from './workspaces.component';\nexport * from './workspaces.module';\n"]}

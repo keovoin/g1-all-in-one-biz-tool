@@ -1,0 +1,1 @@
+{"version":3,"file":"collapsable.interface.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/common/src/lib/interfaces/collapsable.interface.ts"],"names":[],"mappings":"","sourcesContent":["export interface Collapsable {\n\tget isCollapse(): boolean;\n\tset isCollapse(value: boolean);\n}\n"]}

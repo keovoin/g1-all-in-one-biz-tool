@@ -1,0 +1,32 @@
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { IProductCategoryTranslatable, IProductOptionGroupTranslatable } from '@gauzy/contracts';
+import { TranslateService } from '@ngx-translate/core';
+import { NbDialogRef } from '@nebular/theme';
+import { Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class ProductOptionGroupTranslationsComponent extends TranslationBaseComponent {
+    dialogRef: NbDialogRef<IProductCategoryTranslatable>;
+    readonly translationService: TranslateService;
+    private fb;
+    private store;
+    form: UntypedFormGroup;
+    productOptionGroup: IProductOptionGroupTranslatable;
+    languages: any[];
+    activeGroupValueLng: string;
+    activeOptionValueLng: string;
+    activeOption: any;
+    constructor(dialogRef: NbDialogRef<IProductCategoryTranslatable>, translationService: TranslateService, fb: UntypedFormBuilder, store: Store);
+    ngOnInit(): void;
+    getGroupTitleTranslation(languageCodeInput: string): string;
+    getOptionNameTranslation(option: any, languageCodeInput: string): any;
+    setActiveGroupValueLngCode(languageCode: string): void;
+    unSetActiveGroupValueLngCode(): void;
+    isOptionGroupValueActive(languageCode: string): boolean;
+    setActiveOptionLngCode(option: any, languageCode: string): void;
+    unSetActiveOptionLngCode(): void;
+    isOptionActive(option: any, languageCode: string): boolean;
+    onSaveRequest(): Promise<void>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<ProductOptionGroupTranslationsComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<ProductOptionGroupTranslationsComponent, "ngx-product-option-group-translation", never, { "productOptionGroup": { "alias": "productOptionGroup"; "required": false; }; }, {}, never, never, false, never>;
+}

@@ -1,0 +1,85 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmployeeProposalTemplateService = void 0;
+const tslib_1 = require("tslib");
+const common_1 = require("@nestjs/common");
+const core_1 = require("@gauzy/core");
+const mikro_orm_employee_proposal_template_repository_1 = require("./repository/mikro-orm-employee-proposal-template.repository");
+const type_orm_employee_proposal_template_repository_1 = require("./repository/type-orm-employee-proposal-template.repository");
+let EmployeeProposalTemplateService = class EmployeeProposalTemplateService extends core_1.TenantAwareCrudService {
+    constructor(typeOrmEmployeeProposalTemplateRepository, mikroOrmEmployeeProposalTemplateRepository) {
+        super(typeOrmEmployeeProposalTemplateRepository, mikroOrmEmployeeProposalTemplateRepository);
+        this.typeOrmEmployeeProposalTemplateRepository = typeOrmEmployeeProposalTemplateRepository;
+        this.mikroOrmEmployeeProposalTemplateRepository = mikroOrmEmployeeProposalTemplateRepository;
+    }
+    /**
+     * Creates a proposal template, sanitizing the rich-text `content` HTML through the shared
+     * server-side allowlist before persisting — the content is re-rendered in template views and
+     * fed into Gauzy AI proposal generation (see `sanitizeRichHtml`).
+     *
+     * @param entity - The proposal template data to persist.
+     * @returns The persisted proposal template.
+     */
+    async create(entity) {
+        if (typeof entity.content === 'string') {
+            entity.content = (0, core_1.sanitizeRichHtml)(entity.content);
+        }
+        return await super.create(entity);
+    }
+    /**
+     * Updates a proposal template, sanitizing the rich-text `content` HTML through the shared
+     * server-side allowlist before persisting (see `create`).
+     *
+     * @param id - The template ID (or where-criteria) to update.
+     * @param partialEntity - The partial update payload.
+     * @returns The updated template or the TypeORM update result.
+     */
+    async update(id, partialEntity) {
+        const input = partialEntity;
+        if (typeof input.content === 'string') {
+            input.content = (0, core_1.sanitizeRichHtml)(input.content);
+        }
+        return await super.update(id, partialEntity);
+    }
+    /**
+     * Toggles the default status of a proposal template.
+     *
+     * @param {ID} id - The ID of the proposal template.
+     * @param {IEmployeeProposalTemplateMakeDefaultInput} input - The object containing the `isDefault` value.
+     * @returns {Promise<IEmployeeProposalTemplate>} The updated proposal template.
+     */
+    async makeDefault(id, input) {
+        const proposalTemplate = await this.findOneByIdString(id);
+        if (!proposalTemplate) {
+            throw new common_1.NotFoundException(`Proposal template with ID ${id} not found`);
+        }
+        // Update the isDefault property on the target template
+        proposalTemplate.isDefault = input.isDefault;
+        // Reset `isDefault` to false on all templates matching these fields
+        const { organizationId, tenantId, employeeId } = proposalTemplate;
+        // Update the isDefault property on all templates matching these fields. organizationId is a
+        // nullable column: for an organization-less template the null means `organizationId IS NULL` on
+        // both ORMs (TYPEORM_INVALID_WHERE_VALUES_BEHAVIOR), i.e. only its organization-less siblings are
+        // reset — the null used to be dropped and reset the employee's templates in every organization.
+        await super.update({ organizationId, tenantId, employeeId }, { isDefault: false });
+        // Save and return the updated template
+        return super.save(proposalTemplate);
+    }
+    /**
+     * Finds all proposal templates matching the given pagination params.
+     *
+     * @param {BaseQueryDTO<IEmployeeProposalTemplate>} [params] - Pagination parameters.
+     * @returns {Promise<IPagination<IEmployeeProposalTemplate>>} Paginated result.
+     */
+    async findAll(params) {
+        // Directly return the result of `super.findAll`.
+        return super.findAll(params);
+    }
+};
+exports.EmployeeProposalTemplateService = EmployeeProposalTemplateService;
+exports.EmployeeProposalTemplateService = EmployeeProposalTemplateService = tslib_1.__decorate([
+    (0, common_1.Injectable)(),
+    tslib_1.__metadata("design:paramtypes", [type_orm_employee_proposal_template_repository_1.TypeOrmEmployeeProposalTemplateRepository,
+        mikro_orm_employee_proposal_template_repository_1.MikroOrmEmployeeProposalTemplateRepository])
+], EmployeeProposalTemplateService);
+//# sourceMappingURL=employee-proposal-template.service.js.map

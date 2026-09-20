@@ -1,0 +1,1 @@
+{"version":3,"file":"gauzy-cloud-tenant.migrate.command.js","sourceRoot":"","sources":["../../../../../../../packages/core/src/lib/gauzy-cloud/commands/gauzy-cloud-tenant.migrate.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,8BAA8B;IAG1C,YACiB,KAAyB,EACzB,KAAa;QADb,UAAK,GAAL,KAAK,CAAoB;QACzB,UAAK,GAAL,KAAK,CAAQ;IAC3B,CAAC;;AANL,wEAOC;AANgB,mCAAI,GAAG,8BAA8B,CAAC"}

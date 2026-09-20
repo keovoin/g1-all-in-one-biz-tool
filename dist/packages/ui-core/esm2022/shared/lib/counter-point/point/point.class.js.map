@@ -1,0 +1,1 @@
+{"version":3,"file":"point.class.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/counter-point/point/point.class.ts"],"names":[],"mappings":"","sourcesContent":["export interface Point {\n\tcolor: string;\n}\n"]}

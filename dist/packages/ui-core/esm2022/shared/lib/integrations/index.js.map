@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/integrations/index.ts"],"names":[],"mappings":"AAAA,cAAc,4DAA4D,CAAC;AAC3E,cAAc,yDAAyD,CAAC","sourcesContent":["export * from './github/repository-selector/repository-selector.component';\nexport * from './github/repository-selector/repository-selector.module';\n"]}

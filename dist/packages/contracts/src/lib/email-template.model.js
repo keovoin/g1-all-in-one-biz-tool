@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmailTemplateEnum = void 0;
+var EmailTemplateEnum;
+(function (EmailTemplateEnum) {
+    EmailTemplateEnum["PASSWORD_RESET"] = "password";
+    EmailTemplateEnum["MULTI_TENANT_PASSWORD_RESET"] = "multi-tenant-password";
+    EmailTemplateEnum["PASSWORD_LESS_AUTHENTICATION"] = "password-less-authentication";
+    EmailTemplateEnum["APPOINTMENT_CONFIRMATION"] = "appointment-confirmation";
+    EmailTemplateEnum["APPOINTMENT_CANCELLATION"] = "appointment-cancellation";
+    EmailTemplateEnum["TIME_OFF_POLICY_ACTION"] = "time-off-report-action";
+    EmailTemplateEnum["TASK_UPDATE"] = "task-update";
+    EmailTemplateEnum["EQUIPMENT"] = "equipment";
+    EmailTemplateEnum["EQUIPMENT_REQUEST"] = "equipment-request";
+    EmailTemplateEnum["TIME_SHEET_OVERVIEW"] = "timesheet-overview";
+    EmailTemplateEnum["TIME_SHEET_SUBMIT"] = "timesheet-submit";
+    EmailTemplateEnum["TIME_SHEET_ACTION"] = "timesheet-action";
+    EmailTemplateEnum["TIME_SHEET_DELETE"] = "timesheet-delete";
+    EmailTemplateEnum["CANDIDATE_INTERVIEW_SCHEDULE"] = "candidate-schedule-interview";
+    EmailTemplateEnum["INTERVIEWER_INTERVIEW_SCHEDULE"] = "interviewer-interview-schedule";
+    EmailTemplateEnum["WELCOME_USER"] = "welcome-user";
+    EmailTemplateEnum["EMAIL_VERIFICATION"] = "email-verification";
+    EmailTemplateEnum["INVITE_ORGANIZATION_CLIENT"] = "invite-organization-client";
+    EmailTemplateEnum["INVITE_EMPLOYEE"] = "invite-employee";
+    EmailTemplateEnum["INVITE_GAUZY_TEAMS"] = "invite-gauzy-teams";
+    EmailTemplateEnum["INVITE_USER"] = "invite-user";
+    EmailTemplateEnum["EMAIL_INVOICE"] = "email-invoice";
+    EmailTemplateEnum["EMAIL_ESTIMATE"] = "email-estimate";
+    EmailTemplateEnum["EMPLOYEE_JOIN"] = "employee-join";
+    EmailTemplateEnum["EMAIL_RESET"] = "email-reset";
+    EmailTemplateEnum["ORGANIZATION_TEAM_JOIN_REQUEST"] = "organization-team-join-request";
+    EmailTemplateEnum["PAYMENT_RECEIPT"] = "payment-receipt";
+    EmailTemplateEnum["REJECT_CANDIDATE"] = "reject-candidate";
+})(EmailTemplateEnum || (exports.EmailTemplateEnum = EmailTemplateEnum = {}));
+//# sourceMappingURL=email-template.model.js.map

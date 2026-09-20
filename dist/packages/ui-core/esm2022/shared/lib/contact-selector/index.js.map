@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/contact-selector/index.ts"],"names":[],"mappings":"AAAA,cAAc,8BAA8B,CAAC;AAC7C,cAAc,2BAA2B,CAAC","sourcesContent":["export * from './contact-selector.component';\nexport * from './contact-selector.module';\n"]}

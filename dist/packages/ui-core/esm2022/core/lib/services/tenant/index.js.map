@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/tenant/index.ts"],"names":[],"mappings":"AAAA,cAAc,kBAAkB,CAAC;AACjC,cAAc,iCAAiC,CAAC;AAChD,cAAc,uBAAuB,CAAC","sourcesContent":["export * from './tenant.service';\nexport * from './tenant-ui-preferences.service';\nexport * from './preferred-ui.guards';\n"]}

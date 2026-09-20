@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/theme/src/lib/services/index.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,cAAc,oCAAoC,CAAC","sourcesContent":["/*\n * Public API Surface of @gauzy/ui-core/theme\n */\nexport * from './window-mode-block-scroll.service';\n"]}

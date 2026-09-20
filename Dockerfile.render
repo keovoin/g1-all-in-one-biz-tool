@@ -1,0 +1,27 @@
+# Sastra Solution — Render deploy image (prebuilt dist + runtime deps)
+FROM node:24-bookworm-slim
+
+# build tools as insurance for native modules (better-sqlite3/bcrypt fall back to source build)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ca-certificates python3 make g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# third-party runtime deps ONLY (dist/apps/api/node_modules/@gauzy ships compiled in)
+COPY package.deploy.json package.json
+RUN npm install --omit=dev --no-audit --no-fund --loglevel=error
+
+# compiled artifacts (gitignored on main; committed on the render-deploy branch)
+COPY dist ./dist
+COPY apps/api/data ./apps/api/data
+COPY tools/render_entrypoint.sh tools/serve_web_render.js ./tools/
+
+ENV API_HOST=0.0.0.0 \
+    API_PORT=3000 \
+    NODE_ENV=production \
+    TZ=Asia/Phnom_Penh
+
+EXPOSE 4200
+
+CMD ["bash", "tools/render_entrypoint.sh"]

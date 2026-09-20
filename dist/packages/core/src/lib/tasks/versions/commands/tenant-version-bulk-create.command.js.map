@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant-version-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/versions/commands/tenant-version-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,8BAA8B;IAG1C,YAA4B,OAAkB;QAAlB,YAAO,GAAP,OAAO,CAAW;IAAG,CAAC;;AAHnD,wEAIC;AAHgB,mCAAI,GAAG,8BAA8B,CAAC"}

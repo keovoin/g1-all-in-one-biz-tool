@@ -1,0 +1,37 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { Subject } from 'rxjs';
+import { IOrganization } from '@gauzy/contracts';
+import { Store } from '@gauzy/ui-core/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { TasksService } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class TaskNumberFieldComponent extends TranslationBaseComponent implements OnInit, OnDestroy {
+    readonly translateService: TranslateService;
+    private readonly store;
+    private readonly tasksService;
+    formControl: FormControl;
+    _placeholder: string;
+    get placeholder(): string;
+    set placeholder(value: string);
+    _projectId: string;
+    get projectId(): string;
+    set projectId(value: string);
+    private _number;
+    set number(val: number);
+    get number(): number;
+    onChange: any;
+    onTouched: any;
+    organization: IOrganization;
+    number$: Subject<boolean>;
+    constructor(translateService: TranslateService, store: Store, tasksService: TasksService);
+    ngOnInit(): void;
+    writeValue(value: number): void;
+    registerOnChange(fn: (rating: number) => void): void;
+    registerOnTouched(fn: () => void): void;
+    private getOneMaximumTaskNumber;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<TaskNumberFieldComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<TaskNumberFieldComponent, "ngx-task-number-field", never, { "formControl": { "alias": "formControl"; "required": false; }; "placeholder": { "alias": "placeholder"; "required": false; }; "projectId": { "alias": "projectId"; "required": false; }; }, {}, never, never, false, never>;
+}

@@ -1,0 +1,38 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { UntypedFormGroup, UntypedFormBuilder, FormArray } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { ICandidateTechnologies, IOrganization } from '@gauzy/contracts';
+import { CandidateTechnologiesService, ToastrService } from '@gauzy/ui-core/core';
+import { Store } from '@gauzy/ui-core/core';
+import { CommunicationService } from '../../communication.service';
+import * as i0 from "@angular/core";
+export declare class CandidateTechnologiesComponent extends TranslationBaseComponent implements OnInit, OnDestroy {
+    private fb;
+    private readonly toastrService;
+    readonly translateService: TranslateService;
+    private candidateTechnologiesService;
+    private readonly store;
+    private readonly communicationService;
+    private _ngDestroy$;
+    technologiesList: ICandidateTechnologies[];
+    existedTechNames: string[];
+    technologyNames: string[];
+    form: UntypedFormGroup;
+    editId: any;
+    organization: IOrganization;
+    constructor(fb: UntypedFormBuilder, toastrService: ToastrService, translateService: TranslateService, candidateTechnologiesService: CandidateTechnologiesService, store: Store, communicationService: CommunicationService);
+    ngOnInit(): void;
+    private _initializeForm;
+    private loadTechnologies;
+    save(): Promise<void>;
+    update(formValue: ICandidateTechnologies): Promise<void>;
+    create(formValue: ICandidateTechnologies): Promise<void>;
+    edit(index: number, id: string): Promise<void>;
+    remove(technology: ICandidateTechnologies): Promise<void>;
+    ngOnDestroy(): void;
+    private toastrError;
+    get technologies(): FormArray;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CandidateTechnologiesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CandidateTechnologiesComponent, "ga-candidate-technologies", never, {}, {}, never, never, false, never>;
+}

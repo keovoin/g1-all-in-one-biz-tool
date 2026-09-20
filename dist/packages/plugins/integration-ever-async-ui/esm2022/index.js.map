@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../packages/plugins/integration-ever-async-ui/src/index.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,cAAc,qCAAqC,CAAC","sourcesContent":["/**\n * Public API Surface of @gauzy/plugin-integration-ever-async-ui\n */\nexport * from './lib/integration-ever-async-plugin';\n"]}

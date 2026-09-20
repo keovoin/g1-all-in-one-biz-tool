@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../packages/plugins/jobs-ui/src/index.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,cAAc,mBAAmB,CAAC;AAClC,cAAc,mBAAmB,CAAC","sourcesContent":["/**\n * Public API Surface of @gauzy/plugin-jobs-ui\n */\nexport * from './lib/jobs-plugin';\nexport * from './lib/jobs.module';\n"]}

@@ -1,0 +1,14 @@
+import { NestModule, MiddlewareConsumer } from '@nestjs/common';
+export declare class FileStorageModule implements NestModule {
+    /**
+     * Configures middleware for the application.
+     *
+     * @param {MiddlewareConsumer} consumer - The NestJS `MiddlewareConsumer` instance used to apply middleware.
+     *
+     * @description
+     * This method applies the `TenantSettingsMiddleware` to all routes (`'*'`).
+     * The middleware will be executed for every incoming request, allowing tenant-specific settings
+     * to be processed before handling requests.
+     */
+    configure(consumer: MiddlewareConsumer): void;
+}

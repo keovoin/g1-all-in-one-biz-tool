@@ -1,0 +1,28 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./bulk-action.dto"), exports);
+tslib_1.__exportStar(require("./create-document.dto"), exports);
+tslib_1.__exportStar(require("./delete-document.dto"), exports);
+tslib_1.__exportStar(require("./document-category.dto"), exports);
+tslib_1.__exportStar(require("./document-link.dto"), exports);
+tslib_1.__exportStar(require("./document-inbound-address.dto"), exports);
+tslib_1.__exportStar(require("./document-scope-query.dto"), exports);
+tslib_1.__exportStar(require("./document-settings.dto"), exports);
+tslib_1.__exportStar(require("./document-share.dto"), exports);
+tslib_1.__exportStar(require("./document-tag-reference"), exports);
+tslib_1.__exportStar(require("./duplicate-document.dto"), exports);
+tslib_1.__exportStar(require("./get-document-versions-query.dto"), exports);
+tslib_1.__exportStar(require("./get-documents-query.dto"), exports);
+tslib_1.__exportStar(require("./knowledge-reindex.dto"), exports);
+tslib_1.__exportStar(require("./knowledge-search.dto"), exports);
+tslib_1.__exportStar(require("./move-document.dto"), exports);
+tslib_1.__exportStar(require("./reorder-documents.dto"), exports);
+tslib_1.__exportStar(require("./replace-document-file.dto"), exports);
+tslib_1.__exportStar(require("./reprocess-document.dto"), exports);
+tslib_1.__exportStar(require("./review-decision.dto"), exports);
+tslib_1.__exportStar(require("./update-document.dto"), exports);
+tslib_1.__exportStar(require("./update-document-content.dto"), exports);
+tslib_1.__exportStar(require("./update-extracted-text.dto"), exports);
+tslib_1.__exportStar(require("./upload-documents.dto"), exports);
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/proposal-template-select/index.ts"],"names":[],"mappings":"AAAA,cAAc,+DAA+D,CAAC;AAC9E,cAAc,mCAAmC,CAAC","sourcesContent":["export * from './proposal-template-select/proposal-template-select.component';\nexport * from './proposal-template-select.module';\n"]}

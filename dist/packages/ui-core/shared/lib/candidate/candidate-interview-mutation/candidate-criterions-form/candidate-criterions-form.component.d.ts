@@ -1,0 +1,33 @@
+import { ICandidateTechnologies, ICandidatePersonalQualities, IOrganization } from '@gauzy/contracts';
+import { OnInit, OnDestroy } from '@angular/core';
+import { UntypedFormBuilder } from '@angular/forms';
+import { Store } from '@gauzy/ui-core/core';
+import { CandidatePersonalQualitiesService, CandidateTechnologiesService } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class CandidateCriterionsFormComponent implements OnInit, OnDestroy {
+    private readonly fb;
+    private candidateTechnologiesService;
+    private candidatePersonalQualitiesService;
+    protected readonly store: Store;
+    editSelectedTechnologies: ICandidateTechnologies[];
+    editSelectedQualities: ICandidatePersonalQualities[];
+    form: any;
+    technologiesList: ICandidateTechnologies[];
+    personalQualitiesList: ICandidatePersonalQualities[];
+    private _ngDestroy$;
+    selectedTechnologies: any[];
+    selectedQualities: any[];
+    checkedTech: number[];
+    checkedQual: any[];
+    organization: IOrganization;
+    constructor(fb: UntypedFormBuilder, candidateTechnologiesService: CandidateTechnologiesService, candidatePersonalQualitiesService: CandidatePersonalQualitiesService, store: Store);
+    ngOnInit(): void;
+    loadFormData(): void;
+    checkedTechnologies(value: string): void;
+    checkedQualities(value: string): void;
+    private loadCriterions;
+    isChecked(criterions: ICandidateTechnologies[] | ICandidatePersonalQualities[], allCriterions: ICandidateTechnologies[] | ICandidatePersonalQualities[], isTech: boolean): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CandidateCriterionsFormComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CandidateCriterionsFormComponent, "ga-candidate-criterions-form", never, { "editSelectedTechnologies": { "alias": "editSelectedTechnologies"; "required": false; }; "editSelectedQualities": { "alias": "editSelectedQualities"; "required": false; }; }, {}, never, never, false, never>;
+}

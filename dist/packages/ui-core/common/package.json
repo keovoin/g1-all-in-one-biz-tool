@@ -1,0 +1,4 @@
+{
+  "module": "../esm2022/common/gauzy-ui-core-common.js",
+  "typings": "gauzy-ui-core-common.d.ts"
+}

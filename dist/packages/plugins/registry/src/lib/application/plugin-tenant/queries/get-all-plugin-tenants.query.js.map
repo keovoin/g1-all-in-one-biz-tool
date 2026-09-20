@@ -1,0 +1,1 @@
+{"version":3,"file":"get-all-plugin-tenants.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-tenant/queries/get-all-plugin-tenants.query.ts"],"names":[],"mappings":";;;AAGA,MAAa,wBAAwB;IAGpC,YAA4B,MAA6B;QAA7B,WAAM,GAAN,MAAM,CAAuB;IAAG,CAAC;;AAH9D,4DAIC;AAHuB,6BAAI,GAAG,yBAAyB,CAAC"}

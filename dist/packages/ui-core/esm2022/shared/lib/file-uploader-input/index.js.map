@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/file-uploader-input/index.ts"],"names":[],"mappings":"AAAA,cAAc,iCAAiC,CAAC;AAChD,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './file-uploader-input.component';\nexport * from './file-uploader-input.module';\n"]}

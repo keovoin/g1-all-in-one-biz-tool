@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../../packages/ui-core/shared/src/lib/modules/selectors/file-provider-selector/index.ts"],"names":[],"mappings":"AAAA,cAAc,oCAAoC,CAAC;AACnD,cAAc,iCAAiC,CAAC","sourcesContent":["export * from './file-provider-selector.component';\nexport * from './file-provider-selector.module';\n"]}

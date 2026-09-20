@@ -1,0 +1,1 @@
+{"version":3,"file":"gauzy-plugin-dashboard-time-track-angular-ui.js","sourceRoot":"","sources":["../../../../../packages/plugins/dashboard-time-track-angular-ui/src/gauzy-plugin-dashboard-time-track-angular-ui.ts"],"names":[],"mappings":"AAAA;;GAEG;AAEH,cAAc,SAAS,CAAC","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\n\nexport * from './index';\n"]}

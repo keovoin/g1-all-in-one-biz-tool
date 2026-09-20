@@ -1,0 +1,1 @@
+//# sourceMappingURL=serializable.interface.js.map

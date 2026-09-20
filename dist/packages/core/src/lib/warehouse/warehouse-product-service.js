@@ -1,0 +1,175 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WarehouseProductService = void 0;
+const tslib_1 = require("tslib");
+const common_1 = require("@nestjs/common");
+const typeorm_1 = require("typeorm");
+const tenant_aware_crud_service_1 = require("./../core/crud/tenant-aware-crud.service");
+const request_context_1 = require("./../core/context/request-context");
+const internal_1 = require("./../core/entities/internal");
+const product_service_1 = require("../product/product.service");
+const type_orm_warehouse_product_variant_repository_1 = require("./repository/type-orm-warehouse-product-variant.repository");
+const mikro_orm_warehouse_product_repository_1 = require("./repository/mikro-orm-warehouse-product.repository");
+const type_orm_warehouse_repository_1 = require("./repository/type-orm-warehouse.repository");
+const type_orm_warehouse_product_repository_1 = require("./repository/type-orm-warehouse-product.repository");
+let WarehouseProductService = class WarehouseProductService extends tenant_aware_crud_service_1.TenantAwareCrudService {
+    constructor(typeOrmWarehouseProductRepository, mikroOrmWarehouseProductRepository, typeOrmWarehouseRepository, typeOrmWarehouseProductVariantRepository, _productService) {
+        super(typeOrmWarehouseProductRepository, mikroOrmWarehouseProductRepository);
+        this.typeOrmWarehouseProductRepository = typeOrmWarehouseProductRepository;
+        this.mikroOrmWarehouseProductRepository = mikroOrmWarehouseProductRepository;
+        this.typeOrmWarehouseRepository = typeOrmWarehouseRepository;
+        this.typeOrmWarehouseProductVariantRepository = typeOrmWarehouseProductVariantRepository;
+        this._productService = _productService;
+    }
+    /**
+     * Retrieves all warehouse products for a given warehouse.
+     *
+     * @param {ID} warehouseId - The ID of the warehouse to fetch products from.
+     * @returns {Promise<IWarehouseProduct[]>} - A list of warehouse products.
+     */
+    async getAllWarehouseProducts(warehouseId) {
+        const tenantId = request_context_1.RequestContext.currentTenantId();
+        // Fetch all warehouse products
+        const warehouseProducts = await this.typeOrmRepository.find({
+            where: { warehouseId, tenantId },
+            relations: {
+                product: true,
+                variants: { variant: true }
+            }
+        });
+        return warehouseProducts;
+    }
+    /**
+     * Creates multiple warehouse products in bulk.
+     *
+     * @param {IWarehouseProductCreateInput[]} warehouseProductCreateInput - Array of warehouse product input data.
+     * @param {ID} warehouseId - The ID of the warehouse where products will be added.
+     * @returns {Promise<IPagination<IWarehouseProduct[]>>} - The created warehouse products with pagination metadata.
+     *
+     * @throws {NotFoundException} If warehouse or products are not found.
+     *
+     * @description
+     * 1. Fetches the warehouse and related products based on provided input.
+     * 2. Creates warehouse products and their variants in bulk.
+     * 3. Saves and returns the created records.
+     */
+    async createWarehouseProductBulk(warehouseProductCreateInput, warehouseId) {
+        const tenantId = request_context_1.RequestContext.currentTenantId();
+        // Extract product IDs from input
+        const productIds = warehouseProductCreateInput.map((pr) => pr.productId);
+        // Fetch warehouse
+        const warehouse = await this.typeOrmWarehouseRepository.findOneBy({ id: warehouseId, tenantId });
+        if (!warehouse) {
+            throw new common_1.NotFoundException(`Warehouse with ID ${warehouseId} not found`);
+        }
+        // Fetch products with variants
+        const products = await this._productService.find({
+            where: { id: (0, typeorm_1.In)(productIds), tenantId },
+            relations: { variants: true }
+        });
+        if (!products.length) {
+            throw new common_1.NotFoundException('No matching products found');
+        }
+        // Create warehouse products in bulk
+        const warehouseProducts = products.map((product) => {
+            const newWarehouseProduct = new internal_1.WarehouseProduct();
+            newWarehouseProduct.warehouse = warehouse;
+            newWarehouseProduct.product = product;
+            newWarehouseProduct.organizationId = warehouse.organizationId;
+            newWarehouseProduct.tenantId = tenantId;
+            // Create warehouse product variants in bulk
+            newWarehouseProduct.variants = product.variants.map((variant) => {
+                const warehouseVariant = new internal_1.WarehouseProductVariant();
+                warehouseVariant.variant = variant;
+                warehouseVariant.organizationId = warehouse.organizationId;
+                warehouseVariant.tenantId = tenantId;
+                return warehouseVariant;
+            });
+            return newWarehouseProduct;
+        });
+        // Save warehouse product variants first
+        await this.typeOrmWarehouseProductVariantRepository.save(warehouseProducts.flatMap((wp) => wp.variants));
+        // Save warehouse products
+        const result = await this.typeOrmRepository.save(warehouseProducts);
+        return { items: result, total: result.length };
+    }
+    /**
+     * Updates the quantity of a warehouse product.
+     *
+     * @param {ID} warehouseProductId - The ID of the warehouse product to update.
+     * @param {number} quantity - The new quantity to be set.
+     * @returns {Promise<IWarehouseProduct>} - The updated warehouse product.
+     *
+     * @throws {NotFoundException} If the warehouse product is not found.
+     *
+     * @description
+     * 1. Fetches the warehouse product by its ID.
+     * 2. Updates the quantity field.
+     * 3. Saves and returns the updated record.
+     */
+    async updateWarehouseProductQuantity(warehouseProductId, quantity) {
+        // Fetch warehouse product
+        const tenantId = request_context_1.RequestContext.currentTenantId();
+        const warehouseProduct = await this.typeOrmRepository.findOneBy({ id: warehouseProductId, tenantId });
+        // Handle missing warehouse product
+        if (!warehouseProduct) {
+            throw new common_1.NotFoundException(`Warehouse product with ID ${warehouseProductId} not found`);
+        }
+        // Update and save warehouse product quantity
+        warehouseProduct.quantity = quantity;
+        return await this.typeOrmRepository.save(warehouseProduct);
+    }
+    /**
+     * Updates the quantity of a warehouse product variant and synchronizes the total quantity.
+     *
+     * @param {ID} warehouseProductVariantId - The ID of the warehouse product variant to update.
+     * @param {number} quantity - The new quantity to be set.
+     * @returns {Promise<IWarehouseProductVariant>} - The updated warehouse product variant.
+     *
+     * @throws {NotFoundException} If the warehouse product variant or its associated warehouse product is not found.
+     *
+     * @description
+     * 1. Updates the `quantity` of the specified warehouse product variant.
+     * 2. Fetches the associated warehouse product and updates its total quantity.
+     * 3. Saves the updated records to the database.
+     */
+    async updateWarehouseProductVariantQuantity(warehouseProductVariantId, quantity) {
+        // Fetch the warehouse product variant along with its associated warehouse product
+        const tenantId = request_context_1.RequestContext.currentTenantId();
+        const warehouseProductVariant = await this.typeOrmWarehouseProductVariantRepository.findOne({
+            where: { id: warehouseProductVariantId, tenantId },
+            relations: { warehouseProduct: true }
+        });
+        if (!warehouseProductVariant) {
+            throw new common_1.NotFoundException('Warehouse product variant not found');
+        }
+        // Update variant quantity
+        warehouseProductVariant.quantity = quantity;
+        const updatedVariant = await this.typeOrmWarehouseProductVariantRepository.save(warehouseProductVariant);
+        // Fetch the associated warehouse product with all its variants
+        const warehouseProduct = await this.typeOrmRepository.findOne({
+            where: { id: warehouseProductVariant.warehouseProduct?.id, tenantId },
+            relations: { variants: true }
+        });
+        if (!warehouseProduct) {
+            throw new common_1.NotFoundException('Warehouse product not found');
+        }
+        // Calculate total quantity of all variants
+        const sumQuantity = warehouseProduct.variants?.reduce((sum, v) => sum + Number(v.quantity), 0) || 0;
+        // Synchronize warehouse product quantity with total variant quantities
+        warehouseProduct.quantity = sumQuantity;
+        // Save updated warehouse product
+        await this.typeOrmRepository.save(warehouseProduct);
+        return updatedVariant;
+    }
+};
+exports.WarehouseProductService = WarehouseProductService;
+exports.WarehouseProductService = WarehouseProductService = tslib_1.__decorate([
+    (0, common_1.Injectable)(),
+    tslib_1.__metadata("design:paramtypes", [type_orm_warehouse_product_repository_1.TypeOrmWarehouseProductRepository,
+        mikro_orm_warehouse_product_repository_1.MikroOrmWarehouseProductRepository,
+        type_orm_warehouse_repository_1.TypeOrmWarehouseRepository,
+        type_orm_warehouse_product_variant_repository_1.TypeOrmWarehouseProductVariantRepository,
+        product_service_1.ProductService])
+], WarehouseProductService);
+//# sourceMappingURL=warehouse-product-service.js.map

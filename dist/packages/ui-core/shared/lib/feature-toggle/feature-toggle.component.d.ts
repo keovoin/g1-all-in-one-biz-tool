@@ -1,0 +1,35 @@
+import { OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { NbDialogService } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
+import { IFeature, IFeatureOrganization, IFeatureToggle, IOrganization, IUser } from '@gauzy/contracts';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { FeatureStoreService, Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class FeatureToggleComponent extends TranslationBaseComponent implements OnInit, OnChanges {
+    private readonly _activatedRoute;
+    private readonly _featureStoreService;
+    private readonly _storeService;
+    readonly translationService: TranslateService;
+    private readonly dialogService;
+    organization: IOrganization;
+    blocks$: Observable<IFeature[][]>;
+    isOrganization: boolean;
+    user: IUser;
+    loading: boolean;
+    featureTenant: IFeatureOrganization[];
+    featureOrganizations: IFeatureOrganization[];
+    featureTogglesDefinitions: IFeatureToggle[];
+    constructor(_activatedRoute: ActivatedRoute, _featureStoreService: FeatureStoreService, _storeService: Store, translationService: TranslateService, dialogService: NbDialogService);
+    ngOnInit(): void;
+    ngOnChanges(change: SimpleChanges): void;
+    getFeatures(): void;
+    getFeatureOrganizations(): void;
+    featureChanged(isEnabled: boolean, feature: IFeature): Promise<void>;
+    emitFeatureToggle(feature: IFeature, isEnabled: boolean): void;
+    enabledFeature(row: IFeature): boolean;
+    getTranslationFormat(text: string): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<FeatureToggleComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FeatureToggleComponent, "ga-feature-toggle", never, { "organization": { "alias": "organization"; "required": false; }; }, {}, never, never, false, never>;
+}

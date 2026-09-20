@@ -1,0 +1,62 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IntegrationAIEventSubscriber = void 0;
+const tslib_1 = require("tslib");
+const core_1 = require("@gauzy/core");
+const common_1 = require("@nestjs/common");
+const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
+const integration_ai_analysis_service_1 = require("./integration-ai-analysis.service");
+let IntegrationAIEventSubscriber = class IntegrationAIEventSubscriber {
+    constructor(_eventBus, _integrationAIAnalysisService) {
+        this._eventBus = _eventBus;
+        this._integrationAIAnalysisService = _integrationAIAnalysisService;
+        this.logger = new common_1.Logger('IntegrationAIEventSubscriber');
+        this.onDestroy$ = new rxjs_1.Subject();
+    }
+    /**
+     * Initializes the module and sets up a subscription to listen for IntegrationEvent events.
+     * The subscription filters the events to only process those related to GitHub integrations.
+     * When an event is received, a GithubInstallationDeleteCommand is executed.
+     */
+    async onModuleInit() {
+        this._eventBus
+            .ofType(core_1.ScreenshotEvent)
+            .pipe((0, operators_1.filter)((event) => !!event.entity), (0, operators_1.tap)(async (event) => {
+            try {
+                switch (event.type) {
+                    case core_1.BaseEntityEventTypeEnum.CREATED:
+                        // Analyze image using Gauzy AI
+                        await this._integrationAIAnalysisService.analyzeAndSaveScreenshot(event);
+                        break;
+                    default:
+                        this.logger.warn(`Unhandled event type: ${event.type}`);
+                        break;
+                }
+            }
+            catch (error) {
+                this.logger.error('Error while processing screenshot event', error.message);
+            }
+        }), (0, operators_1.catchError)((error) => {
+            this.logger.error('Error in event subscription', error.message);
+            throw new common_1.HttpException(`Error in event subscription: ${error.message}`, common_1.HttpStatus.INTERNAL_SERVER_ERROR);
+        }), (0, operators_1.takeUntil)(this.onDestroy$))
+            .subscribe();
+    }
+    /**
+     * This method is called when the module is destroyed.
+     * It emits a value and completes the onDestroy$ subject to ensure
+     * all subscriptions are properly unsubscribed, preventing memory leaks.
+     */
+    async onModuleDestroy() {
+        this.onDestroy$.next();
+        this.onDestroy$.complete();
+    }
+};
+exports.IntegrationAIEventSubscriber = IntegrationAIEventSubscriber;
+exports.IntegrationAIEventSubscriber = IntegrationAIEventSubscriber = tslib_1.__decorate([
+    (0, common_1.Injectable)(),
+    tslib_1.__metadata("design:paramtypes", [core_1.EventBus,
+        integration_ai_analysis_service_1.IntegrationAIAnalysisService])
+], IntegrationAIEventSubscriber);
+//# sourceMappingURL=integration-ai-event.subscriber.js.map

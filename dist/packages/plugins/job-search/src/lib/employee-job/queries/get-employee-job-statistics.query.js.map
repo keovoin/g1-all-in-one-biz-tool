@@ -1,0 +1,1 @@
+{"version":3,"file":"get-employee-job-statistics.query.js","sourceRoot":"","sources":["../../../../../../../../packages/plugins/job-search/src/lib/employee-job/queries/get-employee-job-statistics.query.ts"],"names":[],"mappings":";;;AAGA,MAAa,6BAA6B;IAGzC,YAA4B,OAA+B;QAA/B,YAAO,GAAP,OAAO,CAAwB;IAAG,CAAC;;AAHhE,sEAIC;AAHgB,kCAAI,GAAG,+BAA+B,CAAC"}

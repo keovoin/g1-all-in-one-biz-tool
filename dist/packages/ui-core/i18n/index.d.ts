@@ -1,0 +1,10 @@
+export * from './lib/i18n.module';
+export * from './lib/i18n.service';
+export * from './lib/i18n.providers';
+export * from './lib/translate-http-loader';
+export * from './lib/custom-compiler';
+export * from './lib/custom-handler';
+export * from './lib/custom-parser';
+export * from './lib/custom-translate-loader';
+export * from './lib/translation-base.component';
+export { getBrowserLanguage } from './lib/utils/get-browser-language';

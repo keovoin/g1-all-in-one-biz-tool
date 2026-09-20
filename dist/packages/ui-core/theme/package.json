@@ -1,0 +1,4 @@
+{
+  "module": "../esm2022/theme/gauzy-ui-core-theme.js",
+  "typings": "gauzy-ui-core-theme.d.ts"
+}

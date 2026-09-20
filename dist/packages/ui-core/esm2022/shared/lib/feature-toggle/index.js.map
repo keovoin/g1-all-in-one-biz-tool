@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/feature-toggle/index.ts"],"names":[],"mappings":"AAAA,cAAc,yBAAyB,CAAC;AACxC,cAAc,4BAA4B,CAAC","sourcesContent":["export * from './feature-toggle.module';\nexport * from './feature-toggle.component';\n"]}

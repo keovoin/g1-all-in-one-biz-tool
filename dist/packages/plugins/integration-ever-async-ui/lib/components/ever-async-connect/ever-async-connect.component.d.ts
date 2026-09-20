@@ -1,0 +1,53 @@
+import { OnInit } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { ID, IOrganization } from '@gauzy/contracts';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { IEverAsyncOptions, IEverAsyncSettingsResponse, IEverAsyncSetupResponse, IEverAsyncUserMapping } from '../../services/ever-async.service';
+import * as i0 from "@angular/core";
+export declare class EverAsyncConnectComponent extends TranslationBaseComponent implements OnInit {
+    readonly translateService: TranslateService;
+    private organizationEpoch;
+    private readonly store;
+    private readonly service;
+    private readonly location;
+    private readonly errors;
+    private readonly toastr;
+    readonly organization: import("@angular/core").WritableSignal<IOrganization>;
+    readonly loading: import("@angular/core").WritableSignal<boolean>;
+    readonly verifying: import("@angular/core").WritableSignal<boolean>;
+    readonly connectionOk: import("@angular/core").WritableSignal<boolean>;
+    readonly settings: import("@angular/core").WritableSignal<IEverAsyncSettingsResponse>;
+    readonly credentials: import("@angular/core").WritableSignal<IEverAsyncSetupResponse>;
+    readonly options: import("@angular/core").WritableSignal<IEverAsyncOptions>;
+    readonly showSecret: import("@angular/core").WritableSignal<boolean>;
+    readonly ready: import("@angular/core").WritableSignal<boolean>;
+    readonly form: FormGroup<{
+        serverUrl: FormControl<string>;
+        projectIds: FormControl<string[]>;
+        isEnabled: FormControl<boolean>;
+        userMappings: FormArray<FormGroup<{
+            channel: FormControl<"slack" | "discord">;
+            workspace: FormControl<string>;
+            chatUserId: FormControl<string>;
+            employeeId: FormControl<string>;
+        }>>;
+    }>;
+    constructor(translateService: TranslateService);
+    get canSave(): boolean;
+    get canRotate(): boolean;
+    ngOnInit(): void;
+    goBack(): void;
+    addMapping(mapping?: IEverAsyncUserMapping): void;
+    removeMapping(index: number): void;
+    toggleProject(id: ID): void;
+    testConnection(): void;
+    connect(): void;
+    rotateCredentials(): void;
+    private saved;
+    private failed;
+    get gauzyApiUrl(): string;
+    get connectorConfig(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EverAsyncConnectComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EverAsyncConnectComponent, "ngx-ever-async-connect", never, {}, {}, never, never, false, never>;
+}

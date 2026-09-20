@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/forms/location/index.ts"],"names":[],"mappings":"AAAA,cAAc,2BAA2B,CAAC;AAC1C,cAAc,wBAAwB,CAAC","sourcesContent":["export * from './location-form.component';\nexport * from './location-form.module';\n"]}

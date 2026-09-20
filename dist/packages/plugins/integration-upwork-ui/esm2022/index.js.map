@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../packages/plugins/integration-upwork-ui/src/index.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,cAAc,iCAAiC,CAAC","sourcesContent":["/**\n * Public API Surface of @gauzy/plugin-integration-upwork-ui\n */\nexport * from './lib/integration-upwork-plugin';\n"]}

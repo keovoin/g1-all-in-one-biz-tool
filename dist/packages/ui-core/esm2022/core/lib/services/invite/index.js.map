@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/invite/index.ts"],"names":[],"mappings":"AAAA,cAAc,kBAAkB,CAAC","sourcesContent":["export * from './invite.service';"]}

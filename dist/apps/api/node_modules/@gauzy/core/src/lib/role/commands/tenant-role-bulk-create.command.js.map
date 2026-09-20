@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant-role-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../packages/core/src/lib/role/commands/tenant-role-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,2BAA2B;IAGvC,YAA4B,KAAgB;QAAhB,UAAK,GAAL,KAAK,CAAW;IAAG,CAAC;;AAHjD,kEAIC;AAHgB,gCAAI,GAAG,oBAAoB,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"get-plugin-subscriptions.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-subscription/queries/get-plugin-subscriptions.query.ts"],"names":[],"mappings":";;;AAGA,MAAa,2BAA2B;IAGvC,YAA4B,KAAiC;QAAjC,UAAK,GAAL,KAAK,CAA4B;IAAG,CAAC;;AAHlE,kEAIC;AAHuB,gCAAI,GAAG,+BAA+B,CAAC"}

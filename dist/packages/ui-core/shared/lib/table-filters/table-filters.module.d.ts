@@ -1,0 +1,32 @@
+import * as i0 from "@angular/core";
+import * as i1 from "./organization-contact-filter.component";
+import * as i2 from "./payment-method-filter.component";
+import * as i3 from "./tags-color-filter.component";
+import * as i4 from "./vendor-filter.component";
+import * as i5 from "./expense-category-filter.component";
+import * as i6 from "./product-category-filter.component";
+import * as i7 from "./product-type-filter.component";
+import * as i8 from "./input-filter.component";
+import * as i9 from "./invite-status-filter.component";
+import * as i10 from "./range-filter.component";
+import * as i11 from "./organization-team-filter.component";
+import * as i12 from "./task-status-filter.component";
+import * as i13 from "./toggle-filter/toggle-filter.component";
+import * as i14 from "@angular/common";
+import * as i15 from "@angular/forms";
+import * as i16 from "@ng-select/ng-select";
+import * as i17 from "@ngx-translate/core";
+import * as i18 from "../tags/tags-color-input/tags-color-input.module";
+import * as i19 from "../vendor-select/vendor-select.module";
+import * as i20 from "../expenses/expense-category-select/expense-category-select.module";
+import * as i21 from "../product/product-category-selector/product-category-selector.module";
+import * as i22 from "../product/product-type-selector/product-type-selector.module";
+import * as i23 from "../contact-select/contact-select.module";
+import * as i24 from "../tasks/task-status-select/task-status-select.module";
+import * as i25 from "@nebular/theme";
+import * as i26 from "@fortawesome/angular-fontawesome";
+export declare class TableFiltersModule {
+    static ɵfac: i0.ɵɵFactoryDeclaration<TableFiltersModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<TableFiltersModule, [typeof i1.OrganizationContactFilterComponent, typeof i2.PaymentMethodFilterComponent, typeof i3.TagsColorFilterComponent, typeof i4.VendorFilterComponent, typeof i5.ExpenseCategoryFilterComponent, typeof i6.ProductCategoryFilterComponent, typeof i7.ProductTypeFilterComponent, typeof i8.InputFilterComponent, typeof i9.InviteStatusFilterComponent, typeof i10.RangeFilterComponent, typeof i11.OrganizationTeamFilterComponent, typeof i12.TaskStatusFilterComponent, typeof i13.ToggleFilterComponent], [typeof i14.CommonModule, typeof i15.FormsModule, typeof i15.ReactiveFormsModule, typeof i16.NgSelectModule, typeof i17.TranslateModule, typeof i18.TagsColorInputModule, typeof i19.VendorSelectModule, typeof i20.ExpenseCategorySelectModule, typeof i21.ProductCategorySelectorModule, typeof i22.ProductTypeSelectorModule, typeof i23.ContactSelectModule, typeof i24.TaskStatusSelectModule, typeof i25.NbToggleModule, typeof i26.FontAwesomeModule], never>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<TableFiltersModule>;
+}

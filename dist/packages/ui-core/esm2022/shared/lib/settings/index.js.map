@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/settings/index.ts"],"names":[],"mappings":"AAAA,cAAc,uDAAuD,CAAC;AACtE,cAAc,+BAA+B,CAAC","sourcesContent":["export * from './danger-zone-mutation/danger-zone-mutation.component';\nexport * from './danger-zone-mutation.module';\n"]}

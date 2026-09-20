@@ -1,0 +1,1 @@
+{"version":3,"file":"base-event.js","sourceRoot":"","sources":["../../../../../../packages/core/src/lib/event-bus/base-event.ts"],"names":[],"mappings":";;;AACA,+BAAoC;AAEpC;;GAEG;AACH,MAAsB,SAAS;IAU9B;;;OAGG;IACH;QACC,IAAI,CAAC,EAAE,GAAG,IAAA,SAAM,GAAE,CAAC,CAAC,sBAAsB;QAC1C,IAAI,CAAC,SAAS,GAAG,IAAI,IAAI,EAAE,CAAC;IAC7B,CAAC;CACD;AAlBD,8BAkBC"}

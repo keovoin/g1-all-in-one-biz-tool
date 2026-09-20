@@ -1,0 +1,5 @@
+/**
+ * Public API Surface of @gauzy/plugin-integration-upwork-ui
+ */
+export * from './lib/integration-upwork-plugin';
+//# sourceMappingURL=index.js.map

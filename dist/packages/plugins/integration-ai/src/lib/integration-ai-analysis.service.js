@@ -1,0 +1,105 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IntegrationAIAnalysisService = void 0;
+const tslib_1 = require("tslib");
+const common_1 = require("@nestjs/common");
+const contracts_1 = require("@gauzy/contracts");
+const core_1 = require("@gauzy/core");
+const gauzy_ai_service_1 = require("./gauzy-ai.service");
+let IntegrationAIAnalysisService = class IntegrationAIAnalysisService {
+    constructor(_connectionEntityManager, _integrationTenantService, _gauzyAIService) {
+        this._connectionEntityManager = _connectionEntityManager;
+        this._integrationTenantService = _integrationTenantService;
+        this._gauzyAIService = _gauzyAIService;
+    }
+    /**
+     * Analyze screenshot using Gauzy AI service.
+     *
+     * @param event The screenshot event containing necessary data.
+     */
+    async analyzeAndSaveScreenshot(event) {
+        const { entity, data, file } = event;
+        const user = core_1.RequestContext.currentUser();
+        // Analyze image using Gauzy AI service
+        await this.analyzeImage(entity, data, file, async (result) => {
+            try {
+                if (result) {
+                    const [analysis] = result;
+                    console.log(`Screenshot Analyze Response: %s`, analysis);
+                    const isWorkRelated = analysis.work;
+                    const description = analysis.description || '';
+                    const apps = analysis.apps || [];
+                    // Update screenshot entity
+                    await this._connectionEntityManager.getRepository(core_1.Screenshot).update(entity.id, {
+                        isWorkRelated,
+                        description,
+                        apps
+                    });
+                }
+            }
+            catch (error) {
+                console.log(`Image Analysis Failed. AI Integration Tenant For Employee: (${user.name})`, error);
+            }
+        });
+    }
+    /**
+     * Analyze an image using Gauzy AI service.
+     * @param input The screenshot input data.
+     * @param data The image data buffer.
+     * @param file The uploaded file information.
+     * @param callback The callback function to handle the analysis result.
+     * @returns The image analysis result.
+     */
+    async analyzeImage(input, data, file, callback) {
+        try {
+            const { organizationId } = input;
+            const tenantId = core_1.RequestContext.currentTenantId() || input.tenantId;
+            // Retrieve integration
+            const integration = await this._integrationTenantService.getIntegrationByOptions({
+                organizationId,
+                tenantId,
+                name: contracts_1.IntegrationEnum.GAUZY_AI
+            });
+            // Check if integration exists
+            if (!!integration) {
+                try {
+                    console.log('Screenshot/Image Analyze Starting. AI Integration Tenant: %s', integration);
+                    const integrationId = integration['id'];
+                    // Check if employee performance analysis sync is enabled
+                    await this._integrationTenantService.findIntegrationTenantByEntity({
+                        integrationId,
+                        organizationId,
+                        entityType: contracts_1.IntegrationEntity.EMPLOYEE_PERFORMANCE
+                    });
+                    // Analyze image using Gauzy AI service
+                    const [analysis] = await this._gauzyAIService.analyzeImage(data, file);
+                    if (!analysis.success) {
+                        console.log('Screenshot/Image Analyze Failed. AI Integration Tenant: %s', integration);
+                    }
+                    if (analysis.success && callback) {
+                        // Call the callback function if provided
+                        callback(analysis.data.analysis);
+                    }
+                    return analysis;
+                }
+                catch (error) {
+                    console.log('Error while getting Integration for Gauzy AI', error.message);
+                    return null;
+                }
+            }
+            return null;
+        }
+        catch (error) {
+            // If needed, consider throwing or handling the error appropriately.
+            console.error('Failed to get AI Integration for provided options: %s', error?.message);
+        }
+    }
+};
+exports.IntegrationAIAnalysisService = IntegrationAIAnalysisService;
+exports.IntegrationAIAnalysisService = IntegrationAIAnalysisService = tslib_1.__decorate([
+    (0, common_1.Injectable)(),
+    tslib_1.__metadata("design:paramtypes", [core_1.ConnectionEntityManager,
+        core_1.IntegrationTenantService,
+        gauzy_ai_service_1.GauzyAIService])
+], IntegrationAIAnalysisService);
+//# sourceMappingURL=integration-ai-analysis.service.js.map

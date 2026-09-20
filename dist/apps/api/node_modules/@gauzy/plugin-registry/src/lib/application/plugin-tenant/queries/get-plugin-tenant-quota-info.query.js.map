@@ -1,0 +1,1 @@
+{"version":3,"file":"get-plugin-tenant-quota-info.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-tenant/queries/get-plugin-tenant-quota-info.query.ts"],"names":[],"mappings":";;;AAGA,MAAa,6BAA6B;IAGzC,YAA4B,cAAkB;QAAlB,mBAAc,GAAd,cAAc,CAAI;IAAG,CAAC;;AAHnD,sEAIC;AAHuB,kCAAI,GAAG,gCAAgC,CAAC"}

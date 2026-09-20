@@ -1,0 +1,35 @@
+import { AlertModalComponent } from './alert-modal/alert-modal.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { BackNavigationComponent } from './back-navigation/back-navigation.component';
+import { BadgeLabelComponent } from './badge-label/badge-label.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { DashboardSkeletonComponent } from './dashboard-skeleton/dashboard-skeleton.component';
+import { DateRangeTitleComponent } from './date-range-title/date-range-title.component';
+import { HeaderTitleComponent } from './header-title/header-title.component';
+import { LayoutSelectorComponent } from './layout-selector/layout-selector.component';
+import { UnderConstructionPopupComponent } from './popup/popup.component';
+import { SearchInputComponent } from './search-input/search-input.component';
+import * as i0 from "@angular/core";
+import * as i1 from "./alert-modal/alert-modal.component";
+import * as i2 from "./avatar/avatar.component";
+import * as i3 from "./back-navigation/back-navigation.component";
+import * as i4 from "./badge-label/badge-label.component";
+import * as i5 from "./breadcrumb/breadcrumb.component";
+import * as i6 from "./dashboard-skeleton/dashboard-skeleton.component";
+import * as i7 from "./date-range-title/date-range-title.component";
+import * as i8 from "./header-title/header-title.component";
+import * as i9 from "./layout-selector/layout-selector.component";
+import * as i10 from "./search-input/search-input.component";
+import * as i11 from "./popup/popup.component";
+import * as i12 from "@angular/common";
+import * as i13 from "@angular/router";
+import * as i14 from "@nebular/theme";
+import * as i15 from "../pipes/pipes.module";
+import * as i16 from "@ngx-translate/core";
+import * as i17 from "ngx-permissions";
+export declare const Components: (typeof AlertModalComponent | typeof AvatarComponent | typeof BackNavigationComponent | typeof BadgeLabelComponent | typeof BreadcrumbComponent | typeof DashboardSkeletonComponent | typeof DateRangeTitleComponent | typeof HeaderTitleComponent | typeof LayoutSelectorComponent | typeof UnderConstructionPopupComponent | typeof SearchInputComponent)[];
+export declare class ComponentsModule {
+    static ɵfac: i0.ɵɵFactoryDeclaration<ComponentsModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<ComponentsModule, [typeof i1.AlertModalComponent, typeof i2.AvatarComponent, typeof i3.BackNavigationComponent, typeof i4.BadgeLabelComponent, typeof i5.BreadcrumbComponent, typeof i6.DashboardSkeletonComponent, typeof i7.DateRangeTitleComponent, typeof i8.HeaderTitleComponent, typeof i9.LayoutSelectorComponent, typeof i10.SearchInputComponent, typeof i11.UnderConstructionPopupComponent], [typeof i12.CommonModule, typeof i13.RouterModule, typeof i14.NbCardModule, typeof i14.NbBadgeModule, typeof i14.NbButtonModule, typeof i14.NbTooltipModule, typeof i14.NbIconModule, typeof i15.PipesModule, typeof i16.TranslateModule, typeof i17.NgxPermissionsModule], [typeof i1.AlertModalComponent, typeof i2.AvatarComponent, typeof i3.BackNavigationComponent, typeof i4.BadgeLabelComponent, typeof i5.BreadcrumbComponent, typeof i6.DashboardSkeletonComponent, typeof i7.DateRangeTitleComponent, typeof i8.HeaderTitleComponent, typeof i9.LayoutSelectorComponent, typeof i10.SearchInputComponent, typeof i11.UnderConstructionPopupComponent]>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<ComponentsModule>;
+}

@@ -1,0 +1,55 @@
+{
+  "name": "@gauzy/plugin-legal-ui",
+  "version": "0.1.0",
+  "description": "A plugin for the legal UI in the Ever Gauzy platform, providing components and modules for managing legal documents and agreements.",
+  "author": {
+    "name": "Ever Co. LTD",
+    "email": "ever@ever.co",
+    "url": "https://ever.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ever-co/ever-gauzy",
+    "directory": "packages/plugins/legal-ui"
+  },
+  "bugs": {
+    "url": "https://github.com/ever-co/ever-gauzy/issues"
+  },
+  "homepage": "https://ever.co",
+  "license": "AGPL-3.0",
+  "private": true,
+  "peerDependencies": {
+    "@angular/common": "21.0.7",
+    "@angular/core": "21.0.7"
+  },
+  "dependencies": {
+    "@angular/router": "21.0.7",
+    "@gauzy/ui-core": "^0.1.0",
+    "@nebular/auth": "^17.0.0",
+    "@ngx-translate/core": "^17.0.0",
+    "tslib": "^2.6.2"
+  },
+  "keywords": [
+    "legal",
+    "plugin",
+    "angular",
+    "ui",
+    "gauzy"
+  ],
+  "engines": {
+    "node": ">=22",
+    "yarn": ">=1.22"
+  },
+  "sideEffects": false,
+  "module": "esm2022/gauzy-plugin-legal-ui.js",
+  "typings": "gauzy-plugin-legal-ui.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./gauzy-plugin-legal-ui.d.ts",
+      "default": "./esm2022/gauzy-plugin-legal-ui.js"
+    }
+  }
+}

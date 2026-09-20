@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant-task-size-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/sizes/commands/tenant-task-size-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,+BAA+B;IAG3C,YACiB,OAAkB;QAAlB,YAAO,GAAP,OAAO,CAAW;IAC/B,CAAC;;AALN,0EAMC;AALgB,oCAAI,GAAG,gCAAgC,CAAC"}

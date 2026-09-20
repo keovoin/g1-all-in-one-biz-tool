@@ -1,0 +1,101 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmailTemplateGeneratePreviewHandler = void 0;
+const tslib_1 = require("tslib");
+const cqrs_1 = require("@nestjs/cqrs");
+const Handlebars = require("handlebars");
+const mjml2html = require("mjml");
+const config_1 = require("@gauzy/config");
+const utils_1 = require("@gauzy/utils");
+const email_template_generate_preview_query_1 = require("../email-template.generate-preview.query");
+const moment_extend_1 = require("../../../core/moment-extend");
+let EmailTemplateGeneratePreviewHandler = class EmailTemplateGeneratePreviewHandler {
+    constructor(configService) {
+        this.configService = configService;
+    }
+    async execute(command) {
+        const { input } = command;
+        let textToHtml = input;
+        try {
+            const mjmlToHtml = mjml2html(input);
+            textToHtml = mjmlToHtml.errors.length ? input : mjmlToHtml.html;
+        }
+        catch (error) {
+            // ignore mjml conversion errors for non-mjml text such as subject
+        }
+        const clientBaseUrl = this.configService.get('clientBaseUrl');
+        const host = this.configService.get('host');
+        const { appName, appLogo, appSignature, appLink, companyLink, companyName } = config_1.environment.appIntegrationConfig;
+        const handlebarsTemplate = Handlebars.compile(textToHtml);
+        const html = handlebarsTemplate({
+            organizationName: 'Organization',
+            email: 'user@domain.com',
+            name: 'John Doe',
+            role: 'USER_ROLE',
+            host: clientBaseUrl || host,
+            hostEmail: '(alish@ever.com)',
+            agenda: 'This booking is for gauzy call',
+            description: 'This is a test appointment booking',
+            participantEmails: 'kdashora@gmail.com,testmail@hotmail.com',
+            location: 'zoom.us',
+            duration: 'Fri, Jul 24, 2020 6:00 AM - Fri, Jul 24, 2020 6:15 AM',
+            candidateName: 'Alex',
+            date: 'Thursday, August 27, 2020',
+            interviewerName: 'John Doe',
+            total_hours: '16',
+            average_activates: '25',
+            log_type: 'tracked',
+            projects: ['Gauzy Web Site', 'Gauzy Platform(open-source)'],
+            project: 'Gauzy Web Site',
+            timesheet_action: 'APPROVE/REJECT',
+            equipment_status: 'APPROVE/REJECT',
+            reason: 'reason for this',
+            equipment_name: 'Fiat Freemont',
+            equipment_type: 'Car',
+            equipment_serial_number: 'CB0950AT',
+            manufactured_year: '2015',
+            initial_cost: '40000',
+            currency: 'BGN',
+            max_share_period: '5',
+            autoApproveShare: false,
+            time_off_policy_requires_approval: 'APPROVE/REJECT',
+            time_off_policy_paid_status: true,
+            task_update_status: 'Update/Assign',
+            task_update_title: 'Bug: Consistency in "Time Off" feature',
+            task_update_description: '"Time off" should be called "Time Off" everywhere. \n' +
+                'Fix "Request Days Off" and change it to just "Request". \n' +
+                'Also, check all popups, etc. that it is called "Time Off" (not "Day off" or anything else) everywhere.\n' +
+                '\n' +
+                '![Artboard](https://user-images.githubusercontent.com/6750734/88939490-33939180-d2a4-11ea-8d13-3efed87a7846.png)\n',
+            task_update_estimate: 'estimate',
+            task_update_due_date: (0, moment_extend_1.moment)(new Date()).add(10, 'days').toDate(),
+            task_status: 'In Progress',
+            task_update_project: 'Gauzy Project',
+            task_update_assign_by: 'Ruslan Konviser',
+            task_update_url: 'https://github.com/ever-co/ever-gauzy/issues/1688',
+            inviteCode: (0, utils_1.generateAlphaNumericCode)(),
+            teams: 'Gauzy Team',
+            verificationCode: (0, utils_1.generateAlphaNumericCode)(),
+            appName: appName,
+            appLogo: appLogo,
+            appSignature: appSignature,
+            appLink: appLink,
+            items: [
+                {
+                    tenantName: 'Default',
+                    userName: 'Default',
+                    resetLink: 'https://github.com/ever-co/ever-gauzy'
+                }
+            ],
+            companyLink,
+            companyName
+        });
+        return { html };
+    }
+};
+exports.EmailTemplateGeneratePreviewHandler = EmailTemplateGeneratePreviewHandler;
+exports.EmailTemplateGeneratePreviewHandler = EmailTemplateGeneratePreviewHandler = tslib_1.__decorate([
+    (0, cqrs_1.QueryHandler)(email_template_generate_preview_query_1.EmailTemplateGeneratePreviewQuery),
+    tslib_1.__metadata("design:paramtypes", [config_1.ConfigService])
+], EmailTemplateGeneratePreviewHandler);
+//# sourceMappingURL=email-template.generate-preview.handler.js.map

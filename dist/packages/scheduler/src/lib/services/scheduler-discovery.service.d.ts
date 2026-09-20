@@ -1,0 +1,30 @@
+import { OnApplicationBootstrap, OnApplicationShutdown, OnModuleInit } from '@nestjs/common';
+import { DiscoveryService, MetadataScanner } from '@nestjs/core';
+import { SchedulerRegistry } from '@nestjs/schedule';
+import { ResolvedSchedulerModuleOptions } from '../interfaces/scheduler-module-options.interface';
+import { ScheduledJobMetadataAccessor } from './scheduled-job-metadata.accessor';
+import { SchedulerJobRegistryService } from './scheduler-job-registry.service';
+import { SchedulerJobRunnerService } from './scheduler-job-runner.service';
+export declare class SchedulerDiscoveryService implements OnModuleInit, OnApplicationBootstrap, OnApplicationShutdown {
+    private readonly discoveryService;
+    private readonly metadataScanner;
+    private readonly metadataAccessor;
+    private readonly jobRegistry;
+    private readonly jobRunner;
+    private readonly schedulerRegistry;
+    private readonly moduleOptions;
+    private readonly logger;
+    private readonly registeredScheduleKinds;
+    constructor(discoveryService: DiscoveryService, metadataScanner: MetadataScanner, metadataAccessor: ScheduledJobMetadataAccessor, jobRegistry: SchedulerJobRegistryService, jobRunner: SchedulerJobRunnerService, schedulerRegistry: SchedulerRegistry, moduleOptions: ResolvedSchedulerModuleOptions);
+    onModuleInit(): void;
+    onApplicationBootstrap(): Promise<void>;
+    onApplicationShutdown(): void;
+    private discoverJobs;
+    private registerSchedules;
+    private registerCronJob;
+    private registerIntervalJob;
+    private executeJobWithJitter;
+    private executeJob;
+    private unregisterSchedules;
+    private resolveProviderName;
+}

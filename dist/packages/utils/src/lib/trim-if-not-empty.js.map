@@ -1,0 +1,1 @@
+{"version":3,"file":"trim-if-not-empty.js","sourceRoot":"","sources":["../../../../../packages/utils/src/lib/trim-if-not-empty.ts"],"names":[],"mappings":";;;AAAA,iDAA4C;AAE5C;;;;;;;;;;;;;GAaG;AACI,MAAM,cAAc,GAAG,CAAC,KAAc,EAAsB,EAAE;IACpE,OAAO,IAAA,yBAAU,EAAC,KAAK,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,IAAI,EAAE,CAAC,CAAC,CAAC,SAAS,CAAC;AACrD,CAAC,CAAC;AAFW,QAAA,cAAc,kBAEzB"}

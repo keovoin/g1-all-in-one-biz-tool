@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/proposal/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAC;AACpC,cAAc,6BAA6B,CAAC","sourcesContent":["export * from './proposals.service';\nexport * from './proposal-template.service';\n"]}

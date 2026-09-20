@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/skills/index.ts"],"names":[],"mappings":"AAAA,cAAc,uCAAuC,CAAC;AACtD,cAAc,oCAAoC,CAAC","sourcesContent":["export * from './skills-input/skills-input.component';\nexport * from './skills-input/skills-input.module';\n"]}

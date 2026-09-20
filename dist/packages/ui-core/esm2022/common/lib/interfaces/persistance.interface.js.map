@@ -1,0 +1,1 @@
+{"version":3,"file":"persistance.interface.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/common/src/lib/interfaces/persistance.interface.ts"],"names":[],"mappings":"","sourcesContent":["import { GuiDrag } from './gui-drag.abstract';\n\nexport interface IPersistance {\n\tget state(): Partial<GuiDrag>[];\n}\n"]}

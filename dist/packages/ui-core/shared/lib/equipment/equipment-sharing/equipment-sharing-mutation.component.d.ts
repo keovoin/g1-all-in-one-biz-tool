@@ -1,0 +1,71 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { UntypedFormGroup, UntypedFormBuilder, AbstractControl } from '@angular/forms';
+import { IEquipmentSharing, IEquipment, IEmployee, IOrganizationTeam, IEquipmentSharingPolicy, IOrganization, EquipmentSharingParticipantEnum, IEquipmentSharingCreateInput, IEquipmentSharingUpdateInput } from '@gauzy/contracts';
+import { NbDialogRef } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { EmployeesService, EquipmentService, EquipmentSharingPolicyService, EquipmentSharingService, OrganizationTeamsService, Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class EquipmentSharingMutationComponent extends TranslationBaseComponent implements OnInit, OnDestroy {
+    readonly dialogRef: NbDialogRef<EquipmentSharingMutationComponent>;
+    private readonly equipmentSharingService;
+    private readonly equipmentService;
+    private readonly store;
+    private readonly fb;
+    readonly translationService: TranslateService;
+    private readonly employeesService;
+    private readonly organizationTeamsService;
+    private readonly equipmentSharingPolicyService;
+    constructor(dialogRef: NbDialogRef<EquipmentSharingMutationComponent>, equipmentSharingService: EquipmentSharingService, equipmentService: EquipmentService, store: Store, fb: UntypedFormBuilder, translationService: TranslateService, employeesService: EmployeesService, organizationTeamsService: OrganizationTeamsService, equipmentSharingPolicyService: EquipmentSharingPolicyService);
+    form: UntypedFormGroup;
+    equipmentSharing: IEquipmentSharing;
+    employees: IEmployee[];
+    disabled: boolean;
+    selectedOrganization: IOrganization;
+    requestStatus: number;
+    participants: EquipmentSharingParticipantEnum;
+    teams: IOrganizationTeam[];
+    equipmentItems: IEquipment[];
+    selectedEmployees: string[];
+    selectedTeams: string[];
+    equipmentSharingPolicies: IEquipmentSharingPolicy[];
+    selectedEquipmentSharingPolicy: string;
+    requestStatuses: number[];
+    equipmentSharingParticipantEnum: typeof EquipmentSharingParticipantEnum;
+    date1: Date;
+    date2: Date;
+    filter: any;
+    periodsUnderUse: any[];
+    selectedItem: IEquipment;
+    shareRequestDay: AbstractControl;
+    shareStartDay: AbstractControl;
+    shareEndDay: AbstractControl;
+    ngOnInit(): void;
+    parseInt(value: any): number;
+    ngOnDestroy(): void;
+    initializeForm(): Promise<void>;
+    /**
+     * Load equipment sharing policies for the selected organization.
+     */
+    loadEquipmentSharingPolicy(): Promise<void>;
+    onEquipmentSharingPolicySelected(equipmentSharingPolicy: string): void;
+    onSaveRequest(): Promise<void>;
+    closeDialog(equipmentSharing?: IEquipmentSharingCreateInput | IEquipmentSharingUpdateInput): Promise<void>;
+    loadEquipmentItems(): Promise<void>;
+    loadEmployees(): Promise<void>;
+    loadTeams(): Promise<void>;
+    loadRequestStatus(): void;
+    setRequestStatus(statusValue: string): void;
+    onEmployeesSelected(employees: string[]): void;
+    onTeamsSelected(teamsSelection: string[]): void;
+    onParticipantsChange(participants: EquipmentSharingParticipantEnum): void;
+    validateForm(): void;
+    checkIfDateBetweenPeriods(periods: {
+        startDate: Date;
+        endDate: Date;
+    }[], dateForCheck: Date): boolean;
+    datePickerFilterPredicate(date: Date): boolean;
+    getStatus(id: number): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EquipmentSharingMutationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EquipmentSharingMutationComponent, "ngx-equipment-sharing-mutation", never, {}, {}, never, never, false, never>;
+}

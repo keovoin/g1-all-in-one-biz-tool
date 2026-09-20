@@ -1,0 +1,30 @@
+import { __decorate } from "tslib";
+import { Component } from '@angular/core';
+import { UntilDestroy } from '@ngneat/until-destroy';
+import { BehaviorSubject } from 'rxjs';
+import { faqs } from './faq-setting';
+import * as i0 from "@angular/core";
+import * as i1 from "@nebular/theme";
+import * as i2 from "@angular/common";
+import * as i3 from "@ngx-translate/core";
+let NgxFaqComponent = class NgxFaqComponent {
+    constructor() {
+        this._faqs$ = new BehaviorSubject([]);
+        this.faqs$ = this._faqs$.asObservable();
+    }
+    ngOnInit() {
+        this._faqs$.next(faqs);
+    }
+    ngOnDestroy() { }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: NgxFaqComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "17.0.0", version: "21.0.7", type: NgxFaqComponent, isStandalone: false, selector: "ngx-faq", ngImport: i0, template: "<div class=\"faq\">\n  <div>\n    <h5 class=\"faq-heading\">\n      {{ 'FORGOT_PASSWORD_PAGE.FAQ_TITLE' | translate }}\n    </h5>\n    @for (item of faqs$ | async; track item) {\n      <div class=\"single-faq\">\n        <div class=\"heading-wrapper\">\n          <nb-icon [icon]=\"item.icon\"></nb-icon>\n          <h6 class=\"side-small-heading\">{{ item.title }}</h6>\n        </div>\n        <p class=\"side-description\">{{ item.content }}</p>\n        <div class=\"hr-div-soft\"></div>\n      </div>\n    }\n  </div>\n  <span>\n    <button nbButton outline status=\"primary\" size=\"small\" class=\"learn-more\">\n      {{ 'FORGOT_PASSWORD_PAGE.FAQ_LEARN_MORE' | translate }}\n    </button>\n  </span>\n</div>\n", styles: [".faq{width:260px;padding:20px;background:#f56d580d;border-radius:var(--border-radius);display:flex;flex-direction:column;justify-content:space-between}.faq .faq-heading,.faq .single-faq{padding-left:8px;padding-right:8px}.faq .faq-heading{font-family:Inter;font-size:18px;font-style:normal;font-weight:600;line-height:22px;letter-spacing:-.009em;text-align:left;color:var(--text-basic-color);margin-bottom:19px}.faq .heading-wrapper{display:flex}.faq .heading-wrapper nb-icon{margin-right:10px;color:var(--color-primary-500)}.faq .heading-wrapper .side-small-heading{font-family:Inter;font-size:14px;font-style:normal;font-weight:600;line-height:17px;letter-spacing:0em;text-align:left;color:var(--text-basic-color)}.faq .side-description{font-family:Inter;font-size:12px;font-style:normal;font-weight:400;line-height:16px;letter-spacing:0em;text-align:left;color:var(--text-basic-color)}.faq .learn-more{margin-top:34px}.faq .hr-div-soft{width:100%;margin-bottom:15px}@media screen and (max-width:790px){.faq{width:476px;margin-top:30px}}@media screen and (max-width:490px){.faq{display:none}}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"], dependencies: [{ kind: "component", type: i1.NbButtonComponent, selector: "button[nbButton],a[nbButton],input[type=\"button\"][nbButton],input[type=\"submit\"][nbButton]", inputs: ["hero"] }, { kind: "component", type: i1.NbIconComponent, selector: "nb-icon", inputs: ["icon", "pack", "options", "status", "config"] }, { kind: "pipe", type: i2.AsyncPipe, name: "async" }, { kind: "pipe", type: i3.TranslatePipe, name: "translate" }] }); }
+};
+NgxFaqComponent = __decorate([
+    UntilDestroy({ checkProperties: true })
+], NgxFaqComponent);
+export { NgxFaqComponent };
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: NgxFaqComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'ngx-faq', standalone: false, template: "<div class=\"faq\">\n  <div>\n    <h5 class=\"faq-heading\">\n      {{ 'FORGOT_PASSWORD_PAGE.FAQ_TITLE' | translate }}\n    </h5>\n    @for (item of faqs$ | async; track item) {\n      <div class=\"single-faq\">\n        <div class=\"heading-wrapper\">\n          <nb-icon [icon]=\"item.icon\"></nb-icon>\n          <h6 class=\"side-small-heading\">{{ item.title }}</h6>\n        </div>\n        <p class=\"side-description\">{{ item.content }}</p>\n        <div class=\"hr-div-soft\"></div>\n      </div>\n    }\n  </div>\n  <span>\n    <button nbButton outline status=\"primary\" size=\"small\" class=\"learn-more\">\n      {{ 'FORGOT_PASSWORD_PAGE.FAQ_LEARN_MORE' | translate }}\n    </button>\n  </span>\n</div>\n", styles: [".faq{width:260px;padding:20px;background:#f56d580d;border-radius:var(--border-radius);display:flex;flex-direction:column;justify-content:space-between}.faq .faq-heading,.faq .single-faq{padding-left:8px;padding-right:8px}.faq .faq-heading{font-family:Inter;font-size:18px;font-style:normal;font-weight:600;line-height:22px;letter-spacing:-.009em;text-align:left;color:var(--text-basic-color);margin-bottom:19px}.faq .heading-wrapper{display:flex}.faq .heading-wrapper nb-icon{margin-right:10px;color:var(--color-primary-500)}.faq .heading-wrapper .side-small-heading{font-family:Inter;font-size:14px;font-style:normal;font-weight:600;line-height:17px;letter-spacing:0em;text-align:left;color:var(--text-basic-color)}.faq .side-description{font-family:Inter;font-size:12px;font-style:normal;font-weight:400;line-height:16px;letter-spacing:0em;text-align:left;color:var(--text-basic-color)}.faq .learn-more{margin-top:34px}.faq .hr-div-soft{width:100%;margin-bottom:15px}@media screen and (max-width:790px){.faq{width:476px;margin-top:30px}}@media screen and (max-width:490px){.faq{display:none}}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"] }]
+        }] });
+//# sourceMappingURL=faq.component.js.map

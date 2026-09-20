@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/counter-point/index.ts"],"names":[],"mappings":"AAAA,cAAc,2BAA2B,CAAC;AAC1C,cAAc,qBAAqB,CAAC","sourcesContent":["export * from './counter-point.component';\nexport * from './point/point.class';\n"]}

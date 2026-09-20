@@ -1,0 +1,63 @@
+import { OnInit } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { NbDialogRef } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
+import moment from 'moment';
+import { IIncome, IOrganization, ISkill, IOrganizationAward, ILanguage, IOrganizationLanguage, ClientFocusEnum, MinimumProjectSizeEnum } from '@gauzy/contracts';
+import { OrganizationAwardsService, OrganizationLanguagesService, Store, ToastrService } from '@gauzy/ui-core/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import * as i0 from "@angular/core";
+export declare class PublicPageOrganizationMutationComponent extends TranslationBaseComponent implements OnInit {
+    readonly translateService: TranslateService;
+    private readonly fb;
+    private readonly dialogRef;
+    private readonly toastrService;
+    private readonly organizationAwardsService;
+    private readonly organizationLanguagesService;
+    private readonly store;
+    income: IIncome;
+    organization?: IOrganization;
+    client_focus: ClientFocusEnum[];
+    minimumProjectSizes: MinimumProjectSizeEnum[];
+    selectedLanguageLevel: string;
+    showAddAward: boolean;
+    showAddLanguage: boolean;
+    awardExist: boolean;
+    languageExist: boolean;
+    organizationId: string;
+    tenantId: string;
+    form: UntypedFormGroup;
+    selectedLanguage: ILanguage;
+    awards: IOrganizationAward[];
+    organization_languages: IOrganizationLanguage[];
+    skills: ISkill[];
+    languages: ILanguage[];
+    moment: typeof moment;
+    get totalEmployees(): any;
+    get banner(): any;
+    get name(): any;
+    get founded(): any;
+    get short_description(): any;
+    get overview(): any;
+    selectedClientFocus: any;
+    constructor(translateService: TranslateService, fb: UntypedFormBuilder, dialogRef: NbDialogRef<PublicPageOrganizationMutationComponent>, toastrService: ToastrService, organizationAwardsService: OrganizationAwardsService, organizationLanguagesService: OrganizationLanguagesService, store: Store);
+    ngOnInit(): void;
+    editPublicPage(): void;
+    close(): void;
+    private _initializeForm;
+    selectedSkillsHandler(ev: any): void;
+    selectedClientFocusHandler(ev: any): void;
+    selectedLanguageHandler(ev: any): void;
+    changeShowAction(sel: any): void;
+    addAward(name: string, year: string): Promise<void>;
+    addLanguage(language: ILanguage, level: string, organization: IOrganization, name: string): Promise<void>;
+    removeAward(award: any): Promise<void>;
+    removeLanguage(language: any): Promise<void>;
+    private loadAwards;
+    /**
+     * Load languages
+     */
+    private loadLanguages;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PublicPageOrganizationMutationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<PublicPageOrganizationMutationComponent, "ngx-public-page-organization-mutation", never, { "selectedClientFocus": { "alias": "selectedClientFocus"; "required": false; }; }, {}, never, never, false, never>;
+}

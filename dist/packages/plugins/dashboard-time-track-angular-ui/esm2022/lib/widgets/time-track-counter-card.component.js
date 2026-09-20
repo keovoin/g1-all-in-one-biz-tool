@@ -1,0 +1,66 @@
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { NbButtonModule, NbIconModule } from '@nebular/theme';
+import { TranslateModule } from '@ngx-translate/core';
+import { CounterPointComponent } from '@gauzy/ui-core/shared';
+import * as i0 from "@angular/core";
+import * as i1 from "@nebular/theme";
+import * as i2 from "@ngx-translate/core";
+/**
+ * Presentational body shared by the six Time Tracking counter widgets.
+ *
+ * It renders the inside of the legacy dashboard counter (large value plus the
+ * `gauzy-counter-point` strip) and adds the two states a canvas-hosted widget
+ * needs but the legacy page never had: a loading skeleton and a recoverable
+ * error state.
+ *
+ * It deliberately renders NO card and NO title: on a canvas every widget is
+ * already wrapped by `<ga-dashboard-widget-host>`, which owns the `nb-card`, the
+ * header title and the edit-mode menu. Rendering our own would nest a card in a
+ * card and print the title twice.
+ *
+ * Purely presentational on purpose — all fetching lives in
+ * `BaseTimeTrackCounterWidgetComponent`, so this component stays trivially
+ * reusable by any future counter.
+ */
+export class TimeTrackCounterCardComponent {
+    constructor() {
+        /**
+         * Optional translation key for a muted line under the counter.
+         *
+         * Used by the range-aware counters to say what the number actually covers
+         * ("Worked over the period") when the selected range is not the one the host
+         * header implies. `null` — the default — renders nothing, because repeating
+         * the host's title inside the card is pure noise.
+         */
+        this.captionKey = input(null, ...(ngDevMode ? [{ debugName: "captionKey" }] : []));
+        /** Already formatted value shown as the headline figure (`"12"`, `"08:15:00"`, `"64%"`). */
+        this.value = input('', ...(ngDevMode ? [{ debugName: "value" }] : []));
+        /** Raw numeric value driving the counter-point strip. */
+        this.counterValue = input(0, ...(ngDevMode ? [{ debugName: "counterValue" }] : []));
+        /** Denominator for the counter-point strip. `0` falls back to a full day. */
+        this.total = input(0, ...(ngDevMode ? [{ debugName: "total" }] : []));
+        /**
+         * Nebular status name used to colour filled points (`info`, `success`, …).
+         *
+         * A status — not a hex — because `CounterPointComponent` interpolates this
+         * into `var(--color-<value>-default)`, which is what keeps the strip correct
+         * in every theme.
+         */
+        this.color = input('', ...(ngDevMode ? [{ debugName: "color" }] : []));
+        /** Renders a progress bar instead of the point strip (percentage counters). */
+        this.progress = input(false, ...(ngDevMode ? [{ debugName: "progress" }] : []));
+        /** Shows the skeleton instead of the value. */
+        this.loading = input(false, ...(ngDevMode ? [{ debugName: "loading" }] : []));
+        /** Non-null switches the card into its error state. */
+        this.error = input(null, ...(ngDevMode ? [{ debugName: "error" }] : []));
+        /** Emitted when the user asks for a re-fetch from the error state. */
+        this.retry = output();
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: TimeTrackCounterCardComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "17.0.0", version: "21.0.7", type: TimeTrackCounterCardComponent, isStandalone: true, selector: "gz-time-track-counter-card", inputs: { captionKey: { classPropertyName: "captionKey", publicName: "captionKey", isSignal: true, isRequired: false, transformFunction: null }, value: { classPropertyName: "value", publicName: "value", isSignal: true, isRequired: false, transformFunction: null }, counterValue: { classPropertyName: "counterValue", publicName: "counterValue", isSignal: true, isRequired: false, transformFunction: null }, total: { classPropertyName: "total", publicName: "total", isSignal: true, isRequired: false, transformFunction: null }, color: { classPropertyName: "color", publicName: "color", isSignal: true, isRequired: false, transformFunction: null }, progress: { classPropertyName: "progress", publicName: "progress", isSignal: true, isRequired: false, transformFunction: null }, loading: { classPropertyName: "loading", publicName: "loading", isSignal: true, isRequired: false, transformFunction: null }, error: { classPropertyName: "error", publicName: "error", isSignal: true, isRequired: false, transformFunction: null } }, outputs: { retry: "retry" }, ngImport: i0, template: "@if (error()) {\n\t<div class=\"counter-error\" role=\"alert\">\n\t\t<div class=\"counter-error-text\">\n\t\t\t<nb-icon icon=\"alert-triangle-outline\" status=\"danger\"></nb-icon>\n\t\t\t<span class=\"counter-error-label\" [title]=\"error()\">\n\t\t\t\t{{ 'DASHBOARD_PAGE.BUILDER.WIDGETS.ERROR' | translate }}\n\t\t\t</span>\n\t\t</div>\n\t\t<button nbButton ghost size=\"tiny\" status=\"basic\" type=\"button\" (click)=\"retry.emit()\">\n\t\t\t{{ 'DASHBOARD_PAGE.BUILDER.WIDGETS.RETRY' | translate }}\n\t\t</button>\n\t</div>\n} @else if (loading()) {\n\t<!-- <output> carries an implicit `status` live region, so no explicit role. -->\n\t<output\n\t\tclass=\"counter-skeleton\"\n\t\taria-busy=\"true\"\n\t\t[attr.aria-label]=\"'DASHBOARD_PAGE.BUILDER.WIDGETS.LOADING' | translate\"\n\t>\n\t\t<!-- `span`, not `div`: `<output>` only accepts phrasing content. The\n\t\t     skeleton is a column flex container, so the spans are blockified as\n\t\t     flex items and keep their explicit height/width. -->\n\t\t<span class=\"skeleton-line skeleton-value\"></span>\n\t\t<span class=\"skeleton-line skeleton-strip\"></span>\n\t</output>\n} @else {\n\t<div class=\"h1 counter-value\">{{ value() }}</div>\n\t<div class=\"counter-container\">\n\t\t<gauzy-counter-point\n\t\t\t[total]=\"total()\"\n\t\t\t[value]=\"counterValue()\"\n\t\t\t[color]=\"color()\"\n\t\t\t[progress]=\"progress()\"\n\t\t></gauzy-counter-point>\n\t</div>\n\n\t@if (captionKey(); as caption) {\n\t\t<div class=\"counter-caption\">{{ caption | translate }}</div>\n\t}\n}\n", styles: [":host{display:flex;flex-direction:column;justify-content:flex-start;height:100%;width:100%;min-width:0;overflow:hidden;font-size:12px;line-height:15px}.counter-value{width:100%;margin:0;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-container{width:100%;margin-top:0;padding-top:.5rem}.counter-caption{margin-top:.375rem;color:var(--text-hint-color);font-size:12px;line-height:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-skeleton{display:flex;flex-direction:column;gap:.75rem}.counter-skeleton .skeleton-line{border-radius:var(--border-radius);background:linear-gradient(90deg,var(--background-basic-color-2) 25%,var(--background-basic-color-3) 37%,var(--background-basic-color-2) 63%);background-size:400% 100%;animation:counter-skeleton-shimmer 1.4s ease infinite}.counter-skeleton .skeleton-value{height:30px;width:45%}.counter-skeleton .skeleton-strip{height:10px;width:71%}@media(prefers-reduced-motion:reduce){.counter-skeleton .skeleton-line{animation:none}}@keyframes counter-skeleton-shimmer{0%{background-position:100% 50%}to{background-position:0 50%}}.counter-error{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem}.counter-error .counter-error-text{display:flex;align-items:center;gap:.375rem;color:var(--text-hint-color);font-size:12px;line-height:15px}.counter-error .counter-error-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-error nb-icon{height:14px;width:14px}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"], dependencies: [{ kind: "ngmodule", type: NbButtonModule }, { kind: "component", type: i1.NbButtonComponent, selector: "button[nbButton],a[nbButton],input[type=\"button\"][nbButton],input[type=\"submit\"][nbButton]", inputs: ["hero"] }, { kind: "ngmodule", type: NbIconModule }, { kind: "component", type: i1.NbIconComponent, selector: "nb-icon", inputs: ["icon", "pack", "options", "status", "config"] }, { kind: "ngmodule", type: TranslateModule }, { kind: "component", type: CounterPointComponent, selector: "gauzy-counter-point", inputs: ["total", "value", "color", "progress"] }, { kind: "pipe", type: i2.TranslatePipe, name: "translate" }], changeDetection: i0.ChangeDetectionStrategy.OnPush }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: TimeTrackCounterCardComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'gz-time-track-counter-card', standalone: true, imports: [NbButtonModule, NbIconModule, TranslateModule, CounterPointComponent], changeDetection: ChangeDetectionStrategy.OnPush, template: "@if (error()) {\n\t<div class=\"counter-error\" role=\"alert\">\n\t\t<div class=\"counter-error-text\">\n\t\t\t<nb-icon icon=\"alert-triangle-outline\" status=\"danger\"></nb-icon>\n\t\t\t<span class=\"counter-error-label\" [title]=\"error()\">\n\t\t\t\t{{ 'DASHBOARD_PAGE.BUILDER.WIDGETS.ERROR' | translate }}\n\t\t\t</span>\n\t\t</div>\n\t\t<button nbButton ghost size=\"tiny\" status=\"basic\" type=\"button\" (click)=\"retry.emit()\">\n\t\t\t{{ 'DASHBOARD_PAGE.BUILDER.WIDGETS.RETRY' | translate }}\n\t\t</button>\n\t</div>\n} @else if (loading()) {\n\t<!-- <output> carries an implicit `status` live region, so no explicit role. -->\n\t<output\n\t\tclass=\"counter-skeleton\"\n\t\taria-busy=\"true\"\n\t\t[attr.aria-label]=\"'DASHBOARD_PAGE.BUILDER.WIDGETS.LOADING' | translate\"\n\t>\n\t\t<!-- `span`, not `div`: `<output>` only accepts phrasing content. The\n\t\t     skeleton is a column flex container, so the spans are blockified as\n\t\t     flex items and keep their explicit height/width. -->\n\t\t<span class=\"skeleton-line skeleton-value\"></span>\n\t\t<span class=\"skeleton-line skeleton-strip\"></span>\n\t</output>\n} @else {\n\t<div class=\"h1 counter-value\">{{ value() }}</div>\n\t<div class=\"counter-container\">\n\t\t<gauzy-counter-point\n\t\t\t[total]=\"total()\"\n\t\t\t[value]=\"counterValue()\"\n\t\t\t[color]=\"color()\"\n\t\t\t[progress]=\"progress()\"\n\t\t></gauzy-counter-point>\n\t</div>\n\n\t@if (captionKey(); as caption) {\n\t\t<div class=\"counter-caption\">{{ caption | translate }}</div>\n\t}\n}\n", styles: [":host{display:flex;flex-direction:column;justify-content:flex-start;height:100%;width:100%;min-width:0;overflow:hidden;font-size:12px;line-height:15px}.counter-value{width:100%;margin:0;font-variant-numeric:tabular-nums;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-container{width:100%;margin-top:0;padding-top:.5rem}.counter-caption{margin-top:.375rem;color:var(--text-hint-color);font-size:12px;line-height:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-skeleton{display:flex;flex-direction:column;gap:.75rem}.counter-skeleton .skeleton-line{border-radius:var(--border-radius);background:linear-gradient(90deg,var(--background-basic-color-2) 25%,var(--background-basic-color-3) 37%,var(--background-basic-color-2) 63%);background-size:400% 100%;animation:counter-skeleton-shimmer 1.4s ease infinite}.counter-skeleton .skeleton-value{height:30px;width:45%}.counter-skeleton .skeleton-strip{height:10px;width:71%}@media(prefers-reduced-motion:reduce){.counter-skeleton .skeleton-line{animation:none}}@keyframes counter-skeleton-shimmer{0%{background-position:100% 50%}to{background-position:0 50%}}.counter-error{display:flex;flex-direction:column;align-items:flex-start;gap:.25rem}.counter-error .counter-error-text{display:flex;align-items:center;gap:.375rem;color:var(--text-hint-color);font-size:12px;line-height:15px}.counter-error .counter-error-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.counter-error nb-icon{height:14px;width:14px}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"] }]
+        }], propDecorators: { captionKey: [{ type: i0.Input, args: [{ isSignal: true, alias: "captionKey", required: false }] }], value: [{ type: i0.Input, args: [{ isSignal: true, alias: "value", required: false }] }], counterValue: [{ type: i0.Input, args: [{ isSignal: true, alias: "counterValue", required: false }] }], total: [{ type: i0.Input, args: [{ isSignal: true, alias: "total", required: false }] }], color: [{ type: i0.Input, args: [{ isSignal: true, alias: "color", required: false }] }], progress: [{ type: i0.Input, args: [{ isSignal: true, alias: "progress", required: false }] }], loading: [{ type: i0.Input, args: [{ isSignal: true, alias: "loading", required: false }] }], error: [{ type: i0.Input, args: [{ isSignal: true, alias: "error", required: false }] }], retry: [{ type: i0.Output, args: ["retry"] }] } });
+//# sourceMappingURL=time-track-counter-card.component.js.map

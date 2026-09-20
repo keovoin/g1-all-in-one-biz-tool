@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TenantRoleBulkCreateCommand = void 0;
+class TenantRoleBulkCreateCommand {
+    constructor(input) {
+        this.input = input;
+    }
+}
+exports.TenantRoleBulkCreateCommand = TenantRoleBulkCreateCommand;
+TenantRoleBulkCreateCommand.type = '[Role] Bulk Create';
+//# sourceMappingURL=tenant-role-bulk-create.command.js.map

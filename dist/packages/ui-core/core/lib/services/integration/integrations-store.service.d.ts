@@ -1,0 +1,31 @@
+import { IIntegration, IIntegrationFilter, IIntegrationGroup } from '@gauzy/contracts';
+import { Observable } from 'rxjs';
+import { IntegrationsService } from './integrations.service';
+import { ErrorHandlingService } from '../notification';
+import * as i0 from "@angular/core";
+export declare const InitialFilter: IIntegrationFilter;
+export declare class IntegrationsStoreService {
+    private _integrationsService;
+    private _errorHandlingService;
+    private _integrations$;
+    integrations$: Observable<IIntegration[]>;
+    private _integrationGroups$;
+    integrationGroups$: Observable<IIntegrationGroup[]>;
+    private _isLoading$;
+    isLoading$: Observable<boolean>;
+    private _selectedIntegrationTypeId$;
+    selectedIntegrationTypeId$: Observable<string>;
+    private _selectedIntegrationFilter$;
+    selectedIntegrationFilter$: Observable<string>;
+    private _filters$;
+    constructor(_integrationsService: IntegrationsService, _errorHandlingService: ErrorHandlingService);
+    private _loadIntegrations;
+    private _loadIntegrationGroups;
+    private _mapToDefaultType;
+    setSelectedIntegrationTypeId(integrationTypeId: string): void;
+    setSelectedIntegrationFilter(filter: string): void;
+    searchIntegration(searchQuery: string): void;
+    clearFilters(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<IntegrationsStoreService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<IntegrationsStoreService>;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/editable-grid/index.ts"],"names":[],"mappings":"AAAA,cAAc,iCAAiC,CAAC;AAChD,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './gauzy-editable-grid.component';\nexport * from './gauzy-editable-grid.module';\n"]}

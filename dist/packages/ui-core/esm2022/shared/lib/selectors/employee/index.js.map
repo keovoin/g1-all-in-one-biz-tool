@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/selectors/employee/index.ts"],"names":[],"mappings":"AAAA,cAAc,oBAAoB,CAAC;AACnC,cAAc,sBAAsB,CAAC","sourcesContent":["export * from './default-employee';\nexport * from './employee.component';\n"]}

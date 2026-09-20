@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/key-result/index.ts"],"names":[],"mappings":"AAAA,cAAc,4BAA4B,CAAC;AAC3C,cAAc,qBAAqB,CAAC","sourcesContent":["export * from './keyresult-update.service';\nexport * from './keyresult.service';"]}

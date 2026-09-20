@@ -1,0 +1,1 @@
+{"version":3,"file":"organization-project-status-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/statuses/commands/organization-project-status-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,0CAA0C;IAGtD,YACiB,KAA2B;QAA3B,UAAK,GAAL,KAAK,CAAsB;IACxC,CAAC;;AALN,gGAMC;AALgB,+CAAI,GAAG,gDAAgD,CAAC"}

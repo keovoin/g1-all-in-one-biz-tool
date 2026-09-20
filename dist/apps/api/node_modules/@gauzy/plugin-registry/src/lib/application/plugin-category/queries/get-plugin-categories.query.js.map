@@ -1,0 +1,1 @@
+{"version":3,"file":"get-plugin-categories.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-category/queries/get-plugin-categories.query.ts"],"names":[],"mappings":";;;AAIA,MAAa,wBAAwB;IAGpC,YAA4B,OAA+C;QAA/C,YAAO,GAAP,OAAO,CAAwC;IAAG,CAAC;;AAHhF,4DAIC;AAHgB,6BAAI,GAAG,kCAAkC,CAAC"}

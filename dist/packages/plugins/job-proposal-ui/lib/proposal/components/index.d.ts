@@ -1,0 +1,14 @@
+import { ProposalLayoutComponent } from './proposal-layout.component';
+import { ProposalComponent } from './proposal/proposal.component';
+import { ProposalDetailsComponent } from './proposal-details/proposal-details.component';
+import { ProposalEditComponent } from './proposal-edit/proposal-edit.component';
+import { ProposalRegisterComponent } from './proposal-register/proposal-register.component';
+import { ProposalStatusComponent } from './table-components/proposal-status/proposal-status.component';
+export { ProposalLayoutComponent } from './proposal-layout.component';
+export { ProposalComponent } from './proposal/proposal.component';
+export { ProposalDetailsComponent } from './proposal-details/proposal-details.component';
+export { ProposalEditComponent } from './proposal-edit/proposal-edit.component';
+export { ProposalRegisterComponent } from './proposal-register/proposal-register.component';
+export { JobTitleComponent } from './table-components/job-title/job-title.component';
+export { ProposalStatusComponent } from './table-components/proposal-status/proposal-status.component';
+export declare const COMPONENTS: (typeof ProposalRegisterComponent | typeof ProposalEditComponent | typeof ProposalDetailsComponent | typeof ProposalComponent | typeof ProposalLayoutComponent | typeof ProposalStatusComponent)[];

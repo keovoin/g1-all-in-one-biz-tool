@@ -1,0 +1,56 @@
+{
+  "name": "@gauzy/ui-react",
+  "version": "0.1.0",
+  "description": "React-to-Angular bridge for Gauzy UI plugins. Renders React components inside Angular with access to Angular services.",
+  "author": {
+    "name": "Ever Co. LTD",
+    "email": "ever@ever.co",
+    "url": "https://ever.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ever-co/ever-gauzy",
+    "directory": "packages/ui-react"
+  },
+  "bugs": {
+    "url": "https://github.com/ever-co/ever-gauzy/issues"
+  },
+  "homepage": "https://ever.co",
+  "license": "AGPL-3.0",
+  "private": true,
+  "peerDependencies": {
+    "@angular/common": "21.0.7",
+    "@angular/core": "21.0.7",
+    "@gauzy/plugin-ui": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rxjs": "^7.0.0"
+  },
+  "keywords": [
+    "gauzy",
+    "ui-react",
+    "angular",
+    "react",
+    "plugin",
+    "ever-gauzy"
+  ],
+  "engines": {
+    "node": ">=22",
+    "yarn": ">=1.22"
+  },
+  "sideEffects": false,
+  "module": "esm2022/gauzy-ui-react.js",
+  "typings": "gauzy-ui-react.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./gauzy-ui-react.d.ts",
+      "default": "./esm2022/gauzy-ui-react.js"
+    }
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/timesheet/activities/index.ts"],"names":[],"mappings":"AAAA,cAAc,yCAAyC,CAAC;AACxD,cAAc,sCAAsC,CAAC","sourcesContent":["export * from './activity-item/activity-item.component';\nexport * from './activity-item/activity-item.module';\n"]}

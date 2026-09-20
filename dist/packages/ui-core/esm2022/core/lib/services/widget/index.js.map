@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/widget/index.ts"],"names":[],"mappings":"AAAA,cAAc,2BAA2B,CAAC;AAC1C,cAAc,yBAAyB,CAAC","sourcesContent":["export * from './widget-registry.service';\nexport * from './widget-registry.types';\n"]}

@@ -1,0 +1,30 @@
+import { OnDestroy } from '@angular/core';
+import { GuiDrag } from '@gauzy/ui-core/common';
+import { Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class WindowService implements OnDestroy {
+    private readonly store;
+    private _windowsRef;
+    private _windows;
+    private _windowLayoutPersistance;
+    private _windowsTakers;
+    private _localStorage;
+    private _strategy;
+    private _windows$;
+    constructor(store: Store);
+    get windowsRef(): any[];
+    set windowsRef(value: any[]);
+    protected sorting(): void;
+    get windows(): GuiDrag[];
+    set windows(value: GuiDrag[]);
+    save(): void;
+    retrieve(): Partial<GuiDrag>[];
+    undoDrag(): void;
+    protected sortingReverse(): void;
+    set windows$(value: Partial<GuiDrag[]>);
+    updateWindow(value: GuiDrag): void;
+    hideWindow(position: number): void;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<WindowService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<WindowService>;
+}

@@ -1,0 +1,51 @@
+import { ID, IPagination, IProductCategoryTranslatable, LanguagesEnum } from '@gauzy/contracts';
+import { BaseQueryDTO, TenantAwareCrudService } from './../core/crud';
+import { ProductCategory } from './product-category.entity';
+import { TypeOrmProductCategoryRepository } from './repository/type-orm-product-category.repository';
+import { MikroOrmProductCategoryRepository } from './repository/mikro-orm-product-category.repository';
+export declare class ProductCategoryService extends TenantAwareCrudService<ProductCategory> {
+    constructor(typeOrmProductCategoryRepository: TypeOrmProductCategoryRepository, mikroOrmProductCategoryRepository: MikroOrmProductCategoryRepository);
+    /**
+     * GET product categories using pagination
+     *
+     * @param options
+     * @param language
+     * @returns
+     */
+    pagination(options: BaseQueryDTO<ProductCategory>, language: LanguagesEnum): Promise<{
+        items: any[];
+        total: number;
+    }>;
+    /**
+     * UPDATE product category
+     *
+     * @param id
+     * @param entity
+     * @returns
+     */
+    updateProductCategory(id: ID, entity: ProductCategory): Promise<ProductCategory>;
+    /**
+     * GET all product categories
+     *
+     * @param input
+     * @param language
+     * @returns
+     */
+    findProductCategories(options: BaseQueryDTO<ProductCategory>, language: LanguagesEnum): Promise<IPagination<ProductCategory>>;
+    /**
+     * MAP product category translations
+     *
+     * @param items
+     * @param languageCode
+     * @returns
+     */
+    mapTranslatedProductCategories(items: IProductCategoryTranslatable[], languageCode: LanguagesEnum): Promise<any[]>;
+    /**
+     * MAP product category translations
+     *
+     * @param type
+     * @param languageCode
+     * @returns
+     */
+    mapTranslatedProductType(type: IProductCategoryTranslatable, languageCode: LanguagesEnum): Promise<any>;
+}

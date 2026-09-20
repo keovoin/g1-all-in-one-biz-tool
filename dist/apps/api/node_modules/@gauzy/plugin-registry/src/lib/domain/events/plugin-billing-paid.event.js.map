@@ -1,0 +1,1 @@
+{"version":3,"file":"plugin-billing-paid.event.js","sourceRoot":"","sources":["../../../../../../../../packages/plugins/registry/src/lib/domain/events/plugin-billing-paid.event.ts"],"names":[],"mappings":";;;AAGA;;GAEG;AACH,MAAa,sBAAsB;IAClC,YAA4B,OAAuB,EAAkB,gBAAyB;QAAlE,YAAO,GAAP,OAAO,CAAgB;QAAkB,qBAAgB,GAAhB,gBAAgB,CAAS;IAAG,CAAC;CAClG;AAFD,wDAEC"}

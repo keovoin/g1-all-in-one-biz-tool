@@ -1,0 +1,38 @@
+import { OnInit, OnDestroy } from '@angular/core';
+import { UntypedFormGroup, UntypedFormBuilder, FormArray } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { ICandidatePersonalQualities, IOrganization } from '@gauzy/contracts';
+import { CandidatePersonalQualitiesService, ToastrService } from '@gauzy/ui-core/core';
+import { Store } from '@gauzy/ui-core/core';
+import { CommunicationService } from '../../communication.service';
+import * as i0 from "@angular/core";
+export declare class CandidatePersonalQualitiesComponent extends TranslationBaseComponent implements OnInit, OnDestroy {
+    private fb;
+    private readonly toastrService;
+    readonly translateService: TranslateService;
+    private candidatePersonalQualitiesService;
+    private readonly store;
+    private readonly communicationService;
+    private _ngDestroy$;
+    personalQualitiesList: ICandidatePersonalQualities[];
+    form: UntypedFormGroup;
+    editId: any;
+    existedQualNames: string[];
+    qualityNames: string[];
+    organization: IOrganization;
+    constructor(fb: UntypedFormBuilder, toastrService: ToastrService, translateService: TranslateService, candidatePersonalQualitiesService: CandidatePersonalQualitiesService, store: Store, communicationService: CommunicationService);
+    ngOnInit(): void;
+    private _initializeForm;
+    private loadQualities;
+    save(): Promise<void>;
+    update(formValue: ICandidatePersonalQualities): Promise<void>;
+    create(formValue: ICandidatePersonalQualities): Promise<void>;
+    edit(index: number, id: string): Promise<void>;
+    remove(quantity: ICandidatePersonalQualities): Promise<void>;
+    ngOnDestroy(): void;
+    private toastrError;
+    get qualities(): FormArray;
+    static ɵfac: i0.ɵɵFactoryDeclaration<CandidatePersonalQualitiesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CandidatePersonalQualitiesComponent, "ga-candidate-personal-qualities", never, {}, {}, never, never, false, never>;
+}

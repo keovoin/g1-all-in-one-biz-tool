@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/appointment-employee/index.ts"],"names":[],"mappings":"AAAA,cAAc,iCAAiC,CAAC","sourcesContent":["export * from './appointment-employees.service';"]}

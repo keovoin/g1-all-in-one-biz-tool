@@ -1,0 +1,22 @@
+import { LEGAL_TOS_EN } from './tos.en.generated';
+import { LEGAL_PRIVACY_EN } from './privacy.en.generated';
+import { LEGAL_COOKIES_EN } from './cookies.en.generated';
+/** npm package the legal text was vendored from. */
+export const LEGAL_CORPUS_PACKAGE = '@ever-co/legal';
+/** Version of {@link LEGAL_CORPUS_PACKAGE} the bundled text was generated from. */
+export const LEGAL_CORPUS_VERSION = '0.1.0';
+/** Corpus the documents belong to, e.g. `ever` / `ever.co`. */
+export const LEGAL_CORPUS_NAME = 'Ever';
+/** Product the bundled documents were rendered for. */
+export const LEGAL_PRODUCT = 'gauzy';
+/** Locale used when no localized document exists. The corpus currently publishes English only. */
+export const LEGAL_DEFAULT_LOCALE = 'en';
+/**
+ * Every legal document bundled into the application.
+ *
+ * These are plain, build-time constants: rendering them performs no HTTP request and cannot
+ * fail because a third-party service is unavailable.
+ */
+export const LEGAL_CORPUS = [LEGAL_TOS_EN, LEGAL_PRIVACY_EN, LEGAL_COOKIES_EN];
+export { LEGAL_TOS_EN, LEGAL_PRIVACY_EN, LEGAL_COOKIES_EN };
+//# sourceMappingURL=index.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/timesheet/view-time-log-modal/index.ts"],"names":[],"mappings":"AAAA,cAAc,iCAAiC,CAAC;AAChD,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './view-time-log-modal.component';\nexport * from './view-time-log-modal.module';"]}

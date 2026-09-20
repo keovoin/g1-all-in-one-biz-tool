@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/dashboard/widget-host/index.ts"],"names":[],"mappings":"AAAA,cAAc,mCAAmC,CAAC;AAClD,cAAc,mCAAmC,CAAC","sourcesContent":["export * from './base-dashboard-widget.component';\nexport * from './dashboard-widget-host.component';\n"]}

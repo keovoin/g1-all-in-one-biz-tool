@@ -1,0 +1,36 @@
+import { OnInit } from '@angular/core';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
+import { IEquipment, ITag, IOrganization, IImageAsset } from '@gauzy/contracts';
+import { NbDialogRef, NbDialogService } from '@nebular/theme';
+import { TranslateService } from '@ngx-translate/core';
+import { TranslationBaseComponent } from '@gauzy/ui-core/i18n';
+import { EquipmentService, ImageAssetService, ToastrService } from '@gauzy/ui-core/core';
+import { Store } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class EquipmentMutationComponent extends TranslationBaseComponent implements OnInit {
+    readonly dialogRef: NbDialogRef<EquipmentMutationComponent>;
+    private readonly dialogService;
+    private readonly equipmentService;
+    private readonly fb;
+    readonly translationService: TranslateService;
+    readonly store: Store;
+    private readonly imageAssetService;
+    private readonly toastrService;
+    form: UntypedFormGroup;
+    equipment: IEquipment;
+    image: IImageAsset;
+    selectedCurrency: string;
+    organization: IOrganization;
+    hoverState: boolean;
+    private newImageUploadedEvent$;
+    private newImageStoredEvent$;
+    constructor(dialogRef: NbDialogRef<EquipmentMutationComponent>, dialogService: NbDialogService, equipmentService: EquipmentService, fb: UntypedFormBuilder, translationService: TranslateService, store: Store, imageAssetService: ImageAssetService, toastrService: ToastrService);
+    ngOnInit(): void;
+    initializeForm(): Promise<void>;
+    onAddImageClick(): Promise<void>;
+    saveEquipment(): Promise<void>;
+    closeDialog(equipment?: IEquipment): Promise<void>;
+    selectedTagsEvent(selectedTags: ITag[]): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EquipmentMutationComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EquipmentMutationComponent, "ngx-equipment-mutation", never, {}, {}, never, never, false, never>;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"organization-issue-type-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/issue-type/commands/organization-issue-type-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,sCAAsC;IAGlD,YAA4B,KAAoB;QAApB,UAAK,GAAL,KAAK,CAAe;IAAG,CAAC;;AAHrD,wFAIC;AAHgB,2CAAI,GAAG,uCAAuC,CAAC"}

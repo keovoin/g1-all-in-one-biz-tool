@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant-status-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/statuses/commands/tenant-status-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,6BAA6B;IAGzC,YAA4B,OAAkB;QAAlB,YAAO,GAAP,OAAO,CAAW;IAAG,CAAC;;AAHnD,sEAIC;AAHgB,kCAAI,GAAG,6BAA6B,CAAC"}

@@ -1,0 +1,12 @@
+import { Auth0Strategy, Auth0Controller } from './auth0';
+import { FacebookStrategy, FacebookController } from './facebook';
+import { GithubStrategy, GithubController } from './github';
+import { GoogleStrategy, GoogleController } from './google';
+import { KeycloakStrategy, KeycloakAuthGuard } from './keycloak';
+import { LinkedinStrategy, LinkedinController } from './linkedin';
+import { MicrosoftStrategy, MicrosoftController, MicrosoftAuthGuard } from './microsoft';
+import { TwitterStrategy, TwitterController } from './twitter';
+import { OAuthAppController } from './oauth-app';
+export declare const Strategies: (typeof Auth0Strategy | typeof FacebookStrategy | typeof GithubStrategy | typeof GoogleStrategy | typeof KeycloakStrategy | typeof LinkedinStrategy | typeof MicrosoftStrategy | typeof TwitterStrategy)[];
+export declare const Controllers: (typeof Auth0Controller | typeof FacebookController | typeof GithubController | typeof GoogleController | typeof LinkedinController | typeof MicrosoftController | typeof TwitterController | typeof OAuthAppController)[];
+export declare const AuthGuards: (typeof KeycloakAuthGuard | typeof MicrosoftAuthGuard)[];

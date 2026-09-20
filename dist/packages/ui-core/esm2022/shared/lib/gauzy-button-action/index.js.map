@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/gauzy-button-action/index.ts"],"names":[],"mappings":"AAAA,cAAc,iCAAiC,CAAC;AAChD,cAAc,8BAA8B,CAAC","sourcesContent":["export * from './gauzy-button-action.component';\nexport * from './gauzy-button-action.module';\n"]}

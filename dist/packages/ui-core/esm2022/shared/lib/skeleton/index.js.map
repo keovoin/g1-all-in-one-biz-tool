@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/shared/src/lib/skeleton/index.ts"],"names":[],"mappings":"AAAA,cAAc,sBAAsB,CAAC;AACrC,cAAc,mBAAmB,CAAC","sourcesContent":["export * from './skeleton.component';\nexport * from './skeleton.module';\n"]}

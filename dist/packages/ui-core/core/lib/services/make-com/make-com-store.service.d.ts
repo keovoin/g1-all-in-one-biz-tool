@@ -1,0 +1,71 @@
+import { Observable } from 'rxjs';
+import { IMakeComIntegrationSettings, IMakeComOrganization, IMakeComTeam, IMakeComScenario, IMakeComHook, IMakeComConnection, IMakeComTemplate, IMakeComSetupStatus, MakeComZone } from '@gauzy/contracts';
+import { MakeComService } from './make-com.service';
+import * as i0 from "@angular/core";
+export declare class MakeComStoreService {
+    private readonly _makeComService;
+    private readonly _setupStatus$;
+    setupStatus$: Observable<IMakeComSetupStatus>;
+    private readonly _settings$;
+    settings$: Observable<IMakeComIntegrationSettings>;
+    private readonly _zone$;
+    zone$: Observable<MakeComZone>;
+    private readonly _makeOrganizations$;
+    makeOrganizations$: Observable<IMakeComOrganization[]>;
+    private readonly _selectedMakeOrganization$;
+    selectedMakeOrganization$: Observable<IMakeComOrganization>;
+    private readonly _makeTeams$;
+    makeTeams$: Observable<IMakeComTeam[]>;
+    private readonly _selectedMakeTeam$;
+    selectedMakeTeam$: Observable<IMakeComTeam>;
+    private readonly _scenarios$;
+    scenarios$: Observable<IMakeComScenario[]>;
+    private readonly _hooks$;
+    hooks$: Observable<IMakeComHook[]>;
+    private readonly _connections$;
+    connections$: Observable<IMakeComConnection[]>;
+    private readonly _templates$;
+    templates$: Observable<IMakeComTemplate[]>;
+    constructor(_makeComService: MakeComService);
+    loadSetupStatus(organizationId?: string): Observable<IMakeComSetupStatus>;
+    getSetupStatus(): IMakeComSetupStatus | null;
+    loadIntegrationSettings(): Observable<IMakeComIntegrationSettings>;
+    updateIntegrationSettings(settings: {
+        isEnabled: boolean;
+        webhookUrl: string;
+    }): Observable<IMakeComIntegrationSettings>;
+    initializeIntegration(body: {
+        organizationId: string;
+    }): Observable<{
+        authorizationUrl: string;
+        integrationId: string;
+    }>;
+    getCurrentSettings(): IMakeComIntegrationSettings | null;
+    loadZone(organizationId?: string): Observable<MakeComZone | null>;
+    setZone(zone: MakeComZone, organizationId?: string): Observable<{
+        success: boolean;
+        zone: MakeComZone;
+    }>;
+    getZone(): MakeComZone | null;
+    loadMakeOrganizations(organizationId?: string): Observable<IMakeComOrganization[]>;
+    selectMakeOrganization(org: IMakeComOrganization, organizationId?: string): Observable<any>;
+    loadMakeTeams(makeOrgId?: number, organizationId?: string): Observable<IMakeComTeam[]>;
+    selectMakeTeam(team: IMakeComTeam, organizationId?: string): Observable<any>;
+    loadScenarios(teamId?: number, organizationId?: string): Observable<IMakeComScenario[]>;
+    startScenario(id: number, organizationId?: string): Observable<IMakeComScenario>;
+    stopScenario(id: number, organizationId?: string): Observable<IMakeComScenario>;
+    runScenario(id: number, organizationId?: string): Observable<any>;
+    deleteScenario(id: number, organizationId?: string): Observable<void>;
+    loadHooks(teamId?: number, organizationId?: string): Observable<IMakeComHook[]>;
+    enableHook(id: number, organizationId?: string): Observable<any>;
+    disableHook(id: number, organizationId?: string): Observable<any>;
+    pingHook(id: number, organizationId?: string): Observable<any>;
+    deleteHook(id: number, organizationId?: string): Observable<void>;
+    loadConnections(teamId?: number, organizationId?: string): Observable<IMakeComConnection[]>;
+    testConnection(id: number, organizationId?: string): Observable<any>;
+    deleteConnection(id: number, organizationId?: string): Observable<void>;
+    loadTemplates(teamId?: number, organizationId?: string): Observable<IMakeComTemplate[]>;
+    clearStore(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<MakeComStoreService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<MakeComStoreService>;
+}

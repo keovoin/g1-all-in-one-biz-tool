@@ -1,0 +1,31 @@
+import { OnDestroy, OnInit } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { IEmployee, PayPeriodEnum, ICandidate, ICurrency } from '@gauzy/contracts';
+import { Store } from '@gauzy/ui-core/core';
+import { CandidateStore, EmployeeStore } from '@gauzy/ui-core/core';
+import * as i0 from "@angular/core";
+export declare class EmployeeRatesComponent implements OnInit, OnDestroy {
+    private readonly fb;
+    private readonly store;
+    private readonly employeeStore;
+    private readonly candidateStore;
+    isEmployee: boolean;
+    isCandidate: boolean;
+    selectedEmployee: IEmployee;
+    selectedCandidate: ICandidate;
+    payPeriods: PayPeriodEnum[];
+    form: UntypedFormGroup;
+    static buildForm(fb: UntypedFormBuilder): UntypedFormGroup;
+    constructor(fb: UntypedFormBuilder, store: Store, employeeStore: EmployeeStore, candidateStore: CandidateStore);
+    ngOnInit(): void;
+    onSubmit(): Promise<void>;
+    private _syncRates;
+    currencyChanged($event: ICurrency): void;
+    get reWeeklyLimit(): import("@angular/forms").AbstractControl<any, any, any>;
+    get billRateValue(): import("@angular/forms").AbstractControl<any, any, any>;
+    get billRateCurrency(): import("@angular/forms").AbstractControl<any, any, any>;
+    get minimumBillingRate(): import("@angular/forms").AbstractControl<any, any, any>;
+    ngOnDestroy(): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<EmployeeRatesComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<EmployeeRatesComponent, "ga-employee-rates", never, { "isEmployee": { "alias": "isEmployee"; "required": false; }; "isCandidate": { "alias": "isCandidate"; "required": false; }; }, {}, never, never, false, never>;
+}

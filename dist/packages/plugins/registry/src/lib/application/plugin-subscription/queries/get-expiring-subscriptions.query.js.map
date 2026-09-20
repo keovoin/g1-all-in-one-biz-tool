@@ -1,0 +1,1 @@
+{"version":3,"file":"get-expiring-subscriptions.query.js","sourceRoot":"","sources":["../../../../../../../../../packages/plugins/registry/src/lib/application/plugin-subscription/queries/get-expiring-subscriptions.query.ts"],"names":[],"mappings":";;;AAEA,MAAa,6BAA6B;IAGzC,YAA4B,OAAe,CAAC;QAAhB,SAAI,GAAJ,IAAI,CAAY;IAAG,CAAC;;AAHjD,sEAIC;AAHuB,kCAAI,GAAG,oCAAoC,CAAC"}

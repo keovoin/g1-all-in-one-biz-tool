@@ -1,0 +1,4 @@
+{
+  "module": "../esm2022/icons/gauzy-ui-core-icons.js",
+  "typings": "gauzy-ui-core-icons.d.ts"
+}

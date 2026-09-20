@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/core/src/lib/services/custom-smtp/index.ts"],"names":[],"mappings":"AAAA,cAAc,uBAAuB,CAAC","sourcesContent":["export * from './custom-smtp.service';"]}

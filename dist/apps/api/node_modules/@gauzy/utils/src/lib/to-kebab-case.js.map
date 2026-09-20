@@ -1,0 +1,1 @@
+{"version":3,"file":"to-kebab-case.js","sourceRoot":"","sources":["../../../../../packages/utils/src/lib/to-kebab-case.ts"],"names":[],"mappings":";;;AAAA;;;;;GAKG;AACI,MAAM,SAAS,GAAG,CAAC,GAAW,EAAU,EAAE,CAChD,GAAG;KACD,OAAO,CAAC,iBAAiB,EAAE,OAAO,CAAC,CAAC,2DAA2D;KAC/F,OAAO,CAAC,SAAS,EAAE,GAAG,CAAC,CAAC,gDAAgD;KACxE,WAAW,EAAE,CAAC,CAAC,0CAA0C;AAJ/C,QAAA,SAAS,aAIL"}

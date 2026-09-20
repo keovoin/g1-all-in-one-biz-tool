@@ -1,0 +1,1 @@
+{"version":3,"file":"expandable.interface.js","sourceRoot":"","sources":["../../../../../../../packages/ui-core/common/src/lib/interfaces/expandable.interface.ts"],"names":[],"mappings":"","sourcesContent":["export interface Expandable {\n\tget isExpand(): boolean;\n\tset isExpand(value: boolean);\n}\n"]}

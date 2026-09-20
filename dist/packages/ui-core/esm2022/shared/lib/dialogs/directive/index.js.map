@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/dialogs/directive/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC;AAClC,cAAc,qBAAqB,CAAC;AACpC,cAAc,oBAAoB,CAAC","sourcesContent":["export * from './alert.directive';\nexport * from './confirm.directive';\nexport * from './prompt.directive';\n"]}

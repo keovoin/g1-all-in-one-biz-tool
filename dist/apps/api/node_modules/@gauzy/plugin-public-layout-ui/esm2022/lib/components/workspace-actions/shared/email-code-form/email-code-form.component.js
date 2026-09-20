@@ -1,0 +1,115 @@
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { UntypedFormGroup } from '@angular/forms';
+import { ALPHA_NUMERIC_CODE_LENGTH } from '@gauzy/constants';
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/forms";
+import * as i2 from "@nebular/theme";
+import * as i3 from "@ngx-translate/core";
+/**
+ * Shared component for email and code input form.
+ * Used across workspace-create, workspace-signin, and workspace-find components.
+ */
+export class EmailCodeFormComponent {
+    constructor() {
+        this.isLoading = false;
+        this.isCodeSent = false;
+        this.isCodeResent = false;
+        this.countdown = 0;
+        this.submitButtonText = 'BUTTONS.CONTINUE';
+        this.sendCodeButtonText = 'BUTTONS.SEND_CODE';
+        this.showForgotEmailLink = false;
+        this.forgotEmailLink = 'mailto:support@gauzy.co';
+        this.showEditEmailButton = true;
+        this.descriptionText = 'LOGIN_PAGE.LOGIN_MAGIC.DESCRIPTION_TITLE';
+        this.successSentCodeTitle = 'LOGIN_PAGE.LOGIN_MAGIC.SUCCESS_SENT_CODE_TITLE';
+        this.successSentCodeSubTitle = 'LOGIN_PAGE.LOGIN_MAGIC.SUCCESS_SENT_CODE_SUB_TITLE';
+        this.sendCode = new EventEmitter();
+        this.resendCode = new EventEmitter();
+        this.submitForm = new EventEmitter();
+        this.editEmail = new EventEmitter();
+        this.codeLength = ALPHA_NUMERIC_CODE_LENGTH;
+    }
+    ngOnInit() {
+        if (!this.form) {
+            throw new Error('Form is required for EmailCodeFormComponent');
+        }
+    }
+    /**
+     * Getter for the email form control.
+     */
+    get email() {
+        return this.form.get('email');
+    }
+    /**
+     * Getter for the code form control.
+     */
+    get code() {
+        return this.form.get('code');
+    }
+    /**
+     * Handle send code button click
+     */
+    onSendCode() {
+        this.sendCode.emit();
+    }
+    /**
+     * Handle resend code link click
+     */
+    onResendCode() {
+        this.resendCode.emit();
+    }
+    /**
+     * Handle form submission
+     */
+    onSubmit() {
+        this.submitForm.emit();
+    }
+    /**
+     * Handle edit email button click
+     */
+    onEditEmail() {
+        this.editEmail.emit();
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: EmailCodeFormComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "17.0.0", version: "21.0.7", type: EmailCodeFormComponent, isStandalone: false, selector: "ga-email-code-form", inputs: { form: "form", isLoading: "isLoading", isCodeSent: "isCodeSent", isCodeResent: "isCodeResent", countdown: "countdown", submitButtonText: "submitButtonText", sendCodeButtonText: "sendCodeButtonText", showForgotEmailLink: "showForgotEmailLink", forgotEmailLink: "forgotEmailLink", showEditEmailButton: "showEditEmailButton", descriptionText: "descriptionText", successSentCodeTitle: "successSentCodeTitle", successSentCodeSubTitle: "successSentCodeSubTitle" }, outputs: { sendCode: "sendCode", resendCode: "resendCode", submitForm: "submitForm", editEmail: "editEmail" }, ngImport: i0, template: "<form #formDirective=\"ngForm\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\">\n\t<!-- Email input -->\n\t<div class=\"form-control-group\">\n\t\t<label class=\"label\" for=\"input-email\">{{ 'LOGIN_PAGE.LABELS.EMAIL' | translate }}</label>\n\t\t<nb-form-field>\n\t\t\t<input\n\t\t\t\ttype=\"email\"\n\t\t\t\tname=\"input-email\"\n\t\t\t\tid=\"input-email\"\n\t\t\t\tnbInput\n\t\t\t\tfullWidth\n\t\t\t\tformControlName=\"email\"\n\t\t\t\t[placeholder]=\"'LOGIN_PAGE.PLACEHOLDERS.EMAIL' | translate\"\n\t\t\t\t[status]=\"email.dirty ? (email.invalid ? 'danger' : 'success') : 'basic'\"\n\t\t\t\t[attr.aria-invalid]=\"email.invalid && email.touched ? true : null\"\n\t\t\t\t[attr.autofocus]=\"isCodeSent ? true : null\"\n\t\t\t\tautocomplete=\"email\"\n\t\t\t\t[readonly]=\"isCodeSent\"\n\t\t\t\t[class.not-allowed]=\"isCodeSent\"\n\t\t\t/>\n\t\t\t@if (isCodeSent && showEditEmailButton) {\n\t\t\t<nb-icon\n\t\t\t\tclass=\"edit-email\"\n\t\t\t\tnbSuffix\n\t\t\t\tnbButton\n\t\t\t\tsize=\"small\"\n\t\t\t\tghost\n\t\t\t\ticon=\"edit-outline\"\n\t\t\t\t(click)=\"onEditEmail()\"\n\t\t\t\tnbTooltip=\"{{ 'WORKSPACES.EDIT_EMAIL' | translate }}\"\n\t\t\t\tnbTooltipPosition=\"top\"\n\t\t\t></nb-icon>\n\t\t\t}\n\t\t</nb-form-field>\n\t\t@if (email.invalid && email.touched && !email.pristine) { @if (email?.errors?.required) {\n\t\t<p class=\"caption status-danger\">\n\t\t\t{{ 'LOGIN_PAGE.VALIDATION.EMAIL_REQUIRED' | translate }}\n\t\t</p>\n\t\t} @if (email?.errors?.pattern) {\n\t\t<p class=\"caption status-danger\">\n\t\t\t{{ 'LOGIN_PAGE.VALIDATION.EMAIL_REAL_REQUIRED' | translate }}\n\t\t</p>\n\t\t} }\n\t</div>\n\n\t<!-- Code input -->\n\t@if (isCodeSent) {\n\t<div class=\"sent-code-container\">\n\t\t<p\n\t\t\t[class.normal-text]=\"(email?.value?.length || 0) < 30\"\n\t\t\t[class.minimum-text]=\"(email?.value?.length || 0) >= 30\"\n\t\t>\n\t\t\t{{ successSentCodeTitle | translate }}\n\t\t\t<b class=\"title\">{{ email?.value }}</b>\n\t\t\t<br />\n\t\t\t<span>{{ successSentCodeSubTitle | translate }}</span>\n\t\t</p>\n\t</div>\n\t<div class=\"form-control-group\">\n\t\t<label class=\"label\" for=\"input-code\">{{ 'LOGIN_PAGE.LABELS.CODE' | translate }}</label>\n\t\t<input\n\t\t\tname=\"input-code\"\n\t\t\tid=\"input-code\"\n\t\t\tnbInput\n\t\t\tfullWidth\n\t\t\tformControlName=\"code\"\n\t\t\t[placeholder]=\"'LOGIN_PAGE.PLACEHOLDERS.CODE' | translate\"\n\t\t\t[status]=\"code.dirty ? (code.invalid ? 'danger' : 'success') : 'basic'\"\n\t\t\t[attr.aria-invalid]=\"code.invalid && code.touched ? true : null\"\n\t\t\t[attr.maxlength]=\"codeLength\"\n\t\t\t[attr.autofocus]=\"isCodeSent ? true : null\"\n\t\t\tautocomplete=\"one-time-code\"\n\t\t\tinputmode=\"numeric\"\n\t\t/>\n\t\t@if (code.invalid && code.touched) {\n\t\t<div role=\"alert\" aria-live=\"polite\">\n\t\t\t@if (code.errors?.required) {\n\t\t\t<p class=\"caption status-danger\">\n\t\t\t\t{{ 'LOGIN_PAGE.VALIDATION.CODE_REQUIRED' | translate }}\n\t\t\t</p>\n\t\t\t} @if (code.errors?.minlength) {\n\t\t\t<p class=\"caption status-danger\">\n\t\t\t\t{{\n\t\t\t\t\t'LOGIN_PAGE.VALIDATION.CODE_REQUIRED_LENGTH'\n\t\t\t\t\t\t| translate : { requiredLength: codeLength }\n\t\t\t\t}}\n\t\t\t</p>\n\t\t\t}\n\t\t</div>\n\t\t}\n\t\t<!-- Resend Code Button & Text -->\n\t\t<p class=\"new-code-wrapper\">\n\t\t\t@if (isCodeResent) {\n\t\t\t<span class=\"request-new-code\" role=\"status\" aria-live=\"polite\">\n\t\t\t\t{{ 'LOGIN_PAGE.LOGIN_MAGIC.REQUEST_NEW_CODE_TITLE' | translate : { countdown: countdown } }}\n\t\t\t</span>\n\t\t\t} @else {\n\t\t\t<a class=\"resend-code\" (click)=\"onResendCode()\">\n\t\t\t\t{{ 'LOGIN_PAGE.LOGIN_MAGIC.RESEND_CODE_TITLE' | translate }}\n\t\t\t</a>\n\t\t\t}\n\t\t</p>\n\t</div>\n\t}\n\n\t<!-- Submit Button -->\n\t<div class=\"submit-btn-wrapper\">\n\t\t@if (showForgotEmailLink) {\n\t\t<a\n\t\t\tclass=\"forgot-email caption-2 forgot-email-big\"\n\t\t\t[href]=\"forgotEmailLink\"\n\t\t\ttarget=\"_blank\"\n\t\t\trel=\"noopener noreferrer\"\n\t\t>\n\t\t\t{{ 'LOGIN_PAGE.FORGOT_EMAIL_TITLE' | translate }}\n\t\t</a>\n\t\t}\n\t\t<div class=\"submit-inner-wrapper\">\n\t\t\t@if (isCodeSent) {\n\t\t\t<button\n\t\t\t\ttype=\"submit\"\n\t\t\t\tnbButton\n\t\t\t\tsize=\"tiny\"\n\t\t\t\tclass=\"submit-btn\"\n\t\t\t\t[disabled]=\"form.invalid || isLoading\"\n\t\t\t\t[attr.aria-busy]=\"isLoading ? true : null\"\n\t\t\t\t[attr.aria-disabled]=\"form.invalid || isLoading ? true : null\"\n\t\t\t>\n\t\t\t\t<span class=\"btn-text\">\n\t\t\t\t\t{{ submitButtonText | translate }}\n\t\t\t\t</span>\n\t\t\t\t@if (isLoading) {\n\t\t\t\t<nb-icon class=\"btn-icon\" [class.spinner]=\"isLoading\" icon=\"loader-outline\"></nb-icon>\n\t\t\t\t}\n\t\t\t</button>\n\t\t\t} @else {\n\t\t\t<button\n\t\t\t\ttype=\"button\"\n\t\t\t\tnbButton\n\t\t\t\tsize=\"tiny\"\n\t\t\t\tclass=\"submit-btn\"\n\t\t\t\t[disabled]=\"email.invalid || isLoading\"\n\t\t\t\t(click)=\"onSendCode()\"\n\t\t\t\t[attr.aria-busy]=\"isLoading ? true : null\"\n\t\t\t\t[attr.aria-disabled]=\"email.invalid || isLoading ? true : null\"\n\t\t\t>\n\t\t\t\t<span class=\"btn-text\">\n\t\t\t\t\t{{ sendCodeButtonText | translate }}\n\t\t\t\t</span>\n\t\t\t\t@if (isLoading) {\n\t\t\t\t<nb-icon class=\"btn-icon\" [class.spinner]=\"isLoading\" icon=\"loader-outline\"></nb-icon>\n\t\t\t\t}\n\t\t\t</button>\n\t\t\t}\n\t\t</div>\n\t</div>\n</form>\n", styles: [".card{background:var(--gauzy-card-1)}.form-control-group{margin-bottom:16px}.form-control-group .label{display:block;margin-bottom:.5rem;font-weight:600;color:var(--text-basic-color)}.form-control-group nb-form-field{width:100%}.form-control-group input.not-allowed{cursor:not-allowed;background-color:var(--background-basic-color-2)}.form-control-group .edit-email{cursor:pointer;color:var(--text-hint-color);transition:all .2s ease}.form-control-group .edit-email:hover{color:var(--text-basic-color)}.form-control-group .caption{margin-top:.25rem;font-size:.75rem}.form-control-group .caption.status-danger{color:var(--status-danger)}.sent-code-container{margin-bottom:1rem;margin-right:-20px}.sent-code-container p{margin-bottom:0}.sent-code-container p.normal-text{font-size:.8rem}.sent-code-container p.minimum-text{font-size:.75rem}.sent-code-container p b{font-size:.8rem}.sent-code-container p span{font-size:.7rem;color:var(--text-hint-color)}.new-code-wrapper{font-size:.75rem;text-align:right;margin-top:.4rem;margin-right:.4rem}.new-code-wrapper .resend-code{margin-bottom:.4rem;cursor:pointer}.new-code-wrapper .request-new-code{color:var(--text-hint-color)}.submit-btn-wrapper{display:flex;justify-content:space-between;align-items:center}.submit-btn-wrapper .forgot-email{text-decoration-line:underline;margin-bottom:0;font-family:Inter;font-size:14px;font-style:normal;font-weight:500;line-height:17px;letter-spacing:-.01em;text-align:left}.submit-btn-wrapper .forgot-email:hover{color:#fa754e}.submit-btn-wrapper .forgot-email.forgot-email-big{display:block}.submit-btn-wrapper .submit-inner-wrapper{display:inline-flex;flex-direction:column;align-items:center}.submit-btn-wrapper .submit-btn{padding:13px 39px;-webkit-box-shadow:0px 19px 15px -14px rgba(0,0,0,.22);box-shadow:0 19px 15px -14px #00000038;font-family:Inter;font-size:16px;font-style:normal;font-weight:700;line-height:16px;letter-spacing:-.009em;text-align:left}.submit-btn-wrapper .submit-btn:enabled{background-color:#fa754e;border:1px solid #fa754e;color:#fff}.submit-btn-wrapper .submit-btn{padding:13px 59px;position:relative}.submit-btn-wrapper .submit-btn .btn-text{display:inline-block}.submit-btn-wrapper .submit-btn .btn-icon{margin-left:.5rem}.submit-btn-wrapper .submit-btn .btn-icon.spinner{animation:spin 1s linear infinite}.submit-btn-wrapper .submit-btn:disabled{opacity:.6;cursor:not-allowed}.magic-description p{text-align:left;font-size:.85rem}.magic-description p a{color:var(--link-text-color)}@keyframes spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.submit-btn .btn-icon.spinner{animation:none!important}}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"], dependencies: [{ kind: "directive", type: i1.ɵNgNoValidate, selector: "form:not([ngNoForm]):not([ngNativeValidate])" }, { kind: "directive", type: i1.DefaultValueAccessor, selector: "input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]" }, { kind: "directive", type: i1.NgControlStatus, selector: "[formControlName],[ngModel],[formControl]" }, { kind: "directive", type: i1.NgControlStatusGroup, selector: "[formGroupName],[formArrayName],[ngModelGroup],[formGroup],[formArray],form:not([ngNoForm]),[ngForm]" }, { kind: "directive", type: i1.FormGroupDirective, selector: "[formGroup]", inputs: ["formGroup"], outputs: ["ngSubmit"], exportAs: ["ngForm"] }, { kind: "directive", type: i1.FormControlName, selector: "[formControlName]", inputs: ["formControlName", "disabled", "ngModel"], outputs: ["ngModelChange"] }, { kind: "component", type: i2.NbButtonComponent, selector: "button[nbButton],a[nbButton],input[type=\"button\"][nbButton],input[type=\"submit\"][nbButton]", inputs: ["hero"] }, { kind: "component", type: i2.NbIconComponent, selector: "nb-icon", inputs: ["icon", "pack", "options", "status", "config"] }, { kind: "component", type: i2.NbFormFieldComponent, selector: "nb-form-field" }, { kind: "directive", type: i2.NbSuffixDirective, selector: "[nbSuffix]" }, { kind: "directive", type: i2.NbInputDirective, selector: "input[nbInput],textarea[nbInput]", inputs: ["fieldSize", "status", "shape", "fullWidth"] }, { kind: "directive", type: i2.NbTooltipDirective, selector: "[nbTooltip]", inputs: ["nbTooltip", "nbTooltipPlacement", "nbTooltipAdjustment", "nbTooltipClass", "nbTooltipIcon", "nbTooltipStatus", "nbTooltipTrigger", "nbTooltipOffset", "nbTooltipDisabled"], outputs: ["nbTooltipShowStateChange"], exportAs: ["nbTooltip"] }, { kind: "pipe", type: i3.TranslatePipe, name: "translate" }], changeDetection: i0.ChangeDetectionStrategy.OnPush }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "21.0.7", ngImport: i0, type: EmailCodeFormComponent, decorators: [{
+            type: Component,
+            args: [{ selector: 'ga-email-code-form', standalone: false, changeDetection: ChangeDetectionStrategy.OnPush, template: "<form #formDirective=\"ngForm\" [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\">\n\t<!-- Email input -->\n\t<div class=\"form-control-group\">\n\t\t<label class=\"label\" for=\"input-email\">{{ 'LOGIN_PAGE.LABELS.EMAIL' | translate }}</label>\n\t\t<nb-form-field>\n\t\t\t<input\n\t\t\t\ttype=\"email\"\n\t\t\t\tname=\"input-email\"\n\t\t\t\tid=\"input-email\"\n\t\t\t\tnbInput\n\t\t\t\tfullWidth\n\t\t\t\tformControlName=\"email\"\n\t\t\t\t[placeholder]=\"'LOGIN_PAGE.PLACEHOLDERS.EMAIL' | translate\"\n\t\t\t\t[status]=\"email.dirty ? (email.invalid ? 'danger' : 'success') : 'basic'\"\n\t\t\t\t[attr.aria-invalid]=\"email.invalid && email.touched ? true : null\"\n\t\t\t\t[attr.autofocus]=\"isCodeSent ? true : null\"\n\t\t\t\tautocomplete=\"email\"\n\t\t\t\t[readonly]=\"isCodeSent\"\n\t\t\t\t[class.not-allowed]=\"isCodeSent\"\n\t\t\t/>\n\t\t\t@if (isCodeSent && showEditEmailButton) {\n\t\t\t<nb-icon\n\t\t\t\tclass=\"edit-email\"\n\t\t\t\tnbSuffix\n\t\t\t\tnbButton\n\t\t\t\tsize=\"small\"\n\t\t\t\tghost\n\t\t\t\ticon=\"edit-outline\"\n\t\t\t\t(click)=\"onEditEmail()\"\n\t\t\t\tnbTooltip=\"{{ 'WORKSPACES.EDIT_EMAIL' | translate }}\"\n\t\t\t\tnbTooltipPosition=\"top\"\n\t\t\t></nb-icon>\n\t\t\t}\n\t\t</nb-form-field>\n\t\t@if (email.invalid && email.touched && !email.pristine) { @if (email?.errors?.required) {\n\t\t<p class=\"caption status-danger\">\n\t\t\t{{ 'LOGIN_PAGE.VALIDATION.EMAIL_REQUIRED' | translate }}\n\t\t</p>\n\t\t} @if (email?.errors?.pattern) {\n\t\t<p class=\"caption status-danger\">\n\t\t\t{{ 'LOGIN_PAGE.VALIDATION.EMAIL_REAL_REQUIRED' | translate }}\n\t\t</p>\n\t\t} }\n\t</div>\n\n\t<!-- Code input -->\n\t@if (isCodeSent) {\n\t<div class=\"sent-code-container\">\n\t\t<p\n\t\t\t[class.normal-text]=\"(email?.value?.length || 0) < 30\"\n\t\t\t[class.minimum-text]=\"(email?.value?.length || 0) >= 30\"\n\t\t>\n\t\t\t{{ successSentCodeTitle | translate }}\n\t\t\t<b class=\"title\">{{ email?.value }}</b>\n\t\t\t<br />\n\t\t\t<span>{{ successSentCodeSubTitle | translate }}</span>\n\t\t</p>\n\t</div>\n\t<div class=\"form-control-group\">\n\t\t<label class=\"label\" for=\"input-code\">{{ 'LOGIN_PAGE.LABELS.CODE' | translate }}</label>\n\t\t<input\n\t\t\tname=\"input-code\"\n\t\t\tid=\"input-code\"\n\t\t\tnbInput\n\t\t\tfullWidth\n\t\t\tformControlName=\"code\"\n\t\t\t[placeholder]=\"'LOGIN_PAGE.PLACEHOLDERS.CODE' | translate\"\n\t\t\t[status]=\"code.dirty ? (code.invalid ? 'danger' : 'success') : 'basic'\"\n\t\t\t[attr.aria-invalid]=\"code.invalid && code.touched ? true : null\"\n\t\t\t[attr.maxlength]=\"codeLength\"\n\t\t\t[attr.autofocus]=\"isCodeSent ? true : null\"\n\t\t\tautocomplete=\"one-time-code\"\n\t\t\tinputmode=\"numeric\"\n\t\t/>\n\t\t@if (code.invalid && code.touched) {\n\t\t<div role=\"alert\" aria-live=\"polite\">\n\t\t\t@if (code.errors?.required) {\n\t\t\t<p class=\"caption status-danger\">\n\t\t\t\t{{ 'LOGIN_PAGE.VALIDATION.CODE_REQUIRED' | translate }}\n\t\t\t</p>\n\t\t\t} @if (code.errors?.minlength) {\n\t\t\t<p class=\"caption status-danger\">\n\t\t\t\t{{\n\t\t\t\t\t'LOGIN_PAGE.VALIDATION.CODE_REQUIRED_LENGTH'\n\t\t\t\t\t\t| translate : { requiredLength: codeLength }\n\t\t\t\t}}\n\t\t\t</p>\n\t\t\t}\n\t\t</div>\n\t\t}\n\t\t<!-- Resend Code Button & Text -->\n\t\t<p class=\"new-code-wrapper\">\n\t\t\t@if (isCodeResent) {\n\t\t\t<span class=\"request-new-code\" role=\"status\" aria-live=\"polite\">\n\t\t\t\t{{ 'LOGIN_PAGE.LOGIN_MAGIC.REQUEST_NEW_CODE_TITLE' | translate : { countdown: countdown } }}\n\t\t\t</span>\n\t\t\t} @else {\n\t\t\t<a class=\"resend-code\" (click)=\"onResendCode()\">\n\t\t\t\t{{ 'LOGIN_PAGE.LOGIN_MAGIC.RESEND_CODE_TITLE' | translate }}\n\t\t\t</a>\n\t\t\t}\n\t\t</p>\n\t</div>\n\t}\n\n\t<!-- Submit Button -->\n\t<div class=\"submit-btn-wrapper\">\n\t\t@if (showForgotEmailLink) {\n\t\t<a\n\t\t\tclass=\"forgot-email caption-2 forgot-email-big\"\n\t\t\t[href]=\"forgotEmailLink\"\n\t\t\ttarget=\"_blank\"\n\t\t\trel=\"noopener noreferrer\"\n\t\t>\n\t\t\t{{ 'LOGIN_PAGE.FORGOT_EMAIL_TITLE' | translate }}\n\t\t</a>\n\t\t}\n\t\t<div class=\"submit-inner-wrapper\">\n\t\t\t@if (isCodeSent) {\n\t\t\t<button\n\t\t\t\ttype=\"submit\"\n\t\t\t\tnbButton\n\t\t\t\tsize=\"tiny\"\n\t\t\t\tclass=\"submit-btn\"\n\t\t\t\t[disabled]=\"form.invalid || isLoading\"\n\t\t\t\t[attr.aria-busy]=\"isLoading ? true : null\"\n\t\t\t\t[attr.aria-disabled]=\"form.invalid || isLoading ? true : null\"\n\t\t\t>\n\t\t\t\t<span class=\"btn-text\">\n\t\t\t\t\t{{ submitButtonText | translate }}\n\t\t\t\t</span>\n\t\t\t\t@if (isLoading) {\n\t\t\t\t<nb-icon class=\"btn-icon\" [class.spinner]=\"isLoading\" icon=\"loader-outline\"></nb-icon>\n\t\t\t\t}\n\t\t\t</button>\n\t\t\t} @else {\n\t\t\t<button\n\t\t\t\ttype=\"button\"\n\t\t\t\tnbButton\n\t\t\t\tsize=\"tiny\"\n\t\t\t\tclass=\"submit-btn\"\n\t\t\t\t[disabled]=\"email.invalid || isLoading\"\n\t\t\t\t(click)=\"onSendCode()\"\n\t\t\t\t[attr.aria-busy]=\"isLoading ? true : null\"\n\t\t\t\t[attr.aria-disabled]=\"email.invalid || isLoading ? true : null\"\n\t\t\t>\n\t\t\t\t<span class=\"btn-text\">\n\t\t\t\t\t{{ sendCodeButtonText | translate }}\n\t\t\t\t</span>\n\t\t\t\t@if (isLoading) {\n\t\t\t\t<nb-icon class=\"btn-icon\" [class.spinner]=\"isLoading\" icon=\"loader-outline\"></nb-icon>\n\t\t\t\t}\n\t\t\t</button>\n\t\t\t}\n\t\t</div>\n\t</div>\n</form>\n", styles: [".card{background:var(--gauzy-card-1)}.form-control-group{margin-bottom:16px}.form-control-group .label{display:block;margin-bottom:.5rem;font-weight:600;color:var(--text-basic-color)}.form-control-group nb-form-field{width:100%}.form-control-group input.not-allowed{cursor:not-allowed;background-color:var(--background-basic-color-2)}.form-control-group .edit-email{cursor:pointer;color:var(--text-hint-color);transition:all .2s ease}.form-control-group .edit-email:hover{color:var(--text-basic-color)}.form-control-group .caption{margin-top:.25rem;font-size:.75rem}.form-control-group .caption.status-danger{color:var(--status-danger)}.sent-code-container{margin-bottom:1rem;margin-right:-20px}.sent-code-container p{margin-bottom:0}.sent-code-container p.normal-text{font-size:.8rem}.sent-code-container p.minimum-text{font-size:.75rem}.sent-code-container p b{font-size:.8rem}.sent-code-container p span{font-size:.7rem;color:var(--text-hint-color)}.new-code-wrapper{font-size:.75rem;text-align:right;margin-top:.4rem;margin-right:.4rem}.new-code-wrapper .resend-code{margin-bottom:.4rem;cursor:pointer}.new-code-wrapper .request-new-code{color:var(--text-hint-color)}.submit-btn-wrapper{display:flex;justify-content:space-between;align-items:center}.submit-btn-wrapper .forgot-email{text-decoration-line:underline;margin-bottom:0;font-family:Inter;font-size:14px;font-style:normal;font-weight:500;line-height:17px;letter-spacing:-.01em;text-align:left}.submit-btn-wrapper .forgot-email:hover{color:#fa754e}.submit-btn-wrapper .forgot-email.forgot-email-big{display:block}.submit-btn-wrapper .submit-inner-wrapper{display:inline-flex;flex-direction:column;align-items:center}.submit-btn-wrapper .submit-btn{padding:13px 39px;-webkit-box-shadow:0px 19px 15px -14px rgba(0,0,0,.22);box-shadow:0 19px 15px -14px #00000038;font-family:Inter;font-size:16px;font-style:normal;font-weight:700;line-height:16px;letter-spacing:-.009em;text-align:left}.submit-btn-wrapper .submit-btn:enabled{background-color:#fa754e;border:1px solid #fa754e;color:#fff}.submit-btn-wrapper .submit-btn{padding:13px 59px;position:relative}.submit-btn-wrapper .submit-btn .btn-text{display:inline-block}.submit-btn-wrapper .submit-btn .btn-icon{margin-left:.5rem}.submit-btn-wrapper .submit-btn .btn-icon.spinner{animation:spin 1s linear infinite}.submit-btn-wrapper .submit-btn:disabled{opacity:.6;cursor:not-allowed}.magic-description p{text-align:left;font-size:.85rem}.magic-description p a{color:var(--link-text-color)}@keyframes spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.submit-btn .btn-icon.spinner{animation:none!important}}\n/**\n * @license\n * Copyright Akveo. All Rights Reserved.\n * Licensed under the MIT License. See License.txt in the project root for license information.\n */\n"] }]
+        }], propDecorators: { form: [{
+                type: Input,
+                args: [{ required: true }]
+            }], isLoading: [{
+                type: Input
+            }], isCodeSent: [{
+                type: Input
+            }], isCodeResent: [{
+                type: Input
+            }], countdown: [{
+                type: Input
+            }], submitButtonText: [{
+                type: Input
+            }], sendCodeButtonText: [{
+                type: Input
+            }], showForgotEmailLink: [{
+                type: Input
+            }], forgotEmailLink: [{
+                type: Input
+            }], showEditEmailButton: [{
+                type: Input
+            }], descriptionText: [{
+                type: Input
+            }], successSentCodeTitle: [{
+                type: Input
+            }], successSentCodeSubTitle: [{
+                type: Input
+            }], sendCode: [{
+                type: Output
+            }], resendCode: [{
+                type: Output
+            }], submitForm: [{
+                type: Output
+            }], editEmail: [{
+                type: Output
+            }] } });
+//# sourceMappingURL=email-code-form.component.js.map

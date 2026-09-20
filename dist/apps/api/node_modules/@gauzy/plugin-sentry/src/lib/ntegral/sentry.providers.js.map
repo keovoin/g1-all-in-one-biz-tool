@@ -1,0 +1,1 @@
+{"version":3,"file":"sentry.providers.js","sourceRoot":"","sources":["../../../../../../../packages/plugins/sentry-tracing/src/lib/ntegral/sentry.providers.ts"],"names":[],"mappings":";;AAUA,sDAKC;AAbD,yDAAkD;AAClD,qDAAiD;AAEjD;;;;GAIG;AACH,SAAgB,qBAAqB,CAAC,OAA4B;IAC9D,OAAO;QACH,OAAO,EAAE,+BAAY;QACrB,QAAQ,EAAE,IAAI,8BAAa,CAAC,OAAO,CAAC;KACvC,CAAC;AACN,CAAC"}

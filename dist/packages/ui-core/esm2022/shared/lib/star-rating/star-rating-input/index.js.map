@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/star-rating/star-rating-input/index.ts"],"names":[],"mappings":"AAAA,cAAc,4BAA4B,CAAC;AAC3C,cAAc,+BAA+B,CAAC","sourcesContent":["export * from './star-rating-input.module';\nexport * from './star-rating-input.component';\n"]}

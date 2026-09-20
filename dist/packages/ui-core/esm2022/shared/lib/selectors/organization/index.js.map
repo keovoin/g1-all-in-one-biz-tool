@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/selectors/organization/index.ts"],"names":[],"mappings":"AAAA,cAAc,0BAA0B,CAAC","sourcesContent":["export * from './organization.component';\n"]}

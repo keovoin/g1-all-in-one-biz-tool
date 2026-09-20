@@ -1,0 +1,1 @@
+{"version":3,"file":"tenant-related-issue-type-bulk-create.command.js","sourceRoot":"","sources":["../../../../../../../../packages/core/src/lib/tasks/related-issue-type/commands/tenant-related-issue-type-bulk-create.command.ts"],"names":[],"mappings":";;;AAGA,MAAa,uCAAuC;IAGnD,YAA4B,OAAkB;QAAlB,YAAO,GAAP,OAAO,CAAW;IAAG,CAAC;;AAHnD,0FAIC;AAHgB,4CAAI,GAAG,uCAAuC,CAAC"}

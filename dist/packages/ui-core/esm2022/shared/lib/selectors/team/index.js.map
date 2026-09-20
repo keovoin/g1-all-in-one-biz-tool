@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../../../../packages/ui-core/shared/src/lib/selectors/team/index.ts"],"names":[],"mappings":"AAAA,cAAc,qBAAqB,CAAC;AACpC,cAAc,uBAAuB,CAAC;AACtC,cAAc,eAAe,CAAC","sourcesContent":["export * from './team/default-team';\nexport * from './team/team.component';\nexport * from './team.module';\n"]}
