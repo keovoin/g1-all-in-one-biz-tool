@@ -10,7 +10,7 @@ WORKDIR /app
 
 # third-party runtime deps ONLY (dist/apps/api/node_modules/@gauzy ships compiled in)
 COPY package.deploy.json package.json
-RUN npm install --omit=dev --no-audit --no-fund --loglevel=error
+RUN npm install --omit=dev --no-audit --no-fund --legacy-peer-deps --loglevel=error
 
 # compiled artifacts (gitignored on main; committed on the render-deploy branch)
 COPY dist ./dist
