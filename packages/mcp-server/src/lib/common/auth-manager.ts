@@ -147,7 +147,7 @@ export class AuthManager {
 				logger.log(`🔑 Attempting login for: ${credentials.email}`);
 			}
 
-			// Use the correct Gauzy API endpoint
+			// Use the correct Sastra API endpoint
 			const response: IAuthResponse = await this.apiClient.post('/api/auth/login', credentials);
 
 			if (response?.token && response?.refresh_token) {
@@ -248,7 +248,7 @@ export class AuthManager {
 				logger.log('🔄 Refreshing access token...');
 			}
 
-			// Use the correct Gauzy API endpoint
+			// Use the correct Sastra API endpoint
 			const response = await this.apiClient.post('/api/auth/refresh-token', {
 				refresh_token: this.tokenData.refreshToken
 			});

@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/mcp-auth",
 	"version": "0.1.0",
-	"description": "MCP Authorization Server for Ever Gauzy Platform used as Identity Server",
+	"description": "MCP Authorization Server for Sastra Solution Platform used as Identity Server",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",

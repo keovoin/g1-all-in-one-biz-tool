@@ -452,7 +452,7 @@ export const flatten = (input: any): any => {
  * TypeORM `FindManyOptions` widened to also accept the legacy string-array `relations`/`select`
  * syntax that TypeORM removed in v1.0 (e.g. `relations: ['role', 'tenant.featureOrganizations']`).
  *
- * Ever Gauzy still passes this syntax in many dynamic call sites. Rather than patching TypeORM's own
+ * Sastra Solution still passes this syntax in many dynamic call sites. Rather than patching TypeORM's own
  * type declarations (the old `patches/typeorm+1.0.0.patch` approach), we widen our own option types
  * and convert the arrays to object form at the TypeORM data-access boundary (see
  * {@link parseTypeORMFindOptions}). The `relations`/`select` element types are pulled from TypeORM

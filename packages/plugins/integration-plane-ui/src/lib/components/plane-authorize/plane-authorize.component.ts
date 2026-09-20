@@ -15,7 +15,7 @@ import { PlaneApiKeyDialogComponent } from '../api-key-dialog/api-key-dialog.com
 
 const URL_PATTERN = /^https?:\/\/.+/;
 
-/** Global hosted Ever Gauzy PM UI URLs shown (read-only) in shared mode. */
+/** Global hosted Sastra Solution PM UI URLs shown (read-only) in shared mode. */
 const SHARED_PLANE_WEB_URL = 'https://pm.gauzy.co';
 const SHARED_PLANE_ADMIN_URL = ''; // admin (god-mode) not offered in shared mode
 const SHARED_PLANE_SPACE_URL = 'https://pm-space.gauzy.co';

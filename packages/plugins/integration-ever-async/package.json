@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-integration-ever-async",
 	"version": "0.1.0",
-	"description": "Ever Gauzy Platform plugin for integration with Ever Async, an async-first team communication assistant",
+	"description": "Sastra Solution Platform plugin for integration with Ever Async, an async-first team communication assistant",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",

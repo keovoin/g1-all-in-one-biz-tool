@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-ai-provider-mistral",
 	"version": "0.1.0",
-	"description": "Ever Gauzy AI Chat provider plugin — registers Mistral AI (OpenAI-compatible chat + Voxtral speech-to-text) with the @gauzy/plugin-ai-chat provider registry",
+	"description": "Sastra Solution AI Chat provider plugin — registers Mistral AI (OpenAI-compatible chat + Voxtral speech-to-text) with the @gauzy/plugin-ai-chat provider registry",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -43,7 +43,7 @@
 		"@nestjs/core": "^11.1.14"
 	},
 	"keywords": [
-		"Ever Gauzy",
+		"Sastra Solution",
 		"plugin",
 		"AI",
 		"chat",

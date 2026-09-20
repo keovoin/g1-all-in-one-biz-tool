@@ -658,7 +658,7 @@
 			"UPWORK_API_KEY": "Clé API Upwork",
 			"UPWORK_SECRET": "Secret Upwork",
 			"GAUZY_API_KEY": "Clé Gauzy IA",
-			"GAUZY_API_SECRET": "Gauzy AI Secret",
+			"GAUZY_API_SECRET": "Sastra AI Secret",
 			"SELECT_COMPANY": "Entreprise",
 			"TYPE_SEARCH_REQUEST": "Tapez votre demande de recherche ici...",
 			"SELECT_ICON": "Icône",
@@ -849,7 +849,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Proposition",
 		"TIME_OFF": "Congé",
@@ -900,11 +900,11 @@
 			"WRONG_FILE_NAME": "Mauvais nom de fichier !!!",
 			"CORRECT_FILE_NAME": "Le nom du fichier devrait être : \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Téléchargez des modèles",
-			"MIGRATE_TO_CLOUD": "Migrez vers Ever Gauzy Cloud",
+			"MIGRATE_TO_CLOUD": "Migrez vers Sastra Solution Cloud",
 			"IMPORT_INFO": "Cliquez sur \"Importer\" pour importer vos données dans la base de données Gauzy.",
 			"EXPORT_INFO": "Cliquez sur \"Exporter\" pour exporter les données de la base de données Gauzy.",
 			"DOWNLOAD_TEMPLATES_INFO": "Cliquez sur \"Télécharger les modèles\" pour télécharger une archive Zip contenant des modèles CSV pour le format des données Gauzy.",
-			"MIGRATE_TO_CLOUD_INFO": "Cliquez sur \"Migrer vers le Cloud Ever Gauzy\" pour migrer de l'édition auto-hébergée à l'édition cloud.",
+			"MIGRATE_TO_CLOUD_INFO": "Cliquez sur \"Migrer vers le Cloud Sastra Solution\" pour migrer de l'édition auto-hébergée à l'édition cloud.",
 			"MIGRATE_SUCCESSFULLY": "Migration vers Clouds Gauzy pour '{{ tenant }}' réussie !",
 			"ACCOUNTING_TEMPLATE": "Modèle de comptabilité",
 			"ACTIVITY": "Activité",
@@ -1276,7 +1276,7 @@
 			"MANUAL_ACTIVITY": "Aucun enregistrement trouvé. Veuillez sélectionner une plage de dates, un employé ou un projet.",
 			"AMOUNT_OWED": "Aucun montant dû.",
 			"WEEKLY_TIME_AND_ACTIVITY": "Vous n'avez pas encore enregistré de temps et d'activité pour ces jours-ci.",
-			"DAILY_TIME_AND_ACTIVITY": "Il n'y a pas encore de temps et d'activité enregistrés pour cette journée. Veuillez utiliser l'application Gauzy Desktop Timer App <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">ici</a>.",
+			"DAILY_TIME_AND_ACTIVITY": "Il n'y a pas encore de temps et d'activité enregistrés pour cette journée. Veuillez utiliser l'application Sastra Desktop Timer App <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">ici</a>.",
 			"PROJECT_BUDGET": "Vous n'avez créé aucun projet avec un budget.",
 			"CLIENT_BUDGET": "Vous n'avez créé aucun client avec un budget."
 		},
@@ -1506,8 +1506,8 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "Clé Gauzy AI",
-			"API_SECRET": "Gauzy AI Secret"
+			"API_KEY": "Clé Sastra AI",
+			"API_SECRET": "Sastra AI Secret"
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4467,7 +4467,7 @@
 		"SETUP": {
 			"WELCOME": "Bienvenue",
 			"TITLE": "Bienvenue sur Ever® Gauzy™ - Plateforme de gestion d'entreprise open-source (ERP/CRM/HRM)",
-			"LABEL": "L'application Gauzy Desktop offre l'intégralité des fonctionnalités de la plateforme Gauzy, directement accessible sur votre ordinateur de bureau ou votre ordinateur portable. De plus, elle permet de suivre le temps de travail, d'enregistrer les activités et de recevoir des rappels/notification de suivi.",
+			"LABEL": "L'application Sastra Desktop offre l'intégralité des fonctionnalités de la plateforme Gauzy, directement accessible sur votre ordinateur de bureau ou votre ordinateur portable. De plus, elle permet de suivre le temps de travail, d'enregistrer les activités et de recevoir des rappels/notification de suivi.",
 			"TITLE_SERVER": "Assistant d'installation du serveur Gauzy",
 			"LABEL_SERVER": "L'application Gauzy pour ordinateur de bureau offre toutes les fonctionnalités de la plateforme Gauzy accessibles directement sur votre ordinateur de bureau ou votre ordinateur portable. De plus, elle permet de suivre le temps de travail, d'enregistrer l'activité et de recevoir des rappels/notifications de suivi.",
 			"FUNCTIONALITIES": "Fonctionnalités",
@@ -4499,8 +4499,8 @@
 			"USER": "Utilisateur",
 			"PASSWORD": "Mot de passe",
 			"UI_HOSTNAME": "Nom d'hôte de l'interface utilisateur / Adresse IP",
-			"TITLE_SERVER_API": "Assistant d'installation du serveur API Ever Gauzy",
-			"LABEL_SERVER_API": "L'application de bureau Ever Gauzy API Server fournit toutes les fonctionnalités de la plateforme Gauzy disponibles directement sur votre ordinateur de bureau ou votre ordinateur portable. De plus, elle permet de suivre le temps de travail, d'enregistrer les activités et de recevoir des rappels/notifications de suivi.",
+			"TITLE_SERVER_API": "Assistant d'installation du serveur API Sastra Solution",
+			"LABEL_SERVER_API": "L'application de bureau Ever Sastra API Server fournit toutes les fonctionnalités de la plateforme Gauzy disponibles directement sur votre ordinateur de bureau ou votre ordinateur portable. De plus, elle permet de suivre le temps de travail, d'enregistrer les activités et de recevoir des rappels/notifications de suivi.",
 			"UNABLE_TO_CONNECT": "Impossible de se connecter au serveur. Veuillez vérifier votre hôte API ou votre connexion Internet.",
 			"JWT_SECRET": "Secret JWT",
 			"JWT_SECRET_PLACEHOLDER": "Entrez une clé secrète pour JWT",
@@ -5565,7 +5565,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "URL CDN",
@@ -5741,7 +5741,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "Clients OAuth",
-		"SUBTITLE": "Enregistrer et gérer des applications tierces qui peuvent demander l'accès à Ever Gauzy au nom de vos utilisateurs.",
+		"SUBTITLE": "Enregistrer et gérer des applications tierces qui peuvent demander l'accès à Sastra Solution au nom de vos utilisateurs.",
 		"STATUS": {
 			"ACTIVE": "Actif",
 			"INACTIVE": "Inactif"

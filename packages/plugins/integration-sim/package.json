@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-integration-sim",
 	"version": "0.1.0",
-	"description": "Ever Gauzy Platform plugin for integration with SIM AI automation platform.",
+	"description": "Sastra Solution Platform plugin for integration with SIM AI automation platform.",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -60,8 +60,8 @@
 		"API key",
 		"plugin",
 		"NestJS",
-		"Gauzy",
-		"Ever Gauzy",
+		"Sastra",
+		"Sastra Solution",
 		"platform",
 		"SDKs"
 	],

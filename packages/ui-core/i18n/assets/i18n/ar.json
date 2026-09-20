@@ -655,8 +655,8 @@
 			"ALL_TEAMS": "كل الفرق",
 			"UPWORK_API_KEY": "مفتاح واجهة برمجة التطبيقات لـ Upwork",
 			"UPWORK_SECRET": "سرّ أبورك",
-			"GAUZY_API_KEY": "مفتاح Gauzy AI",
-			"GAUZY_API_SECRET": "سر Gauzy AI",
+			"GAUZY_API_KEY": "مفتاح Sastra AI",
+			"GAUZY_API_SECRET": "سر Sastra AI",
 			"SELECT_COMPANY": "الشركة",
 			"TYPE_SEARCH_REQUEST": "اكتب طلب البحث الخاص بك هنا...",
 			"SELECT_ICON": "الأيقونة",
@@ -902,7 +902,7 @@
 			"IMPORT_INFO": "انقر على \"استيراد\" لاستيراد بياناتك إلى قاعدة بيانات Gauzy.",
 			"EXPORT_INFO": "انقر على \"تصدير\" لتصدير البيانات من قاعدة البيانات Gauzy.",
 			"DOWNLOAD_TEMPLATES_INFO": "انقر على \"تنزيل القوالب\" لتحميل أرشيف مضغوط بتنسيق CSV يحتوي على قوالب لبيانات Gauzy.",
-			"MIGRATE_TO_CLOUD_INFO": "انقر على \"انتقل إلى Ever Gauzy Cloud\" للانتقال من الإصدار المستضاف ذاتيًا إلى الإصدار السحابي.",
+			"MIGRATE_TO_CLOUD_INFO": "انقر على \"انتقل إلى Sastra Solution Cloud\" للانتقال من الإصدار المستضاف ذاتيًا إلى الإصدار السحابي.",
 			"MIGRATE_SUCCESSFULLY": "نقل Gauzy Cloud بنجاح لـ '{{ tenant }}'!",
 			"ACCOUNTING_TEMPLATE": "قالب المحاسبة",
 			"ACTIVITY": "النشاط",
@@ -1504,8 +1504,8 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "مفتاح Gauzy AI",
-			"API_SECRET": "Gauzy AI سري"
+			"API_KEY": "مفتاح Sastra AI",
+			"API_SECRET": "Sastra AI سري"
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4493,8 +4493,8 @@
 			"USER": "مستخدم",
 			"PASSWORD": "كلمة المرور",
 			"UI_HOSTNAME": "اسم المضيف أو عنوان IP واجهة المستخدم (UI)",
-			"TITLE_SERVER_API": "معالج تثبيت خادم API الخاص بـ Ever Gauzy",
-			"LABEL_SERVER_API": "يوفر تطبيق سطح المكتب Ever Gauzy API Server الوظائف الكاملة لمنصة Gauzy المتوفرة مباشرة على جهاز الكمبيوتر المكتبي أو الكمبيوتر المحمول. بالإضافة إلى ذلك، فهو يسمح بتتبع وقت العمل وتسجيل النشاط والقدرة على تلقي تذكيرات/إشعارات التتبع",
+			"TITLE_SERVER_API": "معالج تثبيت خادم API الخاص بـ Sastra Solution",
+			"LABEL_SERVER_API": "يوفر تطبيق سطح المكتب Ever Sastra API Server الوظائف الكاملة لمنصة Gauzy المتوفرة مباشرة على جهاز الكمبيوتر المكتبي أو الكمبيوتر المحمول. بالإضافة إلى ذلك، فهو يسمح بتتبع وقت العمل وتسجيل النشاط والقدرة على تلقي تذكيرات/إشعارات التتبع",
 			"UNABLE_TO_CONNECT": "غير قادر على الاتصال بالخادم. يرجى التحقق من مضيف API أو اتصال الإنترنت الخاص بك.",
 			"JWT_SECRET": "سر JWT",
 			"JWT_SECRET_PLACEHOLDER": "أدخل مفتاحاً سرياً لـ JWT",
@@ -5559,7 +5559,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "رابط CDN",
@@ -5730,7 +5730,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "عملاء OAuth",
-		"SUBTITLE": "تسجيل وإدارة تطبيقات الطرف الثالث التي يمكنها طلب الوصول إلى Ever Gauzy نيابة عن المستخدمين الخاصين بك.",
+		"SUBTITLE": "تسجيل وإدارة تطبيقات الطرف الثالث التي يمكنها طلب الوصول إلى Sastra Solution نيابة عن المستخدمين الخاصين بك.",
 		"STATUS": {
 			"ACTIVE": "نشط",
 			"INACTIVE": "غير نشط"

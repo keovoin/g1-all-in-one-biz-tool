@@ -1,13 +1,13 @@
 
 /**
  * @description
- * Current version of the Gauzy Agent Application.
+ * Current version of the Sastra Agent Application.
  *
  * @example
  * ```
  * import { version } from './version';
  *
- * console.log('Gauzy Agent Application Version:', version);
+ * console.log('Sastra Agent Application Version:', version);
  * ```
  *
  * @since 0.1.0

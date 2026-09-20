@@ -3,7 +3,7 @@
  */
 export const SyncTags = {
 	GITHUB: 'GitHub',
-	GAUZY: 'Gauzy'
+	GAUZY: 'Sastra'
 } as const;
 
 /**

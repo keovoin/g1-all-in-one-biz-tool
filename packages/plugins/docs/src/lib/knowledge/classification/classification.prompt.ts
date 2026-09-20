@@ -45,7 +45,7 @@ export interface IClassificationPromptInput {
  */
 export function buildClassificationPrompt(input: IClassificationPromptInput): { system: string; user: string } {
 	const system =
-		'You classify business documents for an organization on the Ever Gauzy platform.\n' +
+		'You classify business documents for an organization on the Sastra Solution platform.\n' +
 		'Respond with a single JSON object matching this schema — no prose, no code fences:\n' +
 		'{ "categories": ["slug"], "suggestedTags": ["keyword"], "summary": "…", "language": "en", "confidence": 0.0 }\n' +
 		'Rules: categories = 1-3 slugs from the provided catalog only; suggestedTags = 0-5 short lowercase keywords; ' +

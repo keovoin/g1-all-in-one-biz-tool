@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-ai-chat",
 	"version": "0.1.0",
-	"description": "Ever Gauzy AI Chat backend plugin — Vercel AI SDK powered streaming chat endpoint with tool calling, provider registry (per-provider plugins), per-tenant BYOK credentials and optional MCP tools",
+	"description": "Sastra Solution AI Chat backend plugin — Vercel AI SDK powered streaming chat endpoint with tool calling, provider registry (per-provider plugins), per-tenant BYOK credentials and optional MCP tools",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -49,7 +49,7 @@
 		"@nestjs/core": "^11.1.14"
 	},
 	"keywords": [
-		"Ever Gauzy",
+		"Sastra Solution",
 		"plugin",
 		"AI",
 		"chat",

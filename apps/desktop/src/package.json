@@ -1,8 +1,8 @@
 {
 	"name": "gauzy-desktop",
-	"productName": "Gauzy Desktop",
+	"productName": "Sastra Desktop",
 	"version": "0.1.0",
-	"description": "Gauzy Desktop",
+	"description": "Sastra Desktop",
 	"license": "AGPL-3.0",
 	"homepage": "https://gauzy.co",
 	"repository": {
@@ -22,7 +22,7 @@
 	"build": {
 		"appId": "com.ever.gauzydesktop",
 		"artifactName": "${name}-${arch}-${version}.${ext}",
-		"productName": "Gauzy Desktop",
+		"productName": "Sastra Desktop",
 		"copyright": "Copyright © 2019-Present. Ever Co. LTD",
 		"afterSign": "tools/notarize.js",
 		"dmg": {

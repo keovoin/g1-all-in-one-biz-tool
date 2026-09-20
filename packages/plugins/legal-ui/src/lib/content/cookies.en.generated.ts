@@ -14,7 +14,7 @@ import { ILegalDocument } from '../models/legal-document.model';
 export const LEGAL_COOKIES_EN: ILegalDocument = {
 	document: 'cookies',
 	product: 'gauzy',
-	productName: 'Ever Gauzy',
+	productName: 'Sastra Solution',
 	domain: 'gauzy.co',
 	entity: 'Ever Technologies LTD',
 	entityId: 'ever-technologies-bg',
@@ -25,7 +25,7 @@ export const LEGAL_COOKIES_EN: ILegalDocument = {
 	title: 'Cookie Policy',
 	html: `<h2 id="what-this-policy-covers" tabindex="-1">What this policy covers</h2>
 <p>This Cookie Policy explains the cookies and similar technologies we use on
-<a href="https://gauzy.co">gauzy.co</a> and in Ever Gauzy Cloud — the public website, the documentation,
+<a href="https://gauzy.co">gauzy.co</a> and in Sastra Solution Cloud — the public website, the documentation,
 the signed-in application, and any desktop or mobile application we publish for it. The product-specific
 section below lists what is actually in use on each of those surfaces.</p>
 <p>It sits alongside our <a href="https://gauzy.co/privacy">Privacy Policy</a>. The two documents answer different
@@ -247,7 +247,7 @@ their own, and some are capable of following a visitor across other sites entire
 <p><strong>Nothing in that group runs until you consent to it</strong>, and none of it is covered by the exemption described
 above. Each tool is named in the table below, with what it does, who operates it, and how long anything it
 stores lasts.</p>
-<h2 id="annex-ever-gauzy" tabindex="-1">Annex: Ever Gauzy</h2>
+<h2 id="annex-ever-gauzy" tabindex="-1">Annex: Sastra</h2>
 <h3 id="where-this-applies" tabindex="-1">Where this applies</h3>
 <p>This policy covers the gauzy.co website and the web application. <strong>The desktop applications are
 a different matter</strong>: they are not browsers and they do not use cookies for tracking. What they capture,
@@ -317,7 +317,7 @@ and remember interface preferences such as language, time zone and time format. 
 necessary or preference cookies for a service you have asked us to provide.</p>
 <p><strong>We do not run advertising or cross-site tracking inside the application.</strong> Nothing you do in a workspace
 is used to target advertising anywhere, and no advertising network receives data from it.</p>
-<h3 id="if-your-employer-runs-ever-gauzy" tabindex="-1">If your employer runs Ever Gauzy</h3>
+<h3 id="if-your-employer-runs-ever-gauzy" tabindex="-1">If your employer runs Sastra Solution</h3>
 <p>Cookie consent is about this website and this application in your browser. It has nothing to do with the
 desktop monitoring features — refusing analytics cookies here does not switch off screen capture, and
 accepting them does not switch it on. Those are configured by your employer and described in the privacy

@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-job-search",
 	"version": "0.1.0",
-	"description": "Ever Gauzy Platform Job Search Plugin",
+	"description": "Sastra Solution Platform Job Search Plugin",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -57,7 +57,7 @@
 	"keywords": [
 		"job-search",
 		"plugin",
-		"Ever Gauzy",
+		"Sastra Solution",
 		"NestJS",
 		"typescript",
 		"microservices",

@@ -2,7 +2,7 @@
  * MCP OAuth Authorization Server
  *
  * This server provides OAuth 2.0 authorization for MCP (Model Context Protocol)
- * clients to access Gauzy API resources.
+ * clients to access Sastra API resources.
  */
 
 import { Logger } from '@nestjs/common';

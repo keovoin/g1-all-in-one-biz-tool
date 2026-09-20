@@ -64,7 +64,7 @@ export class SaveEmployeeCriterionHandler implements ICommandHandler<SaveEmploye
 			tenantId
 		});
 
-		// Sync Gauzy AI criteria with the employee
+		// Sync Sastra AI criteria with the employee
 		this._gauzyAIService.syncGauzyEmployeeJobSearchCriteria(employee, criteria);
 
 		return creation;

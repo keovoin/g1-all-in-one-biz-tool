@@ -24,7 +24,7 @@ const openNgSelect = async (selector: string, typeahead?: string) => {
 	const input = getPage().locator(selector).locator('input').first();
 	const option = getPage().locator(TimesheetsPage.dropdownOptionCss).first();
 	// Retry the keyboard-open: a single focus+ArrowDown is occasionally a no-op when a fading dialog
-	// backdrop still owns focus (observed: the project ng-select never opened, so the 'Gauzy Web Site'
+	// backdrop still owns focus (observed: the project ng-select never opened, so the 'Sastra Web Site'
 	// option pick timed out at 60s). Re-focus + ArrowDown until an option renders (or give up after a
 	// few tries and let the caller's click time out with a clearer signal).
 	for (let attempt = 0; attempt < 3; attempt++) {
@@ -33,7 +33,7 @@ const openNgSelect = async (selector: string, typeahead?: string) => {
 		// Typeahead-filter when a search term is given: typing into the ng-select input both guarantees
 		// the panel is THIS control's (not a leftover div.ng-option panel from an earlier ng-select whose
 		// backdrop is still fading) and narrows the option list to the wanted row, so the async project
-		// fetch's target ('Gauzy Web Site') is the only/first div.ng-option — deterministic even under
+		// fetch's target ('Sastra Web Site') is the only/first div.ng-option — deterministic even under
 		// virtual-scroll or a slow getProjects() load. (ROOT CAUSE #3 typeahead variant.)
 		if (typeahead) {
 			await input.fill('').catch(() => {});
@@ -50,7 +50,7 @@ const openNgSelect = async (selector: string, typeahead?: string) => {
 
 // Best-effort ng-option pick: a slow or absent option must not hard-fail the flow. (The old
 // clickElementByText/clickButtonByIndex used a 60s force-timeout, and the round-6 failure was exactly
-// that hanging on the 'Gauzy Web Site' option.) Pick by text if it shows up within a short window,
+// that hanging on the 'Sastra Web Site' option.) Pick by text if it shows up within a short window,
 // else by index, else Escape and move on so the flow still reaches Save.
 //
 // Whether these dropdowns are optional is the ORGANISATION's call, not the form's. Reading
@@ -90,7 +90,7 @@ const bestEffortPick = async (text?: string, index = 0) => {
 // ROUND 7 root cause: a plain hash goto()/force can't dislodge a WEDGED previous screen — if the
 // preceding addClient's contact-mutation form is still rendering (in-flight submit / geocode spinner),
 // the daily route's "Add Time" toolbar button never mounts, the visibility wait below is swallowed, and
-// the whole timesheets flow then runs against the dead Clients DOM (the div.ng-option 'Gauzy Web Site'
+// the whole timesheets flow then runs against the dead Clients DOM (the div.ng-option 'Sastra Web Site'
 // pick times out because the Add Time dialog was never opened). Re-anchor with a HARD RELOAD: set the
 // hash first, then reload() so the browser re-fetches index.html and Angular re-bootstraps cleanly on
 // the daily route, discarding any leftover form/overlay/spinner from the prerequisite. (ROOT CAUSE #8 +
@@ -197,8 +197,8 @@ export const selectProjectDropdownVisible = async () => verifyElementIsVisible(T
 
 // Open the project ng-select AND typeahead-filter to the wanted project so its option is the only
 // div.ng-option rendered (the prior plain ArrowDown open intermittently matched a stale panel and then
-// the 'Gauzy Web Site' text-pick timed out at 60s — the observed round-6 failure). Filter on the first
-// word only ('Gauzy') so ng-select's contains-match still yields the full 'Gauzy Web Site' row.
+// the 'Sastra Web Site' text-pick timed out at 60s — the observed round-6 failure). Filter on the first
+// word only ('Sastra') so ng-select's contains-match still yields the full 'Sastra Web Site' row.
 export const clickSelectProjectDropdown = async () =>
 	openNgSelect(TimesheetsPage.projectDropdownCss, String(TimesheetsPageData.defaultProjectName).split(' ')[0]);
 

@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-job-proposal",
 	"version": "0.1.0",
-	"description": "Ever Gauzy Platform Job Proposal Plugin",
+	"description": "Sastra Solution Platform Job Proposal Plugin",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -58,7 +58,7 @@
 	"keywords": [
 		"job-proposal",
 		"plugin",
-		"Ever Gauzy",
+		"Sastra Solution",
 		"NestJS",
 		"typescript",
 		"microservices",

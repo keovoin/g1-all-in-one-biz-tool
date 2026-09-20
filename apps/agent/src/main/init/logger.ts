@@ -9,7 +9,7 @@ export function InitLogger() {
 	log.setup();
 
 	// Add node modules path
-	log.info('Gauzy Agent Node Modules Path', path.join(__dirname, 'node_modules'));
+	log.info('Sastra Agent Node Modules Path', path.join(__dirname, 'node_modules'));
 
 	// Initialize Sentry
 	initSentry();

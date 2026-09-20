@@ -1,8 +1,8 @@
 {
 	"name": "gauzy-mcp-server",
-	"productName": "Ever Gauzy MCP Server",
+	"productName": "Sastra Solution MCP Server",
 	"version": "0.1.0",
-	"description": "Ever Gauzy MCP Server",
+	"description": "Sastra Solution MCP Server",
 	"license": "AGPL-3.0",
 	"homepage": "https://gauzy.co",
 	"repository": {
@@ -28,7 +28,7 @@
 		],
 		"appId": "com.ever.gauzymcpserver",
 		"artifactName": "${name}-${arch}-${version}.${ext}",
-		"productName": "Ever Gauzy MCP Server",
+		"productName": "Sastra Solution MCP Server",
 		"copyright": "Copyright © 2019-Present. Ever Co. LTD",
 		"afterSign": "tools/notarize.js",
 		"dmg": {

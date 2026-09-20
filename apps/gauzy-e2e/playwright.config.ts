@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 
 /**
- * Playwright config for the Ever Gauzy e2e suite.
+ * Playwright config for the Sastra Solution e2e suite.
  *
  * Migration target replacing Cypress (see cypress.json). Mirrors the Cypress
  * settings: baseURL http://localhost:4200, 1920x1080 viewport, generous timeouts

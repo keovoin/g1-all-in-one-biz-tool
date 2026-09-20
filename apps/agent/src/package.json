@@ -1,8 +1,8 @@
 {
 	"name": "gauzy-agent",
-	"productName": "Gauzy Agent",
+	"productName": "Sastra Agent",
 	"version": "0.1.0",
-	"description": "Gauzy Agent",
+	"description": "Sastra Agent",
 	"license": "AGPL-3.0",
 	"homepage": "https://gauzy.co",
 	"repository": {
@@ -22,7 +22,7 @@
 	"build": {
 		"appId": "com.ever.gauzyagent",
 		"artifactName": "${name}-${arch}-${version}.${ext}",
-		"productName": "Gauzy Agent",
+		"productName": "Sastra Agent",
 		"copyright": "Copyright © 2019-Present. Ever Co. LTD",
 		"afterSign": "tools/notarize.js",
 		"dmg": {

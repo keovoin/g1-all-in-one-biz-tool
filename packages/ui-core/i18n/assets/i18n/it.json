@@ -656,8 +656,8 @@
 			"ALL_TEAMS": "Tutti i team",
 			"UPWORK_API_KEY": "Chiave API di Upwork",
 			"UPWORK_SECRET": "Segreto di Upwork",
-			"GAUZY_API_KEY": "Gauzy AI Key",
-			"GAUZY_API_SECRET": "Gauzy AI Segreto",
+			"GAUZY_API_KEY": "Sastra AI Key",
+			"GAUZY_API_SECRET": "Sastra AI Segreto",
 			"SELECT_COMPANY": "Azienda",
 			"TYPE_SEARCH_REQUEST": "Digita qui la tua richiesta di ricerca..",
 			"SELECT_ICON": "Icona",
@@ -848,7 +848,7 @@
 		"UPWORK": "Upwork",
 		"MAKE_COM": "Make.com",
 		"ZAPIER": "Zapier",
-		"GAUZY_AI": "Gauzy AI",
+		"GAUZY_AI": "Sastra AI",
 		"ACTIVEPIECES": "Activepieces",
 		"PROPOSALS": "Proposte",
 		"TIME_OFF": "Tempo libero",
@@ -899,11 +899,11 @@
 			"WRONG_FILE_NAME": "Nome del file errato!!!",
 			"CORRECT_FILE_NAME": "Il nome del file dovrebbe essere: \"archive.zip\"",
 			"DOWNLOAD_TEMPLATES": "Scarica i modelli",
-			"MIGRATE_TO_CLOUD": "Migrare su Ever Gauzy Cloud",
+			"MIGRATE_TO_CLOUD": "Migrare su Sastra Solution Cloud",
 			"IMPORT_INFO": "Clicca su \"Importa\" per importare i tuoi dati nel database di Gauzy",
 			"EXPORT_INFO": "Clicca su \"Esporta\" per esportare i dati dal database Gauzy",
 			"DOWNLOAD_TEMPLATES_INFO": "Clicca su \"Scarica modelli\" per scaricare l'archivio Zip con i modelli CSV per il formato dei dati di Gauzy",
-			"MIGRATE_TO_CLOUD_INFO": "Clicca su \"Migra a Ever Gauzy Cloud\" per effettuare la migrazione dalla versione auto-ospitata alla versione cloud",
+			"MIGRATE_TO_CLOUD_INFO": "Clicca su \"Migra a Sastra Solution Cloud\" per effettuare la migrazione dalla versione auto-ospitata alla versione cloud",
 			"MIGRATE_SUCCESSFULLY": "La migrazione di Gauzy Cloud per '{{ tenant }}' è stata completata con successo!",
 			"ACCOUNTING_TEMPLATE": "Modello di contabilità",
 			"ACTIVITY": "Attività",
@@ -1275,7 +1275,7 @@
 			"MANUAL_ACTIVITY": "Nessun record trovato. Selezionare intervallo di date, dipendente o progetto",
 			"AMOUNT_OWED": "Nessun importo dovuto",
 			"WEEKLY_TIME_AND_ACTIVITY": "Non hai ancora registrato alcun tempo e attività per questi giorni",
-			"DAILY_TIME_AND_ACTIVITY": "Non è ancora stato registrato alcun tempo e attività per questo giorno. Si prega di utilizzare l'applicazione Gauzy Desktop Timer <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">qua</a>",
+			"DAILY_TIME_AND_ACTIVITY": "Non è ancora stato registrato alcun tempo e attività per questo giorno. Si prega di utilizzare l'applicazione Sastra Desktop Timer <a href={{downloadURL}} rel=\"noopener\" target=\"_blank\">qua</a>",
 			"PROJECT_BUDGET": "Non hai creato nessun progetto con un budget",
 			"CLIENT_BUDGET": "Non hai creato nessun cliente con un budget"
 		},
@@ -1505,8 +1505,8 @@
 			}
 		},
 		"GAUZY_AI_PAGE": {
-			"API_KEY": "Chiave Gauzy AI",
-			"API_SECRET": "Gauzy AI Segreto"
+			"API_KEY": "Chiave Sastra AI",
+			"API_SECRET": "Sastra AI Segreto"
 		},
 		"ACTIVEPIECES_PAGE": {
 			"TITLE": "Activepieces",
@@ -4508,8 +4508,8 @@
 			"USER": "Utente",
 			"PASSWORD": "Password",
 			"UI_HOSTNAME": "Nome host dell'interfaccia utente / indirizzo IP",
-			"TITLE_SERVER_API": "Procedura guidata di installazione del server API Ever Gauzy",
-			"LABEL_SERVER_API": "Ever Gauzy API Server Desktop App fornisce la piena funzionalità della piattaforma Gauzy disponibile direttamente sul tuo computer desktop o laptop. Inoltre, consente di tracciare il tempo di lavoro, registrare le attività e ricevere promemoria/notifiche di tracciamento.",
+			"TITLE_SERVER_API": "Procedura guidata di installazione del server API Sastra Solution",
+			"LABEL_SERVER_API": "Ever Sastra API Server Desktop App fornisce la piena funzionalità della piattaforma Gauzy disponibile direttamente sul tuo computer desktop o laptop. Inoltre, consente di tracciare il tempo di lavoro, registrare le attività e ricevere promemoria/notifiche di tracciamento.",
 			"UNABLE_TO_CONNECT": "Impossibile connettersi al server. Controlla il tuo host API o la connessione internet.",
 			"JWT_SECRET": "Segreto JWT",
 			"JWT_SECRET_PLACEHOLDER": "Inserisci una chiave segreta per JWT",
@@ -5574,7 +5574,7 @@
 			"SOURCE_TYPES": {
 				"CDN": "CDN",
 				"NPM": "NPM",
-				"GAUZY": "Gauzy"
+				"GAUZY": "Sastra"
 			},
 			"CDN": {
 				"URL": "URL CDN",
@@ -5751,7 +5751,7 @@
 	},
 	"OAUTH_CLIENTS": {
 		"TITLE": "Client OAuth",
-		"SUBTITLE": "Registra e gestisci applicazioni di terze parti che possono richiedere l'accesso a Ever Gauzy per conto dei tuoi utenti.",
+		"SUBTITLE": "Registra e gestisci applicazioni di terze parti che possono richiedere l'accesso a Sastra Solution per conto dei tuoi utenti.",
 		"STATUS": {
 			"ACTIVE": "Attivo",
 			"INACTIVE": "Inattivo"

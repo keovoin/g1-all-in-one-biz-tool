@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-ai-provider-anthropic",
 	"version": "0.1.0",
-	"description": "Ever Gauzy AI Chat provider plugin — registers Anthropic (Claude) models with the @gauzy/plugin-ai-chat provider registry via @ai-sdk/anthropic",
+	"description": "Sastra Solution AI Chat provider plugin — registers Anthropic (Claude) models with the @gauzy/plugin-ai-chat provider registry via @ai-sdk/anthropic",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -43,7 +43,7 @@
 		"@nestjs/core": "^11.1.14"
 	},
 	"keywords": [
-		"Ever Gauzy",
+		"Sastra Solution",
 		"plugin",
 		"AI",
 		"chat",

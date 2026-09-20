@@ -4,7 +4,7 @@ import { ISourceStrategy } from '../../shared/plugin.model';
 export class GauzySourceStrategy implements ISourceStrategy<IGauzySource> {
 	public appendToFormData(formData: FormData, source: IGauzySource): void {
 		if (!source.file || !(source.file instanceof File)) {
-			throw new Error('File is required for Gauzy Source.');
+			throw new Error('File is required for Sastra Source.');
 		}
 		formData.append('file', source.file);
 	}

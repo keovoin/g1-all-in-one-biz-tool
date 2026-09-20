@@ -111,7 +111,7 @@
 			"DEFAULT": "Default",
 			"VIA_ENV": "Managed via server environment",
 			"EMPTY_TITLE": "No AI providers yet",
-			"EMPTY_PROVIDERS": "Gauzy AI · OpenRouter · Vercel AI Gateway · Anthropic · OpenAI · Gemini · Grok · Groq · Mistral · LocalAI · OpenAI-compatible — voice: Deepgram · ElevenLabs · Speaches · whisper.cpp"
+			"EMPTY_PROVIDERS": "Sastra AI · OpenRouter · Vercel AI Gateway · Anthropic · OpenAI · Gemini · Grok · Groq · Mistral · LocalAI · OpenAI-compatible — voice: Deepgram · ElevenLabs · Speaches · whisper.cpp"
 		},
 		"CATALOG": {
 			"TITLE": "Add AI Provider",

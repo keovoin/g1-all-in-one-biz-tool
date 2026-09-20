@@ -17,13 +17,13 @@ const logger = new Logger('TestConnectionTools');
  */
 export const registerTestTools = (server: McpServer) => {
 	// Test API connection
-	registerNoArgsTool(server, 'test_api_connection', 'Test the connection to the Gauzy API server', async () => {
+	registerNoArgsTool(server, 'test_api_connection', 'Test the connection to the Sastra API server', async () => {
 		try {
 			const connectionTest = await apiClient.testConnection();
 
 			if (connectionTest.success) {
 				const authStatus = authManager.getAuthStatus();
-				const statusText = `✅ Successfully connected to Gauzy API server!
+				const statusText = `✅ Successfully connected to Sastra API server!
 
 Connection Details:
 - Base URL: ${apiClient.getBaseUrl()}

@@ -7,7 +7,7 @@ import { PlaneSettingName } from './plane-setting.enum';
 import { ConfigurePlaneIntegrationDto } from './dto/configure-plane-integration.dto';
 import { UpdatePlaneSettingsDto } from './dto/update-plane-settings.dto';
 
-/** Global hosted Ever Gauzy PM UI URLs used when the integration runs in "shared" mode. */
+/** Global hosted Sastra Solution PM UI URLs used when the integration runs in "shared" mode. */
 const SHARED_PLANE_WEB_URL = 'https://pm.gauzy.co';
 const SHARED_PLANE_ADMIN_URL = ''; // admin (god-mode) not offered in shared mode
 const SHARED_PLANE_SPACE_URL = 'https://pm-space.gauzy.co';
@@ -427,7 +427,7 @@ export class PlaneIntegrationService {
 		const apiKey = settingsMap[PlaneSettingName.PLANE_API_KEY_VALUE] || '';
 		const apiSecret = settingsMap[PlaneSettingName.PLANE_API_SECRET_VALUE] || '';
 
-		// The externalBaseApiUrl is the Gauzy API URL including the /api prefix
+		// The externalBaseApiUrl is the Sastra API URL including the /api prefix
 		const gauzyApiBaseUrl = this.configService.get('baseUrl') || 'http://localhost:3000';
 
 		return {

@@ -17,7 +17,7 @@ export interface IMcpToolsHandle {
  * MCP server can act on behalf of that user.
  *
  * SECURITY NOTE: only enable this against an MCP server that validates and
- * uses the per-request bearer token for its own Gauzy API calls. An MCP
+ * uses the per-request bearer token for its own Sastra API calls. An MCP
  * server logged in with a fixed service account would execute tools with
  * THAT account's permissions, bypassing the requesting user's RBAC.
  * See the plugin README for the current status of the bundled

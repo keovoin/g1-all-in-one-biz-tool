@@ -6,7 +6,7 @@
  * ```
  * import { version } from './version';
  *
- * console.log('Gauzy API version:', version);
+ * console.log('Sastra API version:', version);
  * ```
  *
  * @since 0.1.0

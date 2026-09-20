@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-onboarding-ui",
 	"version": "0.1.0",
-	"description": "A plugin for the onboarding UI in the Ever Gauzy platform, providing user-friendly components and modules to facilitate the onboarding process.",
+	"description": "A plugin for the onboarding UI in the Sastra Solution platform, providing user-friendly components and modules to facilitate the onboarding process.",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",

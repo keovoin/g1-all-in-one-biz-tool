@@ -12,7 +12,7 @@ export interface IScreenshot extends IBasePerTenantAndOrganizationEntityModel, I
 	fullUrl?: string;
 	recordedAt?: Date;
 	storageProvider?: FileStorageProvider;
-	/** Image/Screenshot Analysis Through Gauzy AI */
+	/** Image/Screenshot Analysis Through Sastra AI */
 	isWorkRelated?: boolean;
 	description?: string;
 	apps?: string | string[];

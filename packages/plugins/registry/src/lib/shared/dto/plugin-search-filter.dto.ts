@@ -90,7 +90,7 @@ export class PluginSearchFilterDTO extends PartialType(BaseQueryDTO<IPlugin>) {
 
 	@ApiPropertyOptional({
 		description: 'Filter by plugin author',
-		example: 'Gauzy Team'
+		example: 'Sastra Team'
 	})
 	@IsOptional()
 	@IsString()

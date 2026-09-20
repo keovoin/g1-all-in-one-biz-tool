@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-ai-provider-gauzy-ai",
 	"version": "0.1.0",
-	"description": "Ever Gauzy AI Chat provider plugin — registers the Gauzy AI provider placeholder with the @gauzy/plugin-ai-chat provider registry (chat routing through Gauzy AI is not implemented yet)",
+	"description": "Sastra Solution AI Chat provider plugin — registers the Sastra AI provider placeholder with the @gauzy/plugin-ai-chat provider registry (chat routing through Sastra AI is not implemented yet)",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -42,14 +42,14 @@
 		"@nestjs/core": "^11.1.14"
 	},
 	"keywords": [
-		"Ever Gauzy",
+		"Sastra Solution",
 		"plugin",
 		"AI",
 		"chat",
 		"AI provider",
 		"Vercel AI SDK",
 		"NestJS",
-		"Gauzy AI"
+		"Sastra AI"
 	],
 	"engines": {
 		"node": ">=22",

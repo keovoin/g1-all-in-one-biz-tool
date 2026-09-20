@@ -186,7 +186,7 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Analyze an image/screenshot using Gauzy AI.
+	 * Analyze an image/screenshot using Sastra AI.
 	 *
 	 * @param files - Array of Buffers representing the uploaded images.
 	 * @returns Promise<any> - The analysis result for the image.
@@ -284,7 +284,7 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Get statistic from Gauzy AI about how many jobs are available for given employee
+	 * Get statistic from Sastra AI about how many jobs are available for given employee
 	 * and to how many of jobs employee already applied and more statistic in the future.
 	 */
 	public async getEmployeesStatistics(): Promise<IEmployeeJobsStatistics[]> {
@@ -292,8 +292,8 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Updates in Gauzy AI if given Employee looking for a jobs or not.
-	 * If not looking, Gauzy AI will NOT return jobs for such employee and will NOT crawl sources for jobs for such employee
+	 * Updates in Sastra AI if given Employee looking for a jobs or not.
+	 * If not looking, Sastra AI will NOT return jobs for such employee and will NOT crawl sources for jobs for such employee
 	 * @param employeeId
 	 * @param isJobSearchActive
 	 */
@@ -317,7 +317,7 @@ export class GauzyAIService {
 		const gauzyAIEmployeeId = await this.getEmployeeGauzyAIId(employeeId);
 
 		console.log(
-			`updateEmployeeStatus called. EmployeeId: ${employeeId}. Gauzy AI EmployeeId: ${gauzyAIEmployeeId}`
+			`updateEmployeeStatus called. EmployeeId: ${employeeId}. Sastra AI EmployeeId: ${gauzyAIEmployeeId}`
 		);
 
 		const update: UpdateEmployee = {
@@ -374,7 +374,7 @@ export class GauzyAIService {
 		const jobPostId = await this.getJobPostId(input.providerCode, input.providerJobId);
 		console.log(chalk.green(`Method 'apply' is called. jobPostId: ${jobPostId}`));
 
-		// Next, we need to find `public employee job post` table record in Gauzy AI to get id of record.
+		// Next, we need to find `public employee job post` table record in Sastra AI to get id of record.
 		// We can find by employeeId and jobPostId
 
 		const employeeJobPostId = await this.getEmployeeJobPostId(employeeId, jobPostId);
@@ -426,9 +426,9 @@ export class GauzyAIService {
 
 	/**
 	 * Updates job visibility
-	 * @param hide Should job be hidden or visible. This will set isActive field to false in Gauzy AI
-	 * @param employeeId If employeeId set, job will be set not active only for that specific employee (using EmployeeJobPost record update in Gauzy AI)
-	 * If employeeId is not set, job will be set not active for all employees (using JobPost record update in Gauzy AI)
+	 * @param hide Should job be hidden or visible. This will set isActive field to false in Sastra AI
+	 * @param employeeId If employeeId set, job will be set not active only for that specific employee (using EmployeeJobPost record update in Sastra AI)
+	 * If employeeId is not set, job will be set not active for all employees (using JobPost record update in Sastra AI)
 	 * @param providerCode e.g. 'upwork'
 	 * @param providerJobId Unique job id in the provider, e.g. in Upwork. If this value is not set, it will update ALL jobs for given provider
 	 */
@@ -449,7 +449,7 @@ export class GauzyAIService {
 
 			console.log(`updateVisibility called. jobPostId: ${jobPostId}`);
 
-			// Next, we need to find `public employee job post` table record in Gauzy AI to get id of record.
+			// Next, we need to find `public employee job post` table record in Sastra AI to get id of record.
 			// We can find by employeeId and jobPostId
 
 			const employeeJobPostId = await this.getEmployeeJobPostId(employeeId, jobPostId);
@@ -502,7 +502,7 @@ export class GauzyAIService {
 	 * NOTE: We will not use this method for now.
 	 *
 	 * Inside interface IEmployeeJobApplication we get below fields
-	 *	applied: boolean; <- This will set isApplied and appliedDate fields in Gauzy AI
+	 *	applied: boolean; <- This will set isApplied and appliedDate fields in Sastra AI
 	 *	employeeId: string; <- Employee who applied for a job
 	 *	providerCode: string; <- e.g. 'upwork'
 	 *	providerJobId: string; <- Unique job id in the provider, e.g. in Upwork
@@ -524,7 +524,7 @@ export class GauzyAIService {
 		const jobPostId = await this.getJobPostId(input.providerCode, input.providerJobId);
 		console.log(chalk.green(`updateApplied called. jobPostId: ${jobPostId}`));
 
-		// Next, we need to find `public employee job post` table record in Gauzy AI to get id of record.
+		// Next, we need to find `public employee job post` table record in Sastra AI to get id of record.
 		// We can find by employeeId and jobPostId
 
 		const employeeJobPostId = await this.getEmployeeJobPostId(employeeId, jobPostId);
@@ -589,7 +589,7 @@ export class GauzyAIService {
 			});
 
 			// ------------------ Update Employee Job Post Record ------------------
-			// Note: it's just set isApplied and appliedDate fields in Gauzy AI
+			// Note: it's just set isApplied and appliedDate fields in Sastra AI
 
 			const update: UpdateEmployeeJobPost = {
 				employeeId: employeeId,
@@ -622,9 +622,9 @@ export class GauzyAIService {
 			});
 		}
 
-		// TODO: here we need to check what returned from Gauzy AI
+		// TODO: here we need to check what returned from Sastra AI
 		// Because for some providers (e.g. Upwork), redirect to apply manually required
-		// But for other providers, apply can work inside Gauzy AI automatically
+		// But for other providers, apply can work inside Sastra AI automatically
 		return { isRedirectRequired: true };
 	}
 
@@ -636,10 +636,10 @@ export class GauzyAIService {
 	// We DO NOT USE DATA YOU PASS FROM UI!
 	// INSTEAD, We CALL THIS METHOD FROM YOUR CQRS COMMAND HANDLERS when you detect that anything related to matching changes
 	// But as explained above, we must reload criteria from DB, not use anything you have in the local variables
-	// (because it might not be full data, but this method requires all data to be synced to Gauzy AI, even if such data was previously already synced)
+	// (because it might not be full data, but this method requires all data to be synced to Sastra AI, even if such data was previously already synced)
 	// How this method will work internally:
-	// - it will call sync for employee first and if no such employee exists in Gauzy AI, it will create new. If exists, it will update employee properties, e.g. lastName
-	// - next, it will remove all criteria for employee in Gauzy AI and create new records again for criterions.
+	// - it will call sync for employee first and if no such employee exists in Sastra AI, it will create new. If exists, it will update employee properties, e.g. lastName
+	// - next, it will remove all criteria for employee in Sastra AI and create new records again for criterions.
 	// I.e. no update will be done, it will be full replacement
 	// The reason it's acceptable is because such data changes rarely for given employee, so it's totally fine to recreate it
 	// NOTE: will need to call this method from multiple different CQRS command handlers!
@@ -722,7 +722,7 @@ export class GauzyAIService {
 				)}`
 			);
 
-			// now let's create new criteria in Gauzy AI based on Gauzy criterions data
+			// now let's create new criteria in Sastra AI based on Gauzy criterions data
 
 			if (criteria && criteria.length > 0) {
 				const gauzyAICriteria: UpworkJobsSearchCriterion[] = [];
@@ -774,11 +774,11 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Creates employees in Gauzy AI if not exists yet. If exists, updates fields, including externalEmployeeId
+	 * Creates employees in Sastra AI if not exists yet. If exists, updates fields, including externalEmployeeId
 	 * How it works:
-	 * - search done externalEmployeeId field first in Gauzy AI to be equal to Gauzy employee Id.
-	 * - if no record found in Gauzy AI, it search Gauzy AI employees records by employee name
-	 * - if no record found in Gauzy AI, it creates new employee in Gauzy AI
+	 * - search done externalEmployeeId field first in Sastra AI to be equal to Gauzy employee Id.
+	 * - if no record found in Sastra AI, it search Sastra AI employees records by employee name
+	 * - if no record found in Sastra AI, it creates new employee in Sastra AI
 	 *
 	 * @param employees
 	 */
@@ -1234,7 +1234,7 @@ export class GauzyAIService {
 			};
 
 			if (this.logging) {
-				console.log(this._requestConfigProvider.getConfig(), 'Runtime Gauzy AI Integration Config');
+				console.log(this._requestConfigProvider.getConfig(), 'Runtime Sastra AI Integration Config');
 				console.log('Custom Run Time Headers: %s', customHeaders);
 			}
 
@@ -1274,7 +1274,7 @@ export class GauzyAIService {
 			console.log(chalk.magenta(`GauzyAI GraphQL Endpoint: ${this.gauzyAIGraphQLEndpoint}`));
 
 			if (this.gauzyAIGraphQLEndpoint && gauzyAIRESTEndpoint) {
-				this._logger.log('Gauzy AI Endpoints (GraphQL & REST) are configured in the environment');
+				this._logger.log('Sastra AI Endpoints (GraphQL & REST) are configured in the environment');
 
 				this.initClient();
 
@@ -1312,19 +1312,19 @@ export class GauzyAIService {
 
 				// testConnectionQuery();
 			} else {
-				this._logger.warn('Gauzy AI Endpoints are not configured in the environment');
+				this._logger.warn('Sastra AI Endpoints are not configured in the environment');
 				this._client = null;
 			}
 		} catch (err) {
-			this._logger.warn('Gauzy AI Endpoints are not configured in the environment');
+			this._logger.warn('Sastra AI Endpoints are not configured in the environment');
 			this._logger.error(err);
 			this._client = null;
 		}
 	}
 
-	/** Sync Employee between Gauzy and Gauzy AI
-	 *  Creates new Employee in Gauzy AI if it's not yet exists there yet (it try to find by externalEmployeeId field value or by name)
-	 *  Update existed Gauzy AI Employee record with new data from Gauzy DB
+	/** Sync Employee between Gauzy and Sastra AI
+	 *  Creates new Employee in Sastra AI if it's not yet exists there yet (it try to find by externalEmployeeId field value or by name)
+	 *  Update existed Sastra AI Employee record with new data from Gauzy DB
 	 */
 	private async syncEmployee(employee: Employee): Promise<Employee> {
 		console.log('-------------------------- Sync Employee --------------------------', employee);
@@ -1356,7 +1356,7 @@ export class GauzyAIService {
 			let isAlreadyCreated = employeesResponse.length > 0;
 
 			console.log(
-				`Is Employee ${employee.externalEmployeeId} already exists in Gauzy AI: ${isAlreadyCreated} by externalEmployeeId field`
+				`Is Employee ${employee.externalEmployeeId} already exists in Sastra AI: ${isAlreadyCreated} by externalEmployeeId field`
 			);
 
 			if (!isAlreadyCreated) {
@@ -1391,7 +1391,7 @@ export class GauzyAIService {
 				isAlreadyCreated = employeesResponse.length > 0;
 
 				console.log(
-					`Is Employee ${employee.externalEmployeeId} already exists in Gauzy AI: ${isAlreadyCreated} by name fields`
+					`Is Employee ${employee.externalEmployeeId} already exists in Sastra AI: ${isAlreadyCreated} by name fields`
 				);
 
 				if (!isAlreadyCreated) {
@@ -1468,9 +1468,9 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Sync User between Gauzy and Gauzy AI
-	 * Creates new User in Gauzy AI if it's not yet exists there yet (it try to find by externalUserId field value or by email)
-	 * Update existed Gauzy AI User record with new data from Gauzy DB
+	 * Sync User between Gauzy and Sastra AI
+	 * Creates new User in Sastra AI if it's not yet exists there yet (it try to find by externalUserId field value or by email)
+	 * Update existed Sastra AI User record with new data from Gauzy DB
 	 */
 	private async syncUser(user: User) {
 		console.log('-------------------------- Sync User --------------------------', user);
@@ -1521,7 +1521,7 @@ export class GauzyAIService {
 			let isAlreadyCreated = usersQueryResult.data.users.totalCount > 0;
 
 			console.log(
-				`Is User already exists in Gauzy AI: ${isAlreadyCreated} by externalUserId: %s and externalTenantId: %s fields`,
+				`Is User already exists in Sastra AI: ${isAlreadyCreated} by externalUserId: %s and externalTenantId: %s fields`,
 				user.externalUserId,
 				user.externalTenantId
 			);
@@ -1603,7 +1603,7 @@ export class GauzyAIService {
 	}
 
 	/**
-	 * Updates the API key of a tenant in the Gauzy AI service.
+	 * Updates the API key of a tenant in the Sastra AI service.
 	 *
 	 * @param input - The updated API key data.
 	 * @returns The updated tenant API key information.

@@ -24,7 +24,7 @@ export class EmployeeProposalTemplateService extends TenantAwareCrudService<Empl
 	/**
 	 * Creates a proposal template, sanitizing the rich-text `content` HTML through the shared
 	 * server-side allowlist before persisting — the content is re-rendered in template views and
-	 * fed into Gauzy AI proposal generation (see `sanitizeRichHtml`).
+	 * fed into Sastra AI proposal generation (see `sanitizeRichHtml`).
 	 *
 	 * @param entity - The proposal template data to persist.
 	 * @returns The persisted proposal template.

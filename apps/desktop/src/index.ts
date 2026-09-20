@@ -67,7 +67,7 @@ import { initSentry } from './sentry';
 import { IConfig } from '@gauzy/desktop-core';
 
 /**
- * Describes the configuration for building the Gauzy API base URL.
+ * Describes the configuration for building the Sastra API base URL.
  */
 export interface ApiConfig {
 	/**
@@ -502,7 +502,7 @@ function setEnvAdditional() {
 }
 
 /**
- * Retrieves the base URL for the Gauzy API based on a configuration object.
+ * Retrieves the base URL for the Sastra API based on a configuration object.
  *
  * If `configs.serverUrl` is defined, this function returns that URL directly.
  * Otherwise, it constructs a local address using `configs.host`, `configs.protocol`,

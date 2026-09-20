@@ -70,7 +70,7 @@ export const plugins = [
 	AiProviderOpenAiPlugin,
 	AiProviderOpenRouterPlugin,
 	AiProviderVercelGatewayPlugin,
-	// Gauzy AI provider is registered but chat is not routed through it yet (see plugin README).
+	// Sastra AI provider is registered but chat is not routed through it yet (see plugin README).
 	AiProviderGauzyAiPlugin,
 	AiProviderGeminiPlugin,
 	AiProviderGrokPlugin,

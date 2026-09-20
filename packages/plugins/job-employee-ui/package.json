@@ -1,7 +1,7 @@
 {
 	"name": "@gauzy/plugin-job-employee-ui",
 	"version": "0.1.0",
-	"description": "A plugin for managing job and employee UI functionalities in the Ever Gauzy platform.",
+	"description": "A plugin for managing job and employee UI functionalities in the Sastra Solution platform.",
 	"author": {
 		"name": "Ever Co. LTD",
 		"email": "ever@ever.co",
@@ -51,7 +51,7 @@
 		"Angular",
 		"UI",
 		"plugin",
-		"Ever Gauzy",
+		"Sastra Solution",
 		"job",
 		"employee",
 		"management"
