@@ -8,7 +8,7 @@ const ROOT = path.resolve(__dirname, '../dist/apps/gauzy');
 let totalReplaced = 0;
 function patchFile(file) {
   const before = fs.readFileSync(file, 'utf-8');
-  const after = before.split('http://localhost:3000').join('/api');
+  const after = before.split('http://localhost:3000').join('');
   if (before !== after) {
     const n = before.split('http://localhost:3000').length - 1;
     fs.writeFileSync(file, after);
