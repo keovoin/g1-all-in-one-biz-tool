@@ -18,7 +18,7 @@ const MAP = [
   ['The Gauzy backend builds its own system prompt', 'The Sastra backend builds its own system prompt'],
   ['Annex: Ever Gauzy', 'Annex: Sastra'],
   ['File is required for Gauzy Source.', 'File is required for Sastra Source.'],
-  ['Ever Gauzy', 'Sastra Solution'],
+  ['Ever Gauzy', 'Sastra Digital Innovation'],
   ['Gauzy Desktop Timer', 'Sastra Desktop Timer'],
   ['Gauzy Desktop', 'Sastra Desktop'],
   ['Gauzy API Server', 'Sastra API Server'],

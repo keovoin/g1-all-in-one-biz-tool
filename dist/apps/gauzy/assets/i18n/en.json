@@ -4587,7 +4587,7 @@
 	},
 	"ABOUT_PAGE": {
 		"COPYRIGHT": "Copyright © 2019-{{year}}. All rights reserved. Based on open-source Gauzy (AGPL-3.0).",
-		"DESCRIPTION": "Sastra Solution is an Open Business Management Platform for Collaborative, On-Demand and Sharing Economies — ERP, CRM, HRM, ATS and Project Management with integrated time tracking.",
+		"DESCRIPTION": "Sastra Digital Innovation is an Open Business Management Platform for Collaborative, On-Demand and Sharing Economies — ERP, CRM, HRM, ATS and Project Management with integrated time tracking.",
 		"LICENSE": "Open source, released under the",
 		"VERSION_DETAILS": "Version Details",
 		"VERSION_MISMATCH": "The web app and the API were built from different commits — a deployment may still be rolling out.",
@@ -5040,7 +5040,7 @@
 		"WAIT_FOR": "Waiting for {{ name }} to start...",
 		"SETUP": {
 			"WELCOME": "Welcome",
-			"TITLE": "Welcome to Sastra Solution - Open-Source Business Management Platform (ERP/CRM/HRM)",
+			"TITLE": "Welcome to Sastra Digital Innovation - Open-Source Business Management Platform (ERP/CRM/HRM)",
 			"LABEL": "Sastra Desktop App provides the full functionality of the Sastra platform available directly on your desktop computer or a laptop. In addition, it allows tracking work time, activity recording, and the ability to receive tracking reminders/notifications.",
 			"TITLE_SERVER": "Sastra Server Installation Wizard",
 			"LABEL_SERVER": "Sastra Desktop App provides the full functionality of the Sastra platform available directly on your desktop computer or a laptop. In addition, it allows tracking work time, activity recording, and the ability to receive tracking reminders/notifications.",
